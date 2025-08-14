@@ -22,18 +22,20 @@
 
     <title>Vincent Game Company</title>
 </head>
-<body class="">
-    <header class="flex justify-between items-center bg-black sticky top-0 shadow-lg">
-        <div class="md:hidden bg-gray-800 text-white p-4" id="burgericon">
+<body class="z-0 relative">
+    <header class="flex justify-between items-center bg-black sticky top-0 shadow-lg z-0">
+        <div class="md:hidden bg-gray-800 text-white p-4 cursor-pointer" id="burgericon">
             <i class="fa-solid fa-bars"></i>
         </div>
-        <nav class="hidden bg-gray-800 text-white p-4" id="navmobile">
-            <ul class="">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
-        </nav>
+        <div class="hidden absolute bg-white/60  p-4 top-0 w-[100%] h-[100vh]" id="navmobilecontainer">
+            <nav class="left-0 z-3 w-[60%] bg-black shadow-lg text-white" id="navmobile">
+                <ul class="">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
         <nav class="hidden md:flex bg-gray-800 text-white p-4" id="navdesktop">
             <ul class="flex space-x-4">
                 <li><a href="#">Home</a></li>
@@ -51,5 +53,6 @@
 
     <h1>Welcome to Vincent Game Company</h1>
     <p>Your one-stop destination for the latest and greatest in gaming.</p>
+    <script src="./script/script.js"></script>
 </body>
 </html>
