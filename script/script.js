@@ -14,8 +14,38 @@ navmobilecontainer.addEventListener('click', function (event) {
     }
   });
 
+const duelStartButton = document.getElementById('duelStartButton');
+const magicDuelMechanism = document.getElementById('magicDuelMechanism');
+duelStartButton.addEventListener('click', () => { 
+    magicDuelMechanism.classList.remove('hidden');
+    duelStartButton.classList.add('hidden');
+});
+
 
 let magicMeter = document.getElementById('magicMeter');
 let magicDuelLevel = document.getElementById('magicDuelLevel');
+let abraKadabraButton = document.getElementById('abraKadabraButton');
+let magicToken = 10;
+let opponentMagicToken = 100-magicToken;
 
-magicMeter.style.width = magicDuelLevel.innerText * 10 + '%';
+magicDuelLevel.textContent = 1;
+
+let magicMeterLeft = document.getElementById('magicMeterLeft');
+let magicMeterRight = document.getElementById('magicMeterRight');
+
+magicMeterLeft.style.width = magicToken + '%';
+magicMeterRight.style.width = opponentMagicToken + '%';
+
+setInterval(() => {
+    magicToken--;
+    opponentMagicToken++;
+    magicMeterLeft.style.width = magicToken + '%';
+    magicMeterRight.style.width = opponentMagicToken + '%';
+}, 5000/magicDuelLevel.textContent);
+
+abraKadabraButton.addEventListener('click', () => {
+    magicToken += 5;
+    opponentMagicToken -= 5;
+    magicMeterLeft.style.width = magicToken + '%';
+    magicMeterRight.style.width = opponentMagicToken + '%';
+});

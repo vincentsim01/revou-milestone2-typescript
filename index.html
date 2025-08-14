@@ -20,7 +20,7 @@
     <link rel="icon" type="image/x-icon" href="./asset/favicon.png">
 
 
-    <title>Vincent Game Company</title>
+    <title>RevoFun</title>
 </head>
 <body class="z-0 relative">
     <header class="flex justify-between items-center bg-black sticky top-0 shadow-lg z-0">
@@ -51,22 +51,28 @@
             </div>
     </header>
     <section>
-        <h1>Welcome to Vincent Game Company</h1>
+        <h1>Welcome to RevoFun</h1>
         <p>Your one-stop destination for the latest and greatest in gaming.</p>
     </section>
-    <section id="avraKedavraGameContainer" class="hidden md:grid md:w-[100%] md:h-[100vh] relative md:grid-cols-6 md:grid-rows-4 bg-[url('./asset/background.png')]">
+    <section id="avraKedavraGameContainer" class="hidden md:grid md:w-[100%] md:h-[100vh] relative md:grid-cols-6 md:grid-rows-4 bg-[url('./asset/background.png')] bg-cover bg-center">
         <div class='col-start-1 col-end-2 row-start-1 row-end-2'>Harris Poetra</div>
         <div class="col-start-1 col-end-2  row-start-2 row-end-3"><img src="./asset/avatar.png" class="h-[100%]"></div>
-        <div class="col-start-1 col-end-2  row-start-3 row-end-4"><button class="border border-black" id="abraKadabraButton">Abra Kadabra</button></div>
-        <div class="col-start-2 col-end-5 row-start-1 row-end-4 justify-center items-center">
-            <div>Magic Duel <span id="magicDuelLevel">1</span></div>
-            <div id="magicMeter" class="border border-black h-[20px]">
+        <div class="col-start-1 col-end-2  row-start-3 row-end-4"><button class="border border-black cursor-pointer" id="abraKadabraButton">Abra Kadabra</button></div>
+        <div class="col-start-2 col-end-5 row-start-1 row-end-4 justify-center items-center" id="magicDuelContainer">
+            <button id="duelStartButton">Start Duel</button>
+            <div id="magicDuelMechanism" class="hidden">
+                <div>Magic Duel <span id="magicDuelLevel"></span></div>
+                <div id="magicMeter" class="border border-black h-[20px] w-[100%] relative flex">
+                    <div id="magicMeterLeft" class="bg-blue-500 h-[100%]"></div>
+                    <div id="magicMeterRight" class="bg-gray-300 h-[100%]"></div>
 
+                </div>
             </div>
+
         </div>
         <div class='col-start-5 col-end-6 row-start-1 row-end-2'>Koklemot</div>
         <div class="col-start-5 col-end-6 row-start-2 row-end-3"><img src="./asset/avatar.png" class="h-[100%]"></div>
-        <div class="col-start-5 col-end-6 row-start-3 row-end-4"><button  class="border border-black" id="simSalabimButton">Sim Salabim</button></div>
+        <!-- <div class="col-start-5 col-end-6 row-start-3 row-end-4"><button  class="border border-black" id="simSalabimButton">Sim Salabim</button></div> -->
     </section>
 
 
