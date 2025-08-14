@@ -12,5 +12,4 @@ navmobilecontainer.addEventListener('click', function (event) {
     if (!navmobile.contains(event.target)) {
         navmobilecontainer.classList.add('hidden');
     }
-
   });
