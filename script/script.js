@@ -13,3 +13,9 @@ navmobilecontainer.addEventListener('click', function (event) {
         navmobilecontainer.classList.add('hidden');
     }
   });
+
+
+let magicMeter = document.getElementById('magicMeter');
+let magicDuelLevel = document.getElementById('magicDuelLevel');
+
+magicMeter.style.width = magicDuelLevel.innerText * 10 + '%';
