@@ -22,10 +22,31 @@
 
     <title>Vincent Game Company</title>
 </head>
-<body>
-    <header>
-        <div class="md:hidden bg-gray-800 text-white p-4">
-            <h1 class="text-lg font-bold">Vincent Game Company</h1>
+<body class="">
+    <header class="flex justify-between items-center bg-black sticky top-0 shadow-lg">
+        <div class="md:hidden bg-gray-800 text-white p-4" id="burgericon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="hidden bg-gray-800 text-white p-4" id="navmobile">
+            <ul class="">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <nav class="hidden md:flex bg-gray-800 text-white p-4" id="navdesktop">
+            <ul class="flex space-x-4">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="text-lg font-bold text-white">Vincent Game Company</div>
+        <div class="flex justify-between items-center p-4 bg-gray-800 text-white">
+            <div class="hidden md:block">
+                <i class="fa-solid fa-search"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>
     </header>
 
     <h1>Welcome to Vincent Game Company</h1>
