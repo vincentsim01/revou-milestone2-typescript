@@ -63,15 +63,15 @@
         <p>Your one-stop destination for the latest and greatest in gaming.</p>
     </section>
     <section id="avraKedavraGameContainer" class="hidden md:grid md:w-[100%] md:h-[100vh] relative md:grid-cols-6 md:grid-rows-4 bg-[url('./asset/background.png')] bg-cover bg-center">
-        <div class='col-start-2 col-end-3 row-start-1 row-end-2 border border-black flex justify-center items-center'><div class="font-harrypotter text-2xl">Harris Poetra</div></div>
-        <div class="col-start-2 col-end-3  row-start-2 row-end-3 flex justify-center items-center"><button class="border border-black cursor-pointer" id="abraKadabraButton">Abra Kadabra</button></div>
-        <div class="col-start-2 col-end-3  row-start-3 row-end-5 flex justify-center items-bottom border border-black"><img src="./asset/harrispoetra.png" class="h-[100%] "></div>
-        <div class="text-center col-start-3 col-end-5 row-start-2 row-end-3 flex justify-center items-center flex border border-black"><p>Magic Duel <span id="magicDuelLevel"></span></p></div>
-        <div class="col-start-3 col-end-5 row-start-3 row-end-5 justify-center items-bottom flex  border border-black" id="magicDuelContainer">
-            <button id="duelStartButton">Start Duel</button>
+        <div class='col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center'><div class="font-harrypotter text-2xl">Harris Poetra</div></div> 
+        <div class="col-start-2 col-end-3  row-start-2 row-end-3 flex justify-center items-center hidden" id="harrisspell"><div class="font-harrypotter">Cast Your Spell to Defeat Koklemot!  <i class="fa-solid fa-arrow-right"></i></div><button class="border border-black cursor-pointer p-5 rounded-md font-harrypotter shadow-lg hover:scale-105 active:scale-95 transition-active duration-200 active:shadow-2xl active:shadow-green-300" id="abraKadabraButton">Abra Kadabra</button></div>
+        <div class="col-start-2 col-end-3  row-start-3 row-end-5 flex justify-center items-bottom"><img src="./asset/harrispoetra.png" class="h-[100%] "></div>
+        <div class="text-center col-start-3 col-end-5 row-start-1 row-end-3 flex justify-center items-center flex"><p class="font-harrypotter text-6xl animate-bounce">Magic Duel <span id="magicDuelLevel" class="font-harrypotter"></span></p></div>
+        <div class="col-start-3 col-end-5 row-start-4 row-end-5 justify-center items-bottom flex" id="magicDuelContainer">
+            <button id="duelStartButton" class="font-harrypotter rounded-full pl-5 pr-5 h-[50%] border border-black shadow-lg hover:scale-105 cursor-pointer">Start Duel</button>
             <div id="magicDuelMechanism" class="hidden w-[90%]">
 
-                <div id="magicMeter" class="border border-black h-[20px] w-[100%] relative flex">
+                <div id="magicMeter" class=" h-[20px] w-[100%] relative flex">
                     <div id="magicMeterLeft" class="bg-gradient-to-r from-green-700 via-green-500 to-green-100 h-[100%]"></div>
                     <div id="magicMeterRight" class="bg-gradient-to-l from-red-700 via-red-500 to-red-100 h-[100%]"></div>
 
@@ -90,9 +90,9 @@
 
 
         </div>
-        <div class='col-start-5 col-end-6 row-start-1 row-end-2 flex justify-center items-center border border-black'><div class="font-harrypotter text-2xl">Koklemot</div></div>
-        <div class="col-start-5 col-end-6 row-start-2 row-end-3 flex justify-center items-center">Spell Power: <span id="spellSpeed" class="font-harrypotter"></span></div>
-        <div class="col-start-5 col-end-6 row-start-3 row-end-5 flex justify-center items-center border border-black"><img src="./asset/voldemortleft.png" class="h-[60%] mt-30 border border-black"></div>
+        <div class='col-start-5 col-end-6 row-start-1 row-end-2 flex justify-center items-center'><div class="font-harrypotter text-2xl">Koklemot</div></div>
+        <div class="col-start-5 col-end-6 row-start-2 row-end-3 flex justify-center items-center font-harrypotter hidden" id="koklemotspellpower">Spell Power: <span id="spellSpeed" class="font-harrypotter"></span></div>
+        <div class="col-start-5 col-end-6 row-start-3 row-end-5 flex justify-center items-center"><img src="./asset/voldemortleft.png" class="h-[60%] mt-30"></div>
 
     </section>
 

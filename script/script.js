@@ -42,11 +42,15 @@ const magicDuelMessage = document.getElementById('magicDuelMessage');
 const magicDuelOutcomeWinButton = document.getElementById('magicDuelOutcomeWinButton');
 const magicDuelOutcomeLoseButton = document.getElementById('magicDuelOutcomeLoseButton');
 const magicDuelOutcomeExitButton = document.getElementById('magicDuelOutcomeExitButton');
+const harrisspell = document.getElementById('harrisspell');
+const koklemotspellpower = document.getElementById('koklemotspellpower');
 
 
 duelStartButton.addEventListener('click', () => { 
     magicDuelMechanism.classList.remove('hidden');
     duelStartButton.classList.add('hidden');
+    harrisspell.classList.remove('hidden');
+    koklemotspellpower.classList.remove('hidden');
 
     let magicToken = 10;
     let opponentMagicToken = 100-magicToken;
