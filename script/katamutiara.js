@@ -1,3 +1,6 @@
+const firstKataMutiara = document.getElementById("firstKataMutiara");
+const secondKataMutiara = document.getElementById("secondKataMutiara");
+
 const kataMutiara = [
     { 1 : ["Kamu memang seperti lempeng bumi", "bergeser sedikit saja sudah mengguncang hatiku"] },
     { 2 : ["Selain ada garuda di dadaku", "di dadaku juga selalu ada kamu."] },
@@ -17,11 +20,60 @@ const kataMutiara = [
     { 16 : ["Ikan apa yang bikin baper?", "Ikan stop loving you."]}
 ]
 
-let filteredFive = [];
 
-for (let i = 0; i < 5; i++) {
-    let index = Math.floor(Math.random() * kataMutiara.length-1);
-    filteredFive.push(kataMutiara[index]);
+function shuffleArray(array) {
+    const shuffled = [...array]; // Make a copy so the original array is not changed
+
+    for (let i = shuffled.length - 1; i > 0; i--) {  
+        // i goes from the last index down to 1
+        const j = Math.floor(Math.random() * (i + 1)); 
+        // Pick a random index between 0 and i (inclusive)
+
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        // Swap element at i with element at j
+    }
+
+    return shuffled; // Return the shuffled array
 }
 
-console.log(filteredFive);
+function selectRandomPairs(data, count = 5) {
+    const shuffled = shuffleArray(data); // Shuffle the array
+    return shuffled.slice(0, count);     // Take the first `count` items
+}
+
+let randomKataFive = selectRandomPairs(kataMutiara, 5);
+
+// let filteredFive = [];
+
+// for (let i = 0; i < 5; i++) {
+//     let index = Math.floor(Math.random() * kataMutiara.length-1);
+//     filteredFive.push(kataMutiara[index]);
+// }
+
+
+// const randomFirstFive = [];
+// for (let j = 0; j < filteredFive.length; j++) {
+
+//     let index = Math.floor(Math.random() * filteredFive.length-1);
+//     console.log(index);
+//     randomFirstFive.push(index);
+
+// }
+
+
+randomKataFive.map((item) => {
+    firstKataMutiara.innerHTML += `
+        <div class="text-gray-700 w-[15%] h-[30vh] border border-black">
+            "${item[Object.keys(item)[0]][0]}"
+        </div>
+    `;
+    secondKataMutiara.innerHTML += `
+        <div class="text-gray-700 w-[15%] h-[30vh] border border-black">
+            "${item[Object.keys(item)[0]][1]}"
+        </div>
+    `;
+})
+
+
+
+
