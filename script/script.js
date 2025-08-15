@@ -57,39 +57,41 @@ duelStartButton.addEventListener('click', () => {
     magicMeterRight.style.width = opponentMagicToken + '%';
 
     spellSpeed.textContent = magicDuelLevel.textContent;
-
+    
     let intervalId = setInterval(() => {
         magicToken--;
         opponentMagicToken++;
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
         if(magicToken<=0){
-            magicDuelOutcomeContainer.classList.remove('hidden');
-            magicDuelOutcome.classList.remove('hidden');
-            magicDuelResult.textContent = 'You lose!';
-            magicDuelMessage.textContent = 'Better luck next time!';
-            magicDuelOutcomeLoseButton.classList.remove('hidden');
-        }else if(magicToken>=100){
-                magicToken=1000000000;
+                magicDuelOutcomeContainer.classList.remove('hidden');
+                magicDuelOutcome.classList.remove('hidden');
+                magicDuelResult.textContent = 'You lose!';
+                magicDuelMessage.textContent = 'Better luck next time!';
+                magicDuelOutcomeLoseButton.classList.remove('hidden');
         }
-
         }, 
-        5000/magicDuelLevel.textContent);
+        2000/magicDuelLevel.textContent);
 
     abraKadabraButton.addEventListener('click', () => {
         magicToken += 5;
         opponentMagicToken -= 5;
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
-            if(magicToken>=100){
+
+        if(magicToken>=100){
                 magicDuelOutcomeContainer.classList.remove('hidden');
                 magicDuelOutcome.classList.remove('hidden');
                 magicDuelResult.textContent = 'You win!';
                 magicDuelMessage.textContent = 'Congratulations!';
                 magicDuelOutcomeWinButton.classList.remove('hidden');
                 magicToken=1000000000;
-            }    
+            }   
     }); 
+
+if(magicToken>=100){clearInterval(intervalId);}
+if(magicToken<=0){clearInterval(intervalId);}
+
 
 
 
@@ -120,40 +122,46 @@ duelStartButton.addEventListener('click', () => {
         magicMeterRight.style.width = opponentMagicToken + '%';
         magicDuelLevel.textContent++;
         spellSpeed.textContent = magicDuelLevel.textContent;
-        clearInterval(intervalId);
 
-            var intervalId2 = setInterval(() => {
-                magicToken--;
-                opponentMagicToken++;
-                magicMeterLeft.style.width = magicToken + '%';
-                magicMeterRight.style.width = opponentMagicToken + '%';
 
-                if(magicToken<=0){
+        let intervalId = setInterval(() => {
+            magicToken--;
+            opponentMagicToken++;
+            magicMeterLeft.style.width = magicToken + '%';
+            magicMeterRight.style.width = opponentMagicToken + '%';
+            if(magicToken<=0){
                     magicDuelOutcomeContainer.classList.remove('hidden');
                     magicDuelOutcome.classList.remove('hidden');
                     magicDuelResult.textContent = 'You lose!';
                     magicDuelMessage.textContent = 'Better luck next time!';
                     magicDuelOutcomeLoseButton.classList.remove('hidden');
-                }
-
-            }, 5000/magicDuelLevel.textContent);
+            }
+            }, 
+            2000/magicDuelLevel.textContent);
         
     });
 
-    magicDuelOutcomeExitButton.addEventListener('click', () => {
-        magicDuelOutcomeContainer.classList.add('hidden');
-        magicDuelOutcome.classList.add('hidden');
-        magicDuelResult.textContent = '';
-        magicDuelMessage.textContent = '';
-        magicDuelOutcomeWinButton.classList.add('hidden');
-        magicDuelOutcomeLoseButton.classList.add('hidden');
-        magicToken = 10;
-        opponentMagicToken = 100 - magicToken;
-        magicDuelMechanism.classList.add('hidden');
-        duelStartButton.classList.remove('hidden');
-        magicDuelLevel.textContent = 1;
-        clearInterval(intervalId2);
-    });
+    // magicDuelOutcomeExitButton.addEventListener('click', () => {
+    //     magicDuelOutcomeContainer.classList.add('hidden');
+    //     magicDuelOutcome.classList.add('hidden');
+    //     magicDuelResult.textContent = '';
+    //     magicDuelMessage.textContent = '';
+    //     magicDuelOutcomeWinButton.classList.add('hidden');
+    //     magicDuelOutcomeLoseButton.classList.add('hidden');
+    //     magicToken = 10;
+    //     opponentMagicToken = 100 - magicToken;
+    //     magicDuelMechanism.classList.add('hidden');
+    //     duelStartButton.classList.remove('hidden');
+    //     magicDuelLevel.textContent = 1;
+    //     clearInterval(intervalId);
+    //     clearInterval(intervalId);        
+    //     clearInterval(intervalId);
+    //     clearInterval(intervalId);
+    //     clearInterval(intervalId);
+    //     clearInterval(intervalId);
+    //     clearInterval(intervalId);
+    //     clearInterval(intervalId);
+    // });
 
 });
 
