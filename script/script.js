@@ -1,3 +1,7 @@
+document.addEventListener("dblclick", function (event) {
+  event.preventDefault();
+});
+
 const burgericon = document.getElementById('burgericon');
 const navmobilecontainer = document.getElementById('navmobilecontainer');
 const navmobile = document.getElementById('navmobile');
@@ -19,6 +23,7 @@ navmobilecontainer.addEventListener('click', function (event) {
 
 const duelStartButton = document.getElementById('duelStartButton');
 const magicDuelMechanism = document.getElementById('magicDuelMechanism');
+const spellSpeed = document.getElementById('spellSpeed');
 
 
 
@@ -50,11 +55,15 @@ duelStartButton.addEventListener('click', () => {
     magicMeterLeft.style.width = magicToken + '%';
     magicMeterRight.style.width = opponentMagicToken + '%';
 
-    setInterval(() => {
+    spellSpeed.textContent = magicDuelLevel.textContent;
+
+    let intervalId = setInterval(() => {
     magicToken--;
     opponentMagicToken++;
     magicMeterLeft.style.width = magicToken + '%';
     magicMeterRight.style.width = opponentMagicToken + '%';
+
+
 
     if(magicToken<=0){
         magicDuelOutcomeContainer.classList.remove('hidden');
@@ -64,7 +73,7 @@ duelStartButton.addEventListener('click', () => {
         magicDuelOutcomeLoseButton.classList.remove('hidden');
     }
 
-}, 5000/magicDuelLevel.textContent);
+    }, 5000/magicDuelLevel.textContent);
 
 abraKadabraButton.addEventListener('click', () => {
     magicToken += 5;
@@ -97,6 +106,7 @@ magicDuelOutcomeLoseButton.addEventListener('click', () => {
 });
 
 magicDuelOutcomeWinButton.addEventListener('click', () => {
+
     magicDuelOutcomeContainer.classList.add('hidden');
     magicDuelOutcome.classList.add('hidden');
     magicDuelResult.textContent = '';
@@ -108,8 +118,11 @@ magicDuelOutcomeWinButton.addEventListener('click', () => {
     magicMeterLeft.style.width = magicToken + '%';
     magicMeterRight.style.width = opponentMagicToken + '%';
     magicDuelLevel.textContent++;
+    spellSpeed.textContent = magicDuelLevel.textContent;
+    // clearInterval(intervalId2);
+    // clearInterval(intervalId);
 
-        setInterval(() => {
+        let intervalId2 = setInterval(() => {
             magicToken--;
             opponentMagicToken++;
             magicMeterLeft.style.width = magicToken + '%';
