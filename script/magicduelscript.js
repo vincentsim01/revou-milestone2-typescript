@@ -98,8 +98,8 @@ duelStartButton.addEventListener('click', () => {
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
         magicDuelLevel.textContent++;
-        // console.log(magicDuelLevel.textContent);
-        // console.log(typeof(magicDuelLevel.textContent));
+        console.log(`magicDuelLevel.textContent: ${magicDuelLevel.textContent}`);
+        console.log(typeof(magicDuelLevel.textContent));
         spellSpeed.textContent = magicDuelLevel.textContent;
         magicDuelLevelInt = Number(magicDuelLevel.textContent);
 
@@ -127,7 +127,7 @@ duelStartButton.addEventListener('click', () => {
         opponentMagicToken++;
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
-        console.log(`magicDuelLevelInt: ${magicDuelLevelInt}`);
+        // console.log(`magicDuelLevelInt: ${magicDuelLevelInt}`);
         if(magicToken<=0){
                 // clearInterval(intervalId);
                 magicDuelOutcomeContainer.classList.remove('hidden');
@@ -158,8 +158,9 @@ duelStartButton.addEventListener('click', () => {
         magicMeterRight.style.width = '';
         magicDuelMechanism.classList.add('hidden');
         duelStartButton.classList.remove('hidden');
-        // magicDuelLevel=0;
         magicDuelLevel.textContent = '';
+        // console.log(`magicDuelLevel.textContent: ${magicDuelLevel.textContent}`);
+        // console.log(typeof(magicDuelLevel.textContent));
         clearInterval(intervalId);
 
     });
