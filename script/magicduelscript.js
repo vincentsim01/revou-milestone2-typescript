@@ -147,13 +147,20 @@ duelStartButton.addEventListener('click', () => {
         magicDuelOutcome.classList.add('hidden');
         magicDuelResult.textContent = '';
         magicDuelMessage.textContent = '';
+        magicDuelClickCount.textContent = '';
+        harrisspell.classList.add('hidden');
+        koklemotspellpower.classList.add('hidden');
         magicDuelOutcomeWinButton.classList.add('hidden');
         magicDuelOutcomeLoseButton.classList.add('hidden');
-        magicToken = 10;
+        magicToken = 0;
         opponentMagicToken = 100 - magicToken;
+        magicMeterLeft.style.width = '';
+        magicMeterRight.style.width = '';
         magicDuelMechanism.classList.add('hidden');
         duelStartButton.classList.remove('hidden');
-        magicDuelLevel.textContent = 1;
+        // magicDuelLevel=0;
+        magicDuelLevel.textContent = '';
+        clearInterval(intervalId);
 
     });
 
