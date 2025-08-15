@@ -64,11 +64,11 @@
     </section>
     <section id="avraKedavraGameContainer" class="hidden md:grid md:w-[100%] md:h-[100vh] relative md:grid-cols-6 md:grid-rows-4 bg-[url('./asset/background.png')] bg-cover bg-center">
         <div class='col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center'><div class="font-harrypotter text-2xl">Harris Poetra</div></div> 
-        <div class="col-start-2 col-end-3  row-start-2 row-end-3 flex justify-center items-center hidden" id="harrisspell"><div class="font-harrypotter">Cast Your Spell to Defeat Koklemot!  <i class="fa-solid fa-arrow-right"></i></div><button class="border border-black cursor-pointer p-5 rounded-md font-harrypotter shadow-lg hover:scale-105 active:scale-95 transition-active duration-200 active:shadow-2xl active:shadow-green-300" id="abraKadabraButton">Abra Kadabra</button></div>
+        <div class="col-start-2 col-end-3  row-start-2 row-end-3 flex justify-center items-center hidden" id="harrisspell"><div class="font-harrypotter">Cast Your Spell to Defeat Koklemot!  <i class="fa-solid fa-arrow-right"></i></div><button class="border border-black cursor-pointer p-5 rounded-md font-harrypotter shadow-lg hover:scale-105 active:scale-95 transition-active duration-200 active:shadow-2xl active:shadow-green-300" id="abraKadabraButton">Sim Salabim</button></div>
         <div class="col-start-2 col-end-3  row-start-3 row-end-5 flex justify-center items-bottom"><img src="./asset/harrispoetra.png" class="h-[100%] "></div>
         <div class="text-center col-start-3 col-end-5 row-start-1 row-end-3 flex justify-center items-center flex"><p class="font-harrypotter text-6xl animate-bounce">Magic Duel <span id="magicDuelLevel" class="font-harrypotter"></span></p></div>
         <div class="col-start-3 col-end-5 row-start-4 row-end-5 justify-center items-bottom flex" id="magicDuelContainer">
-            <button id="duelStartButton" class="font-harrypotter rounded-full pl-5 pr-5 h-[50%] border border-black shadow-lg hover:scale-105 cursor-pointer">Start Duel</button>
+            <button id="duelStartButton" class="font-harrypotter rounded-full pl-5 pr-5 h-[50%] border border-black shadow-lg hover:scale-105 active:scale-95 active:shadow-green-300 active:shadow-2xl cursor-pointer">Start Duel</button>
             <div id="magicDuelMechanism" class="hidden w-[90%]">
 
                 <div id="magicMeter" class=" h-[20px] w-[100%] relative flex">
@@ -81,8 +81,8 @@
                 <div id="magicDuelOutcome" class="hidden font-harrypotter">
                 <div id="magicDuelResult" class="font-harrypotter"></div>
                 <div id="magicDuelMessage" class="font-harrypotter"></div>
-                <button id="magicDuelOutcomeWinButton" class="hidden font-harrypotter">Go To The Next Level</button>
-                <button id="magicDuelOutcomeLoseButton" class="hidden font-harrypotter">Try Again</button>
+                <button id="magicDuelOutcomeWinButton" class="hidden font-harrypotter p-5 m-5 border border-black rounded-lg shadow-lg hover:scale-105 active:scale-95 active:shadow-green-300 active:shadow-2xl cursor-pointer">Go To The Next Level</button>
+                <button id="magicDuelOutcomeLoseButton" class="hidden font-harrypotter p-5 m-5 border border-black rounded-lg shadow-lg hover:scale-105 active:scale-95 active:shadow-red-300 active:shadow-2xl cursor-pointer">Try Again</button>
                 <!-- <button id="magicDuelOutcomeExitButton">Exit</button> -->
             </div>
 
