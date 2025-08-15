@@ -71,25 +71,35 @@ duelStartButton.addEventListener('click', () => {
         magicDuelResult.textContent = 'You lose!';
         magicDuelMessage.textContent = 'Better luck next time!';
         magicDuelOutcomeLoseButton.classList.remove('hidden');
+
+        // clearInterval(intervalId2);
+    }else if(magicToken>=100){
+            magicToken=1000000000;
+
+        // clearInterval(intervalId2);
     }
 
     }, 5000/magicDuelLevel.textContent);
 
-abraKadabraButton.addEventListener('click', () => {
-    magicToken += 5;
-    opponentMagicToken -= 5;
-    magicMeterLeft.style.width = magicToken + '%';
-    magicMeterRight.style.width = opponentMagicToken + '%';
-    if(magicToken>=100){
-        magicDuelOutcomeContainer.classList.remove('hidden');
-        magicDuelOutcome.classList.remove('hidden');
-        magicDuelResult.textContent = 'You win!';
-        magicDuelMessage.textContent = 'Congratulations!';
-        magicDuelOutcomeWinButton.classList.remove('hidden');
+    abraKadabraButton.addEventListener('click', () => {
+        magicToken += 5;
+        opponentMagicToken -= 5;
+        magicMeterLeft.style.width = magicToken + '%';
+        magicMeterRight.style.width = opponentMagicToken + '%';
+            if(magicToken>=100){
+                magicDuelOutcomeContainer.classList.remove('hidden');
+                magicDuelOutcome.classList.remove('hidden');
+                magicDuelResult.textContent = 'You win!';
+                magicDuelMessage.textContent = 'Congratulations!';
+                magicDuelOutcomeWinButton.classList.remove('hidden');
+                magicToken=1000000000;
 
-    }
-    
-});
+
+            }
+        
+    }); 
+
+
 
 
 magicDuelOutcomeLoseButton.addEventListener('click', () => {
@@ -122,7 +132,7 @@ magicDuelOutcomeWinButton.addEventListener('click', () => {
     // clearInterval(intervalId2);
     // clearInterval(intervalId);
 
-        let intervalId2 = setInterval(() => {
+        var intervalId2 = setInterval(() => {
             magicToken--;
             opponentMagicToken++;
             magicMeterLeft.style.width = magicToken + '%';
