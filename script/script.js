@@ -39,6 +39,7 @@ const magicDuelOutcomeContainer = document.getElementById('magicDuelOutcomeConta
 const magicDuelOutcome = document.getElementById('magicDuelOutcome');
 const magicDuelResult = document.getElementById('magicDuelResult');
 const magicDuelMessage = document.getElementById('magicDuelMessage');
+const magicDuelClickCount = document.getElementById('magicDuelClickCount');
 const magicDuelOutcomeWinButton = document.getElementById('magicDuelOutcomeWinButton');
 const magicDuelOutcomeLoseButton = document.getElementById('magicDuelOutcomeLoseButton');
 const magicDuelOutcomeExitButton = document.getElementById('magicDuelOutcomeExitButton');
@@ -47,6 +48,7 @@ const koklemotspellpower = document.getElementById('koklemotspellpower');
 
 
 duelStartButton.addEventListener('click', () => { 
+    let clickCounter = 0;
     magicDuelMechanism.classList.remove('hidden');
     duelStartButton.classList.add('hidden');
     harrisspell.classList.remove('hidden');
@@ -72,6 +74,7 @@ duelStartButton.addEventListener('click', () => {
                 magicDuelOutcome.classList.remove('hidden');
                 magicDuelResult.textContent = 'You lose!';
                 magicDuelMessage.textContent = 'Better luck next time!';
+                magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
                 magicDuelOutcomeLoseButton.classList.remove('hidden');
         }
         }, 
@@ -82,12 +85,14 @@ duelStartButton.addEventListener('click', () => {
         opponentMagicToken -= 5;
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
+        clickCounter++;
 
         if(magicToken>=100){
                 magicDuelOutcomeContainer.classList.remove('hidden');
                 magicDuelOutcome.classList.remove('hidden');
                 magicDuelResult.textContent = 'You win!';
                 magicDuelMessage.textContent = 'Congratulations!';
+                magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
                 magicDuelOutcomeWinButton.classList.remove('hidden');
                 magicToken=1000000000;
             }   
@@ -105,6 +110,7 @@ if(magicToken<=0){clearInterval(intervalId);}
         magicDuelOutcome.classList.add('hidden');
         magicDuelResult.textContent = '';
         magicDuelMessage.textContent = '';
+        magicDuelClickCount.textContent = '';
         magicDuelOutcomeWinButton.classList.add('hidden');
         magicDuelOutcomeLoseButton.classList.add('hidden');
         magicToken = 10;
@@ -118,6 +124,7 @@ if(magicToken<=0){clearInterval(intervalId);}
         magicDuelOutcome.classList.add('hidden');
         magicDuelResult.textContent = '';
         magicDuelMessage.textContent = '';
+        magicDuelClickCount.textContent = '';
         magicDuelOutcomeWinButton.classList.add('hidden');
         magicDuelOutcomeLoseButton.classList.add('hidden');
         magicToken = 10;
