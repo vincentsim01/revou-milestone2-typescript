@@ -19,6 +19,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/favicon.png">
 
+    <!-- Harry Potter Font -->
+    <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+    <style>
+        .font-harrypotter{
+            font-family: 'Harry Potter', sans-serif;
+        }
+    </style>
+
 
     <title>RevoFun</title>
 </head>
@@ -55,25 +63,26 @@
         <p>Your one-stop destination for the latest and greatest in gaming.</p>
     </section>
     <section id="avraKedavraGameContainer" class="hidden md:grid md:w-[100%] md:h-[100vh] relative md:grid-cols-6 md:grid-rows-4 bg-[url('./asset/background.png')] bg-cover bg-center">
-        <div class='col-start-1 col-end-2 row-start-1 row-end-2'>Harris Poetra</div>
-        <div class="col-start-1 col-end-2  row-start-2 row-end-3"><img src="./asset/avatar.png" class="h-[100%]"></div>
-        <div class="col-start-1 col-end-2  row-start-3 row-end-4"><button class="border border-black cursor-pointer" id="abraKadabraButton">Abra Kadabra</button></div>
-        <div class="col-start-2 col-end-5 row-start-1 row-end-4 justify-center items-center" id="magicDuelContainer">
+        <div class='col-start-2 col-end-3 row-start-1 row-end-2 border border-black flex justify-center items-center'><div class="font-harrypotter text-2xl">Harris Poetra</div></div>
+        <div class="col-start-2 col-end-3  row-start-2 row-end-3 flex justify-center items-center"><button class="border border-black cursor-pointer" id="abraKadabraButton">Abra Kadabra</button></div>
+        <div class="col-start-2 col-end-3  row-start-3 row-end-5 flex justify-center items-bottom border border-black"><img src="./asset/harrispoetra.png" class="h-[100%] "></div>
+        <div class="text-center col-start-3 col-end-5 row-start-2 row-end-3 flex justify-center items-center flex border border-black"><p>Magic Duel <span id="magicDuelLevel"></span></p></div>
+        <div class="col-start-3 col-end-5 row-start-3 row-end-5 justify-center items-bottom flex  border border-black" id="magicDuelContainer">
             <button id="duelStartButton">Start Duel</button>
-            <div id="magicDuelMechanism" class="hidden">
-                <div>Magic Duel <span id="magicDuelLevel"></span></div>
+            <div id="magicDuelMechanism" class="hidden w-[90%]">
+
                 <div id="magicMeter" class="border border-black h-[20px] w-[100%] relative flex">
-                    <div id="magicMeterLeft" class="bg-blue-500 h-[100%]"></div>
-                    <div id="magicMeterRight" class="bg-gray-300 h-[100%]"></div>
+                    <div id="magicMeterLeft" class="bg-gradient-to-r from-green-700 via-green-500 to-green-100 h-[100%]"></div>
+                    <div id="magicMeterRight" class="bg-gradient-to-l from-red-700 via-red-500 to-red-100 h-[100%]"></div>
 
                 </div>
             </div>
             <div id="magicDuelOutcomeContainer" class="hidden bg-white/60 absolute top-0 left-0 w-[100%] h-[100vh] p-5 z-10 flex justify-center items-center">
-                <div id="magicDuelOutcome" class="hidden">
-                <div id="magicDuelResult"></div>
-                <div id="magicDuelMessage"></div>
-                <button id="magicDuelOutcomeWinButton" class="hidden">Go To The Next Level</button>
-                <button id="magicDuelOutcomeLoseButton" class="hidden">Try Again</button>
+                <div id="magicDuelOutcome" class="hidden font-harrypotter">
+                <div id="magicDuelResult" class="font-harrypotter"></div>
+                <div id="magicDuelMessage" class="font-harrypotter"></div>
+                <button id="magicDuelOutcomeWinButton" class="hidden font-harrypotter">Go To The Next Level</button>
+                <button id="magicDuelOutcomeLoseButton" class="hidden font-harrypotter">Try Again</button>
                 <!-- <button id="magicDuelOutcomeExitButton">Exit</button> -->
             </div>
 
@@ -81,9 +90,10 @@
 
 
         </div>
-        <div class='col-start-5 col-end-6 row-start-1 row-end-2'>Koklemot</div>
-        <div class="col-start-5 col-end-6 row-start-2 row-end-3"><img src="./asset/avatar.png" class="h-[100%]"></div>
-        <div class="col-start-5 col-end-6 row-start-3 row-end-4">Spell Power: <span id="spellSpeed"></span></div>
+        <div class='col-start-5 col-end-6 row-start-1 row-end-2 flex justify-center items-center border border-black'><div class="font-harrypotter text-2xl">Koklemot</div></div>
+        <div class="col-start-5 col-end-6 row-start-2 row-end-3 flex justify-center items-center">Spell Power: <span id="spellSpeed" class="font-harrypotter"></span></div>
+        <div class="col-start-5 col-end-6 row-start-3 row-end-5 flex justify-center items-center border border-black"><img src="./asset/voldemortleft.png" class="h-[60%] mt-30 border border-black"></div>
+
     </section>
 
 
