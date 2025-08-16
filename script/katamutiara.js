@@ -118,8 +118,10 @@ let secondCard = null;
     function flipCard() {
         if (!firstCard) {
             firstCard = this;
+            this.classList.add("flipped");
         } else {
             secondCard = this;
+            this.classList.add("flipped");
             checkMatch();
         }
 
@@ -148,8 +150,8 @@ let secondCard = null;
                 setTimeout(() => {
                 // firstCard.textContent = "";
                 // secondCard.textContent = "";
-                // firstCard.classList.remove("flipped");
-                // secondCard.classList.remove("flipped");
+                firstCard.classList.remove("flipped");
+                secondCard.classList.remove("flipped");
                 resetTurn();
                 }, 1000);
             }
