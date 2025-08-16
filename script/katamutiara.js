@@ -37,9 +37,9 @@ function shuffleArray(array) {
 }
 
 function shuffleArray2(array) { // Make a copy so the original array is not changed
-    for (let i = array.length - 1; i > 0; i--) {
+            for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+                [array[i], array[j]] = [array[j], array[i]];
             }
             return array;
 }
@@ -86,20 +86,27 @@ let secondCard = null;
                 card2.addEventListener("click", flipCard);
                 secondKataMutiara.appendChild(card2);
             });
-    }
 
-    function randomizeDiv(){
-            const divs = Array.from(firstKataMutiara.querySelectorAll('.card'));
+            const divs = Array.from(firstKataMutiara.children);
             let shuffleddivs = shuffleArray2(divs)
             shuffleddivs.forEach(div => firstKataMutiara.appendChild(div)); 
-            console.log(divs);
 
-            const divs2 = Array.from(secondKataMutiara.querySelectorAll('.card'));
+            const divs2 = Array.from(secondKataMutiara.children);
             let shuffleddivs2 = shuffleArray2(divs2)
-            shuffleddivs2.forEach(div => secondKataMutiara.appendChild(div));       
+            shuffleddivs2.forEach(div => secondKataMutiara.appendChild(div));  
     }
 
-    randomizeDiv();
+    // function randomizeDiv(){
+    //         const divs = Array.from(firstKataMutiara.querySelectorAll('.card'));
+    //         let shuffleddivs = shuffleArray2(divs)
+    //         shuffleddivs.forEach(div => firstKataMutiara.appendChild(div)); 
+
+    //         const divs2 = Array.from(secondKataMutiara.querySelectorAll('.card'));
+    //         let shuffleddivs2 = shuffleArray2(divs2)
+    //         shuffleddivs2.forEach(div => secondKataMutiara.appendChild(div));       
+    // }
+
+    // randomizeDiv();
 
 
 
@@ -153,7 +160,7 @@ let secondCard = null;
             //   lockBoard = false;
 
             // Check win
-            if (document.querySelectorAll(".matched").length === 10) {
+            if (document.querySelectorAll(".matched").length === randomKataFive.length*2) {
                 setTimeout(() => alert("🎉 You Win!"), 500);
             }
         }
