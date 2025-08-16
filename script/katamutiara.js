@@ -1,6 +1,7 @@
 const firstKataMutiara = document.getElementById("firstKataMutiara");
 const secondKataMutiara = document.getElementById("secondKataMutiara");
-
+// item[Object.keys(item)[0]][0]
+// item[Object.keys(item)[0]][1]
 const kataMutiara = [
     { 1 : ["Kamu memang seperti lempeng bumi", "bergeser sedikit saja sudah mengguncang hatiku"] },
     { 2 : ["Selain ada garuda di dadaku", "di dadaku juga selalu ada kamu."] },
@@ -32,7 +33,6 @@ function shuffleArray(array) {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         // Swap element at i with element at j
     }
-
     return shuffled; // Return the shuffled array
 }
 
@@ -41,38 +41,111 @@ function selectRandomPairs(data, count = 5) {
     return shuffled.slice(0, count);     // Take the first `count` items
 }
 
-let randomKataFive = selectRandomPairs(kataMutiara, 5);
+let randomKataMutiara = shuffleArray(kataMutiara);
 
-// let filteredFive = [];
+let randomKataFive = selectRandomPairs(randomKataMutiara, 5);
 
-// for (let i = 0; i < 5; i++) {
-//     let index = Math.floor(Math.random() * kataMutiara.length-1);
-//     filteredFive.push(kataMutiara[index]);
-// }
-
-
-// const randomFirstFive = [];
-// for (let j = 0; j < filteredFive.length; j++) {
-
-//     let index = Math.floor(Math.random() * filteredFive.length-1);
-//     console.log(index);
-//     randomFirstFive.push(index);
-
-// }
+let firstKataArray = [];
+let secondKataArray = [];
+let shuffledfirstKataArray;
+let shuffledsecondKataArray;
+let firstCard = null;
+let secondCard = null;
 
 
-randomKataFive.map((item) => {
-    firstKataMutiara.innerHTML += `
-        <div class="text-gray-700 w-[15%] h-[30vh] border border-black">
-            "${item[Object.keys(item)[0]][0]}"
-        </div>
-    `;
-    secondKataMutiara.innerHTML += `
-        <div class="text-gray-700 w-[15%] h-[30vh] border border-black">
-            "${item[Object.keys(item)[0]][1]}"
-        </div>
-    `;
-})
+ function createBoard() {
+    firstKataMutiara.innerHTML = "";
+    secondKataMutiara.innerHTML = "";
+
+    randomKataFive.forEach((item) => {
+    // firstKataArray.push(item[Object.keys(item)[0]][0]);
+    // shuffledfirstKataArray = shuffleArray(firstKataArray);
+    // secondKataArray.push(item[Object.keys(item)[0]][1]);
+    // shuffledsecondKataArray = shuffleArray(secondKataArray);
+    const card1 = document.createElement("div");
+    card1.classList.add("card");
+    card1.textContent = item[Object.keys(item)[0]][0];
+    card1.dataset.id = item[Object.keys(item)[0]];
+
+    card1.addEventListener("click", flipCard);
+    firstKataMutiara.appendChild(card1);
+
+    const card2 = document.createElement("div");
+    card2.classList.add("card");
+    card2.textContent = item[Object.keys(item)[0]][1];
+    card2.dataset.id = item[Object.keys(item)[0]];
+
+    card2.addEventListener("click", flipCard);
+    secondKataMutiara.appendChild(card2);
+});
+
+    }
+
+    function flipCard() {
+        if (!firstCard) {
+            firstCard = this;
+        } else {
+            secondCard = this;
+            checkMatch();
+        }
+
+    }
+
+    //     function flipCard() {
+    //   if (lockBoard || this.classList.contains("flipped")) return;
+
+    //   this.textContent = this.dataset.symbol;
+    //   this.classList.add("flipped");
+
+    //   if (!firstCard) {
+    //     firstCard = this;
+    //   } else {
+    //     secondCard = this;
+    //     checkMatch();
+    //   }
+    // }
+
+        function checkMatch() {
+      if (firstCard.dataset.symbol === secondCard.dataset.symbol) {
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+        resetTurn();
+      } else {
+        lockBoard = true;
+        setTimeout(() => {
+          firstCard.textContent = "";
+          secondCard.textContent = "";
+          firstCard.classList.remove("flipped");
+          secondCard.classList.remove("flipped");
+          resetTurn();
+        }, 1000);
+      }
+    }
+
+        function resetTurn() {
+      [firstCard, secondCard] = [null, null];
+      lockBoard = false;
+
+      // Check win
+      if (document.querySelectorAll(".matched").length === cards.length) {
+        setTimeout(() => alert("🎉 You Win!"), 500);
+      }
+    }
+
+    createBoard();
+
+// randomKataFive.map((item) => {
+//     firstKataMutiara.innerHTML += `
+//         <div class="text-gray-700 w-[15%] h-[30vh] border border-black">
+//             "${item[Object.keys(item)[0]][0]}"
+//         </div>
+//     `;
+//     secondKataMutiara.innerHTML += `
+//         <div class="text-gray-700 w-[15%] h-[30vh] border border-black">
+//             "${item[Object.keys(item)[0]][1]}"
+//         </div>
+//     `;
+// })
 
 
 

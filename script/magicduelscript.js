@@ -104,21 +104,7 @@ duelStartButton.addEventListener('click', () => {
         magicDuelLevelInt = Number(magicDuelLevel.textContent);
 
 
-        // let intervalId = setInterval(() => {
-        //     magicToken--;
-        //     opponentMagicToken++;
-        //     magicMeterLeft.style.width = magicToken + '%';
-        //     magicMeterRight.style.width = opponentMagicToken + '%';
-        //     if(magicToken<=0){
 
-        //             magicDuelOutcomeContainer.classList.remove('hidden');
-        //             magicDuelOutcome.classList.remove('hidden');
-        //             magicDuelResult.textContent = 'You lose!';
-        //             magicDuelMessage.textContent = 'Better luck next time!';
-        //             magicDuelOutcomeLoseButton.classList.remove('hidden');
-        //     }
-        //     }, 
-        //     2000/magicDuelLevel.textContent);
         
     });
 
@@ -166,3 +152,21 @@ duelStartButton.addEventListener('click', () => {
     });
 
 });
+
+
+
+        // let intervalId = setInterval(() => {
+        //     magicToken--;
+        //     opponentMagicToken++;
+        //     magicMeterLeft.style.width = magicToken + '%';
+        //     magicMeterRight.style.width = opponentMagicToken + '%';
+        //     if(magicToken<=0){
+
+        //             magicDuelOutcomeContainer.classList.remove('hidden');
+        //             magicDuelOutcome.classList.remove('hidden');
+        //             magicDuelResult.textContent = 'You lose!';
+        //             magicDuelMessage.textContent = 'Better luck next time!';
+        //             magicDuelOutcomeLoseButton.classList.remove('hidden');
+        //     }
+        //     }, 
+        //     2000/magicDuelLevel.textContent);

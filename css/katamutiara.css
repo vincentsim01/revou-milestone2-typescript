@@ -1,0 +1,26 @@
+
+ .card {
+      width: 100px;
+      height: 100px;
+      background: #3498db;
+      color: black;
+      font-size: 0.2 em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 8px;
+
+    }
+
+.card:hover{
+    transform: scale(1.05);
+}
+.flipped {
+      background: #2ecc71;
+    }
+
+.matched {
+      background: #95a5a6;
+      cursor: default;
+    }
