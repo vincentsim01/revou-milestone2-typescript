@@ -1,7 +1,7 @@
 
  .card {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       background: #3498db;
       color: black;
       font-size: 0.2 em;
@@ -10,6 +10,7 @@
       justify-content: center;
       cursor: pointer;
       border-radius: 8px;
+      padding: 1em;
 
     }
 

@@ -64,6 +64,7 @@ let secondCard = null;
     // shuffledsecondKataArray = shuffleArray(secondKataArray);
     const card1 = document.createElement("div");
     card1.classList.add("card");
+    card1.classList.add("m-5");
     card1.textContent = item[Object.keys(item)[0]][0];
     card1.dataset.id = item[Object.keys(item)[0]];
 
@@ -72,6 +73,7 @@ let secondCard = null;
 
     const card2 = document.createElement("div");
     card2.classList.add("card");
+    card2.classList.add("m-5");
     card2.textContent = item[Object.keys(item)[0]][1];
     card2.dataset.id = item[Object.keys(item)[0]];
 
