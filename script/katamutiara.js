@@ -17,7 +17,7 @@ const kataMutiara = [
     { 12 : ["Cinta adalah pengorbanan", "tapi kalau pengorbanan mulu sih namanya penderitaan"]},
     { 13 : ["Aku rela ikut lomba lari keliling dunia", "asalkan engkau yang menjadi garis finishnya."]},
     { 14 : ["Hari Minggu itu weekend","tapi kalau cinta aku ke kamu tuh will never end."]},
-    { 15 : ["Mapasku kok sesak ya?", "Karena separuh nafasku ada di kamu"]},
+    { 15 : ["Napasku kok sesak ya?", "Karena separuh nafasku ada di kamu"]},
     { 16 : ["Ikan apa yang bikin baper?", "Ikan stop loving you."]}
 ]
 
@@ -36,14 +36,22 @@ function shuffleArray(array) {
     return shuffled; // Return the shuffled array
 }
 
-function selectRandomPairs(data, count = 5) {
+function shuffleArray2(array) { // Make a copy so the original array is not changed
+    for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+            return array;
+}
+
+function selectRandomPairs(data, count = 6) {
     const shuffled = shuffleArray(data); // Shuffle the array
     return shuffled.slice(0, count);     // Take the first `count` items
 }
 
 let randomKataMutiara = shuffleArray(kataMutiara);
 
-let randomKataFive = selectRandomPairs(randomKataMutiara, 5);
+let randomKataFive = selectRandomPairs(randomKataMutiara, 6);
 
 let firstKataArray = [];
 let secondKataArray = [];
@@ -54,34 +62,51 @@ let secondCard = null;
 
 
  function createBoard() {
-    // firstKataMutiara.innerHTML = "";
-    // secondKataMutiara.innerHTML = "";
+            // firstKataMutiara.innerHTML = "";
+            // secondKataMutiara.innerHTML = "";
 
-    randomKataFive.forEach((item) => {
-    // firstKataArray.push(item[Object.keys(item)[0]][0]);
-    // shuffledfirstKataArray = shuffleArray(firstKataArray);
-    // secondKataArray.push(item[Object.keys(item)[0]][1]);
-    // shuffledsecondKataArray = shuffleArray(secondKataArray);
-    const card1 = document.createElement("div");
-    card1.classList.add("card");
-    card1.classList.add("m-5");
-    card1.textContent = item[Object.keys(item)[0]][0];
-    card1.dataset.id = item[Object.keys(item)[0]];
+            randomKataFive.forEach((item) => {
+                // firstKataArray.push(item[Object.keys(item)[0]][0]);
+                // shuffledfirstKataArray = shuffleArray(firstKataArray);
+                // secondKataArray.push(item[Object.keys(item)[0]][1]);
+                // shuffledsecondKataArray = shuffleArray(secondKataArray);
+                const card1 = document.createElement("div");
+                card1.classList.add("card");
+                card1.classList.add("m-3");
+                card1.textContent = item[Object.keys(item)[0]][0];
+                card1.dataset.id = item[Object.keys(item)[0]];
+                card1.addEventListener("click", flipCard);
+                firstKataMutiara.appendChild(card1);
 
-    card1.addEventListener("click", flipCard);
-    firstKataMutiara.appendChild(card1);
-
-    const card2 = document.createElement("div");
-    card2.classList.add("card");
-    card2.classList.add("m-5");
-    card2.textContent = item[Object.keys(item)[0]][1];
-    card2.dataset.id = item[Object.keys(item)[0]];
-
-    card2.addEventListener("click", flipCard);
-    secondKataMutiara.appendChild(card2);
-});
-
+                const card2 = document.createElement("div");
+                card2.classList.add("card");
+                card2.classList.add("m-3");
+                card2.textContent = item[Object.keys(item)[0]][1];
+                card2.dataset.id = item[Object.keys(item)[0]];
+                card2.addEventListener("click", flipCard);
+                secondKataMutiara.appendChild(card2);
+            });
     }
+
+    function randomizeDiv(){
+            const divs = Array.from(firstKataMutiara.querySelectorAll('.card'));
+            let shuffleddivs = shuffleArray2(divs)
+            shuffleddivs.forEach(div => firstKataMutiara.appendChild(div)); 
+            console.log(divs);
+
+            const divs2 = Array.from(secondKataMutiara.querySelectorAll('.card'));
+            let shuffleddivs2 = shuffleArray2(divs2)
+            shuffleddivs2.forEach(div => secondKataMutiara.appendChild(div));       
+    }
+
+    randomizeDiv();
+
+
+
+    // const cardClassElement = document.getElementsByClassName("card");
+    // for(let i=cardClassElement.length-1; i>=0; i--) {
+    //         const j = Math.floor(Math.random() * (i + 1)); 
+    // }
 
     function flipCard() {
         if (!firstCard) {
