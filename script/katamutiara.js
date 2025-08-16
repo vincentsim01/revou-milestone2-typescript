@@ -54,8 +54,8 @@ let secondCard = null;
 
 
  function createBoard() {
-    firstKataMutiara.innerHTML = "";
-    secondKataMutiara.innerHTML = "";
+    // firstKataMutiara.innerHTML = "";
+    // secondKataMutiara.innerHTML = "";
 
     randomKataFive.forEach((item) => {
     // firstKataArray.push(item[Object.keys(item)[0]][0]);
@@ -106,31 +106,30 @@ let secondCard = null;
     // }
 
         function checkMatch() {
-      if (firstCard.dataset.symbol === secondCard.dataset.symbol) {
-        firstCard.classList.add("matched");
-        secondCard.classList.add("matched");
-        resetTurn();
-      } else {
-        lockBoard = true;
-        setTimeout(() => {
-          firstCard.textContent = "";
-          secondCard.textContent = "";
-          firstCard.classList.remove("flipped");
-          secondCard.classList.remove("flipped");
-          resetTurn();
-        }, 1000);
-      }
-    }
+            if (firstCard.dataset.id === secondCard.dataset.id) {
+                firstCard.classList.add("matched");
+                secondCard.classList.add("matched");
+                resetTurn();
+            } else {
+                setTimeout(() => {
+                // firstCard.textContent = "";
+                // secondCard.textContent = "";
+                // firstCard.classList.remove("flipped");
+                // secondCard.classList.remove("flipped");
+                resetTurn();
+                }, 1000);
+            }
+        }
 
         function resetTurn() {
-      [firstCard, secondCard] = [null, null];
-      lockBoard = false;
+            [firstCard, secondCard] = [null, null];
+            //   lockBoard = false;
 
-      // Check win
-      if (document.querySelectorAll(".matched").length === cards.length) {
-        setTimeout(() => alert("🎉 You Win!"), 500);
-      }
-    }
+            // Check win
+            if (document.querySelectorAll(".matched").length === 10) {
+                setTimeout(() => alert("🎉 You Win!"), 500);
+            }
+        }
 
     createBoard();
 
