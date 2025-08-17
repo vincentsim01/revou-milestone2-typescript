@@ -18,7 +18,7 @@
     transform: scale(1.05);
 }
 .flipped {
-            background: #95a5a6;
+        background: #95a5a6;
       pointer-events: none;
     }
 

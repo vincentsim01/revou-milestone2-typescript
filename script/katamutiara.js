@@ -129,28 +129,56 @@ letPlayButton.addEventListener("click", () => {
     // }
 
     function flipCard() {
+        if (this.classList.contains("flipped")) return;    
         this.textContent = this.dataset.Content;
+        this.classList.add("flipped");
 
-    
         if (!firstCard) {
             firstCard = this;
-            this.classList.add("flipped");
-            setTimeout(() => {
-                checkMatch();
-            }, 5000);
 
-        } else if(firstCard.parentElement == this.parentElement) {
-            secondCard = null;
-            this.textContent = '?';
-            console.log(firstCard);
-            console.log(secondCard);
-        } else {
+            // setTimeout(() => {
+            //     checkMatch();
+            // }, 5000);
+
+        } 
+        // else if(firstCard && secondCard)
+        //     {
+
+        //     }
+        else if (firstCard && !secondCard) {
             secondCard = this;
-            this.classList.add("flipped");
+            if (firstCard.parentElement === this.parentElement) {
+                secondCard = null;
+                setTimeout(() => {
+                    this.textContent = '?';
+                    this.classList.remove("flipped");
+                }, 800);
+                return
+            }
+
+            // this.textContent = this.dataset.Content;
+            // this.classList.add("flipped");
             checkMatch();
+        } 
+        // else if (firstCard.parentElement === this.parentElement) {
+        //     secondCard = null;
+            // this.textContent = '?';
+            // this.classList.remove("flipped");
+        // } 
+        else if (firstCard!== null && secondCard !== null) {
+            alert('Please wait for the pearl to finish checking');
+            this.textContent = '?';
+            this.classList.remove("flipped");
+            // firstCard = this;
+
+
         }
 
+        console.log(`firstCard: ${firstCard.textContent}, secondCard: ${secondCard.textContent}`);
+
     }
+
+  
 
     //     function flipCard() {
     //   if (lockBoard || this.classList.contains("flipped")) return;
@@ -171,21 +199,24 @@ letPlayButton.addEventListener("click", () => {
                 firstCard.classList.add("matched");
                 secondCard.classList.add("matched");
                 resetTurn();
-            } else if(firstCard.classList.contains("flipped") && !secondCard.classList.contains("flipped")) {
-                firstCard.textContent = "?";
-                firstCard.classList.remove("flipped");
-                firstCard = null;
-                alert('only firstclick')
 
-            }
+            } 
+            // else if(firstCard.classList.contains("flipped") && !secondCard.classList.contains("flipped")) {
+            //     firstCard.textContent = "?";
+            //     firstCard.classList.remove("flipped");
+            //     firstCard = null;
+            //     alert('only firstclick')
+            // }
             else {
+
                 setTimeout(() => {
                 firstCard.textContent = "?";
                 secondCard.textContent = "?";
                 firstCard.classList.remove("flipped");
                 secondCard.classList.remove("flipped");
                 resetTurn();
-                }, 2000);
+                // [firstCard, secondCard] = [null, null];
+                }, 1000);
             }
         }
 
