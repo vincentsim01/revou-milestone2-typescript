@@ -119,13 +119,23 @@ let secondCard = null;
 
     function flipCard() {
         this.textContent = this.dataset.Content;
-        this.classList.add("flipped");
+
     
         if (!firstCard) {
             firstCard = this;
+            this.classList.add("flipped");
+            setTimeout(() => {
+                checkMatch();
+            }, 5000);
 
+        } else if(firstCard.parentElement == this.parentElement) {
+            secondCard = null;
+            this.textContent = '?';
+            console.log(firstCard);
+            console.log(secondCard);
         } else {
             secondCard = this;
+            this.classList.add("flipped");
             checkMatch();
         }
 
@@ -150,7 +160,14 @@ let secondCard = null;
                 firstCard.classList.add("matched");
                 secondCard.classList.add("matched");
                 resetTurn();
-            } else {
+            } else if(firstCard.classList.contains("flipped") && !secondCard.classList.contains("flipped")) {
+                firstCard.textContent = "?";
+                firstCard.classList.remove("flipped");
+                firstCard = null;
+                alert('only firstclick')
+
+            }
+            else {
                 setTimeout(() => {
                 firstCard.textContent = "?";
                 secondCard.textContent = "?";
