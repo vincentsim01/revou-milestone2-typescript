@@ -98,6 +98,7 @@ letPlayButton.addEventListener("click", () => {
                 card1.classList.add("card");
                 card1.classList.add("m-3");
                 card1.textContent = '?';
+                card1.style.backgroundImage = "url('./asset/katamutiarabackground.png')";
                 card1.dataset.Content = item[Object.keys(item)[0]][0];
                 card1.dataset.id = item[Object.keys(item)[0]];
                 card1.addEventListener("click", flipCard);
@@ -107,6 +108,8 @@ letPlayButton.addEventListener("click", () => {
                 card2.classList.add("card");
                 card2.classList.add("m-3");
                 card2.textContent = '?';
+                card2.style.backgroundImage = "url('./asset/mutiarabg.png')";
+                card2.style.backgroundPosition = "left";
                 card2.dataset.Content = item[Object.keys(item)[0]][1];
                 card2.dataset.id = item[Object.keys(item)[0]];
                 card2.addEventListener("click", flipCard);
