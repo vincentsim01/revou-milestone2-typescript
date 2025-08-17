@@ -1,5 +1,8 @@
 const firstKataMutiara = document.getElementById("firstKataMutiara");
 const secondKataMutiara = document.getElementById("secondKataMutiara");
+const resultContainer = document.getElementById("resultContainer");
+const resultText = document.getElementById("resultText");
+const playAgainButton = document.getElementById("playAgainButton");
 // item[Object.keys(item)[0]][0]
 // item[Object.keys(item)[0]][1]
 const kataMutiara = [
@@ -51,7 +54,7 @@ function selectRandomPairs(data, count = 6) {
 
 let randomKataMutiara = shuffleArray(kataMutiara);
 
-let randomKataFive = selectRandomPairs(randomKataMutiara, 6);
+let randomKataFive = selectRandomPairs(randomKataMutiara, 4);
 
 let firstKataArray = [];
 let secondKataArray = [];
@@ -186,13 +189,33 @@ letPlayButton.addEventListener("click", () => {
             }
         }
 
+        function playAgain(){
+            firstKataMutiara.textContent="";
+            secondKataMutiara.textContent="";
+            resultContainer.classList.add("hidden");
+            resultText.textContent = "";
+            createBoard();
+        }
+
+        playAgainButton.addEventListener("click", () => {
+            playAgain();
+        })
+
+        
+
         function resetTurn() {
             [firstCard, secondCard] = [null, null];
             //   lockBoard = false;
 
             // Check win
             if (document.querySelectorAll(".matched").length === randomKataFive.length*2) {
-                setTimeout(() => alert("🎉 You Win!"), 500);
+                setTimeout(
+                    () => 
+                        {
+                        resultContainer.classList.remove("hidden");
+                        resultText.textContent = "🎉 You Win!";
+                    },
+                     500);
             }
         }
 
