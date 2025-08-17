@@ -60,6 +60,14 @@ let shuffledsecondKataArray;
 let firstCard = null;
 let secondCard = null;
 
+const letPlayButton = document.getElementById("letPlayButton");
+
+letPlayButton.addEventListener("click", () => {
+    letPlayButton.classList.add("hidden");
+    firstKataMutiara.classList.remove("hidden");
+    secondKataMutiara.classList.remove("hidden");
+    createBoard();
+});
 
  function createBoard() {
             // firstKataMutiara.innerHTML = "";
@@ -174,7 +182,7 @@ let secondCard = null;
                 firstCard.classList.remove("flipped");
                 secondCard.classList.remove("flipped");
                 resetTurn();
-                }, 1000);
+                }, 2000);
             }
         }
 
@@ -188,7 +196,7 @@ let secondCard = null;
             }
         }
 
-    createBoard();
+    // createBoard();
 
 // randomKataFive.map((item) => {
 //     firstKataMutiara.innerHTML += `
