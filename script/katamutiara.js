@@ -73,7 +73,8 @@ let secondCard = null;
                 const card1 = document.createElement("div");
                 card1.classList.add("card");
                 card1.classList.add("m-3");
-                card1.textContent = item[Object.keys(item)[0]][0];
+                card1.textContent = '?';
+                card1.dataset.Content = item[Object.keys(item)[0]][0];
                 card1.dataset.id = item[Object.keys(item)[0]];
                 card1.addEventListener("click", flipCard);
                 firstKataMutiara.appendChild(card1);
@@ -81,7 +82,8 @@ let secondCard = null;
                 const card2 = document.createElement("div");
                 card2.classList.add("card");
                 card2.classList.add("m-3");
-                card2.textContent = item[Object.keys(item)[0]][1];
+                card2.textContent = '?';
+                card2.dataset.Content = item[Object.keys(item)[0]][1];
                 card2.dataset.id = item[Object.keys(item)[0]];
                 card2.addEventListener("click", flipCard);
                 secondKataMutiara.appendChild(card2);
@@ -116,12 +118,14 @@ let secondCard = null;
     // }
 
     function flipCard() {
+        this.textContent = this.dataset.Content;
+        this.classList.add("flipped");
+    
         if (!firstCard) {
             firstCard = this;
-            this.classList.add("flipped");
+
         } else {
             secondCard = this;
-            this.classList.add("flipped");
             checkMatch();
         }
 
@@ -148,8 +152,8 @@ let secondCard = null;
                 resetTurn();
             } else {
                 setTimeout(() => {
-                // firstCard.textContent = "";
-                // secondCard.textContent = "";
+                firstCard.textContent = "?";
+                secondCard.textContent = "?";
                 firstCard.classList.remove("flipped");
                 secondCard.classList.remove("flipped");
                 resetTurn();
