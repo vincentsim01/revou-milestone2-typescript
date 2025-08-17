@@ -3,6 +3,7 @@ const secondKataMutiara = document.getElementById("secondKataMutiara");
 const resultContainer = document.getElementById("resultContainer");
 const resultText = document.getElementById("resultText");
 const playAgainButton = document.getElementById("playAgainButton");
+const kataMutiaraDescription = document.getElementById("kataMutiaraDescription");
 // item[Object.keys(item)[0]][0]
 // item[Object.keys(item)[0]][1]
 const kataMutiara = [
@@ -69,6 +70,18 @@ letPlayButton.addEventListener("click", () => {
     letPlayButton.classList.add("hidden");
     firstKataMutiara.classList.remove("hidden");
     secondKataMutiara.classList.remove("hidden");
+    kataMutiaraDescription.innerHTML = `
+    <div class="font-preahvihear text-xs text-gray-600 mb-8 bg-white/30 border border-black rounded-md p-5" >
+
+    <b><u>Temukan pasangan kata yang cocok! </u></b>
+    <ul class='list-disc'>
+    <li>Si Mutiara mengucapkan beberapa kata bijak yang terdiri dari 2 frase </li>
+    <li>Frase pertama terletak di kotak atas dan frase kedua terletak di kotak bawah</li>
+    <li>Kalian harus memasangkan frase pertama dengan frase kedua yang tepat!</li>
+    <li>Mohon jangan terburu-buru dalam memilih pasangan! Karena Si Mutiara perlu waktu untuk memproses kedua frase yang dipilih</li>
+    </ul>
+    </div>
+    `
     createBoard();
 });
 
