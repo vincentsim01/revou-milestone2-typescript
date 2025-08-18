@@ -4,6 +4,8 @@ const resultContainer = document.getElementById("resultContainer");
 const resultText = document.getElementById("resultText");
 const playAgainButton = document.getElementById("playAgainButton");
 const kataMutiaraDescription = document.getElementById("kataMutiaraDescription");
+const countdownContainer = document.getElementById("countdownContainer");
+const countdownText = document.getElementById("countdownText");
 // item[Object.keys(item)[0]][0]
 // item[Object.keys(item)[0]][1]
 const kataMutiara = [
@@ -81,9 +83,34 @@ letPlayButton.addEventListener("click", () => {
     <li>Mohon jangan terburu-buru dalam memilih pasangan! Karena Si Mutiara perlu waktu untuk memproses kedua frase yang dipilih</li>
     </ul>
     </div>
-    `
+    `;
+    countdownContainer.classList.remove("hidden");
     createBoard();
 });
+
+let timeCounter = 30;
+
+// const intervalId = setInterval(() => {
+//     if (timeCounter > 0) {
+//         timeCounter--;
+//         countdownText.textContent = `Waktu tersisa: ${timeCounter} detik`;
+//     } else {
+//         clearInterval(intervalId);
+//         countdownText.textContent = "Waktu habis!";
+//         resultContainer.classList.remove("hidden");
+//         resultText.textContent = "You Lose!";
+
+//     }
+// }, 1000);
+
+// function youLose() {
+//             clearInterval(intervalId);
+//             countdownText.textContent = "Waktu habis!";
+//             resultContainer.classList.remove("hidden");
+//             resultText.textContent = "You Lose!";
+//             timeCounter = 30;
+
+// }
 
  function createBoard() {
             // firstKataMutiara.innerHTML = "";
@@ -98,7 +125,7 @@ letPlayButton.addEventListener("click", () => {
                 card1.classList.add("card");
                 card1.classList.add("m-3");
                 card1.textContent = '?';
-                card1.style.backgroundImage = "url('./asset/katamutiarabackground.png')";
+                // card1.style.backgroundColor = "rgb(51, 102, 204)";
                 card1.dataset.Content = item[Object.keys(item)[0]][0];
                 card1.dataset.id = item[Object.keys(item)[0]];
                 card1.addEventListener("click", flipCard);
@@ -108,7 +135,7 @@ letPlayButton.addEventListener("click", () => {
                 card2.classList.add("card");
                 card2.classList.add("m-3");
                 card2.textContent = '?';
-                card2.style.backgroundImage = "url('./asset/mutiarabg.png')";
+                // card2.style.backgroundColor = "rgb(0, 102, 255)";
                 card2.style.backgroundPosition = "left";
                 card2.dataset.Content = item[Object.keys(item)[0]][1];
                 card2.dataset.id = item[Object.keys(item)[0]];
@@ -241,11 +268,14 @@ letPlayButton.addEventListener("click", () => {
             secondKataMutiara.textContent="";
             resultContainer.classList.add("hidden");
             resultText.textContent = "";
+            timeCounter = 30;
+            countdownContainer.classList.add("hidden");
             createBoard();
         }
 
         playAgainButton.addEventListener("click", () => {
             playAgain();
+            timeCounter = 30;
         })
 
         
