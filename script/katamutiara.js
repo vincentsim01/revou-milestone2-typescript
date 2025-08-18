@@ -73,7 +73,7 @@ letPlayButton.addEventListener("click", () => {
     firstKataMutiara.classList.remove("hidden");
     secondKataMutiara.classList.remove("hidden");
     kataMutiaraDescription.innerHTML = `
-    <div class="font-preahvihear text-xs text-gray-600 mb-8 bg-white/30 border border-black rounded-md p-5" >
+    <div class="font-preahvihear text-xs text-gray-900 mb-2 bg-white/30 border border-black rounded-md p-5" >
 
     <b><u>Temukan pasangan kata yang cocok! </u></b>
     <ul class='list-disc'>
@@ -90,18 +90,18 @@ letPlayButton.addEventListener("click", () => {
 
 let timeCounter = 30;
 
-// const intervalId = setInterval(() => {
-//     if (timeCounter > 0) {
-//         timeCounter--;
-//         countdownText.textContent = `Waktu tersisa: ${timeCounter} detik`;
-//     } else {
-//         clearInterval(intervalId);
-//         countdownText.textContent = "Waktu habis!";
-//         resultContainer.classList.remove("hidden");
-//         resultText.textContent = "You Lose!";
+const intervalId = setInterval(() => {
+    if (timeCounter > 0) {
+        timeCounter--;
+        countdownText.textContent = `Waktu tersisa: ${timeCounter} detik`;
+    } else {
+        clearInterval(intervalId);
+        countdownText.textContent = "Waktu habis!";
+        resultContainer.classList.remove("hidden");
+        resultText.textContent = "You Lose!";
 
-//     }
-// }, 1000);
+    }
+}, 1000);
 
 // function youLose() {
 //             clearInterval(intervalId);
@@ -132,10 +132,10 @@ let timeCounter = 30;
                 firstKataMutiara.appendChild(card1);
 
                 const card2 = document.createElement("div");
-                card2.classList.add("card");
+                card2.classList.add("card2");
                 card2.classList.add("m-3");
                 card2.textContent = '?';
-                // card2.style.backgroundColor = "rgb(0, 102, 255)";
+                card2.style.backgroundColor = "rgba(43, 51, 67, 1)";
                 card2.style.backgroundPosition = "left";
                 card2.dataset.Content = item[Object.keys(item)[0]][1];
                 card2.dataset.id = item[Object.keys(item)[0]];
@@ -268,14 +268,14 @@ let timeCounter = 30;
             secondKataMutiara.textContent="";
             resultContainer.classList.add("hidden");
             resultText.textContent = "";
-            timeCounter = 30;
+            // timeCounter = 30;
             countdownContainer.classList.add("hidden");
             createBoard();
         }
 
         playAgainButton.addEventListener("click", () => {
             playAgain();
-            timeCounter = 30;
+            // timeCounter = 30;
         })
 
         

@@ -3,24 +3,46 @@
       width: 150px;
       height: 150px;
       background: radial-gradient(circle,rgba(111, 227, 252, 1) 0%, rgba(91, 123, 212, 1) 80%, rgba(29, 94, 140, 1) 100%);
+        /* background-image: url('../asset/greenbeach.jpg'); */
+        background-size:cover;
       color: black;
-      font-size: 0.5 em;
+      font-size: 0.8 em;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       border-radius: 8px;
       padding: 1em;
-      color:white;
+      color:black;
       font-family:'preahvihear', sans-serif;
       position: relative;
 
     }
-.card::after{
-    /* content : "A"; */
-    /* background-image: url('./asset/bordersea.jpg'); */
-    background-size: cover;
-    opacity: 0.2;
+
+     .card2 {
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle,rgba(222, 253, 255, 1) 0%, rgba(44, 215, 245, 1) 61%, rgba(179, 204, 255, 1) 100%);
+        /* background-image: url('../asset/greenbeach.jpg'); */
+        background-size:cover;
+      color: black;
+      font-size: 0.8 em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 1em;
+      color:black;
+      font-family:'preahvihear', sans-serif;
+      position: relative;
+
+    }
+/* .card::after{
+    content : " ";
+    background-image: url('./asset/bordersea.jpg');
+    /* background: white; */
+    opacity: 0.9;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,7 +50,7 @@
     bottom: 0;
     z-index: -1;
     border-radius: 8px;
-}
+} */
 
 .card:hover{
     transform: scale(1.05);
