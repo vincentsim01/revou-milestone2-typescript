@@ -88,28 +88,54 @@
                 <i class="fa-solid fa-user"></i>
             </div>
     </header>
-    <section id="apiAirRumputContainer" class="flex flex-col items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('./asset/firewatergrassbackground.png');">
+    <secti id="apiAirRumputContainer" class="flex flex-col items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('./asset/firewatergrassbackground.png');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 p-4" id="welcomeContainer">
             <h1 class="text-4xl font-bold mb-4 text-white" id="welcomeTitle">DUEL API AIR RUMPUT</h1>
             <p class="text-lg text-gray-300 mb-3" id="welcomeDescription">Selamat datang di DUEL API AIR RUMPUT. Ayo kita BERDUEL!</p>
             <button id="startAdventureButton" class="border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Mulai Petualangan</button>
         </div>
-        <div class="hidden w-full h-1/2 grid grid-cols-3 grid-rows-3 gap-2 text-center" id="duelContainer">
-            <div class="col-start-1 col-end-2 row-start-1 row-end-1"> Top Left</div>
-            <div class="col-start-2 col-end-3 row-start-1 row-end-1"> Top Middle</div>
-            <div class="col-start-3 col-end-4 row-start-1 row-end-1"> Top Right</div>
+        <section class="hidden w-full h-3/4 grid grid-cols-3 grid-rows-3 gap-2 text-center" id="duelContainer">
+            <div class="col-start-1 col-end-2 row-start-1 row-end-2">
+                 <div>
+                    <p>Charmander</p>
+                    <p>HP</p>
+                 </div>
+            </div>
+            <div class="col-start-2 col-end-4 row-start-1 row-end-2"> 
+                <div>
+                    <img src="./asset/charmander.png" alt="Charmander" class="mx-auto w-[100px]">
+                </div>
+            </div>
 
-            <div class="col-start-1 col-end-2 row-start-2 row-end-3"> Middle Left</div>
-            <div class="col-start-2 col-end-3 row-start-2 row-end-3"> Middle Middle</div>
-            <div class="col-start-3 col-end-4 row-start-2 row-end-3"> Middle Right</div>
+            <div class="col-start-1 col-end-2 row-start-2 row-end-3"> 
+                 <div>
+                    <img src="./asset/bulbasaur.png" alt="Bulbasaur" class="mx-auto w-[100px]">
+                </div>
+            </div>
+            <div class="col-start-2 col-end-4 row-start-2 row-end-3">
+                    <div>
+                        <p>Bulbasaur</p>
+                        <p>HP</p>
+                    </div>
+                </div>
+  
+            </d>
 
-            <div class="col-start-1 col-end-2 row-start-3 row-end-4"> Bottom Left</div>
-            <div class="col-start-2 col-end-3 row-start-3 row-end-4"> Bottom Middle</div>
-            <div class="col-start-3 col-end-4 row-start-3 row-end-4"> Bottom Right</div>
+            
 
+            <div class="col-start-1 col-end-3 row-start-3 row-end-4">Defeat your opponent!</div>
+            <div class="col-start-3 col-end-4 row-start-3 row-end-4"> 
+                <div class="grid grid-cols-2 grid-rows-2">
+                    <div class="col-start-1 col-end-2 row-start-1 row-end-2">Fire</div>
+                    <div class="col-start-2 col-end-3 row-start-1 row-end-2">Water</div>
+                    <div class="col-start-1 col-end-2 row-start-2 row-end-3">Grass</div>
+                    <div class="col-start-2 col-end-3 row-start-2 row-end-3">Physical</div>
+                </div>
+            </div>
 
-        </div>
+        
+        
     </section>
 
     <script src="./script/apiairrumput.js"></script>
