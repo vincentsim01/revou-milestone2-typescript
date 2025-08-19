@@ -97,16 +97,18 @@ duelStartButton.addEventListener('click', () => {
         opponentMagicToken = 100 - magicToken;
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
-        magicDuelLevel.textContent++;
-        console.log(`magicDuelLevel.textContent: ${magicDuelLevel.textContent}`);
-        console.log(typeof(magicDuelLevel.textContent));
+          const levelNow = parseInt(magicDuelLevel.textContent, 10) || 0;
+        const nextLevel = levelNow + 1;
+        magicDuelLevel.textContent = String(nextLevel);
+            console.log(`magicDuelLevel.textContent: ${magicDuelLevel.textContent}`);
+            console.log(typeof(magicDuelLevel.textContent));
         spellSpeed.textContent = magicDuelLevel.textContent;
         magicDuelLevelInt = Number(magicDuelLevel.textContent);
 
 
 
         
-    });
+    },  { once: true });
 
      const intervalId = setInterval(() => {
         magicToken--;
@@ -144,7 +146,9 @@ duelStartButton.addEventListener('click', () => {
         magicMeterRight.style.width = '';
         magicDuelMechanism.classList.add('hidden');
         duelStartButton.classList.remove('hidden');
-        magicDuelLevel.textContent = '';
+         magicDuelLevel.textContent = '1';     // reset level dengan jelas
+        spellSpeed.textContent = '1';
+        magicDuelLevelInt = 1;
         // console.log(`magicDuelLevel.textContent: ${magicDuelLevel.textContent}`);
         // console.log(typeof(magicDuelLevel.textContent));
         clearInterval(intervalId);
