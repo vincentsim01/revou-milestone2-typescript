@@ -112,7 +112,7 @@ function duelStart(e){
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
                 enemyHP.style.width = `${enemyHPValue}%`;
             }, 1000);
-                        setTimeout(() => {
+            setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -151,6 +151,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                 }, 1000);
+            setTimeout(() => {
+                gameInstruction.textContent = `Let's continue the duel`;
+                fireAttackButton.classList.remove('cursor-not-allowed');
+                waterAttackButton.classList.remove('cursor-not-allowed');
+                grassAttackButton.classList.remove('cursor-not-allowed');
+                physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                fireAttackButton.classList.remove('text-gray-100');
+                waterAttackButton.classList.remove('text-gray-100');
+                grassAttackButton.classList.remove('text-gray-100');
+                physicalAttackButton.classList.remove('text-gray-100');
+                return;
+            }, 2000);
             }else if(enemyAttackThisTurn === "Grass"){
                 gameInstruction.textContent = "Enemy used Grass attack! Your attack loses!";
                 playerDamageThisTurn = 5;
@@ -162,6 +175,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                 }, 1000);
+            setTimeout(() => {
+                gameInstruction.textContent = `Let's continue the duel`;
+                fireAttackButton.classList.remove('cursor-not-allowed');
+                waterAttackButton.classList.remove('cursor-not-allowed');
+                grassAttackButton.classList.remove('cursor-not-allowed');
+                physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                fireAttackButton.classList.remove('text-gray-100');
+                waterAttackButton.classList.remove('text-gray-100');
+                grassAttackButton.classList.remove('text-gray-100');
+                physicalAttackButton.classList.remove('text-gray-100');
+                return;
+            }, 2000);
             }
 
         }
@@ -177,6 +203,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                 }, 1000);
+            setTimeout(() => {
+                gameInstruction.textContent = `Let's continue the duel`;
+                fireAttackButton.classList.remove('cursor-not-allowed');
+                waterAttackButton.classList.remove('cursor-not-allowed');
+                grassAttackButton.classList.remove('cursor-not-allowed');
+                physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                fireAttackButton.classList.remove('text-gray-100');
+                waterAttackButton.classList.remove('text-gray-100');
+                grassAttackButton.classList.remove('text-gray-100');
+                physicalAttackButton.classList.remove('text-gray-100');
+                return;
+            }, 2000);
             }else if(enemyAttackThisTurn === "Water"){
                 gameInstruction.textContent = "Enemy used Water attack! Your attack wins!";
                 playerDamageThisTurn = 20;
@@ -188,6 +227,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                 }, 1000);
+            setTimeout(() => {
+                gameInstruction.textContent = `Let's continue the duel`;
+                fireAttackButton.classList.remove('cursor-not-allowed');
+                waterAttackButton.classList.remove('cursor-not-allowed');
+                grassAttackButton.classList.remove('cursor-not-allowed');
+                physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                fireAttackButton.classList.remove('text-gray-100');
+                waterAttackButton.classList.remove('text-gray-100');
+                grassAttackButton.classList.remove('text-gray-100');
+                physicalAttackButton.classList.remove('text-gray-100');
+                return;
+            }, 2000);
             }else if(enemyAttackThisTurn === "Grass"){
                 gameInstruction.textContent = "Enemy used Grass attack! It's a tie!";
                 playerDamageThisTurn = 10;
@@ -199,6 +251,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                 }, 1000);
+                setTimeout(() => {
+                gameInstruction.textContent = `Let's continue the duel`;
+                fireAttackButton.classList.remove('cursor-not-allowed');
+                waterAttackButton.classList.remove('cursor-not-allowed');
+                grassAttackButton.classList.remove('cursor-not-allowed');
+                physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                fireAttackButton.classList.remove('text-gray-100');
+                waterAttackButton.classList.remove('text-gray-100');
+                grassAttackButton.classList.remove('text-gray-100');
+                physicalAttackButton.classList.remove('text-gray-100');
+                return;
+            }, 2000);
             }
 
          }
@@ -213,6 +278,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                 }, 1000);
+            setTimeout(() => {
+                gameInstruction.textContent = `Let's continue the duel`;
+                fireAttackButton.classList.remove('cursor-not-allowed');
+                waterAttackButton.classList.remove('cursor-not-allowed');
+                grassAttackButton.classList.remove('cursor-not-allowed');
+                physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                fireAttackButton.classList.remove('text-gray-100');
+                waterAttackButton.classList.remove('text-gray-100');
+                grassAttackButton.classList.remove('text-gray-100');
+                physicalAttackButton.classList.remove('text-gray-100');
+                return;
+            }, 2000);
 
         }
 
