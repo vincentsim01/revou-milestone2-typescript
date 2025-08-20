@@ -100,9 +100,9 @@
         <section class="hidden w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center border border-black" id="duelContainer">
             <div class="bg-[url('./asset/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
                 <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end">
-                    <div class="bg-white rounded-md border border-black">
+                    <div class="bg-white rounded-md border border-black w-[80%]">
                         <p>Charmander</p>
-                        <p>HP</p>
+                        <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="enemyHPContainer" class=" inline-block w-[85%]"><div id="enemyHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex border border-black justify-center items-center"> 
@@ -117,9 +117,9 @@
                     </div>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-start justify-start">
-                    <div class="bg-white rounded-md border border-black">
+                    <div class="bg-white rounded-md border border-black w-[80%]">
                         <p>Bulbasaur</p>
-                        <p>HP</p>
+                         <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>
   
@@ -127,13 +127,13 @@
             
         </div>  
 
-        <div class="col-start-1 col-end-4 row-start-7 row-end-8 border border-black bg-white">Defeat your opponent!</div>
-        <div class="col-start-4 col-end-5 row-start-7 row-end-8 bg-white"> 
-                <div class="grid grid-cols-2 grid-rows-2">
-                    <div class="col-start-1 col-end-2 row-start-1 row-end-2">Fire</div>
-                    <div class="col-start-2 col-end-3 row-start-1 row-end-2">Water</div>
-                    <div class="col-start-1 col-end-2 row-start-2 row-end-3">Grass</div>
-                    <div class="col-start-2 col-end-3 row-start-2 row-end-3">Physical</div>
+        <div class="col-start-1 col-end-4 row-start-7 row-end-8 border border-black bg-white flex items-center justify-center" id="gameInstruction">Defeat your opponent!</div>
+        <div class="col-start-4 col-end-5 row-start-7 row-end-8 bg-white border"> 
+                <div class="grid grid-cols-2 grid-rows-2 h-[100%]">
+                    <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer" id="fireAttackButton" onclick="duelStart(event)">Fire</div>
+                    <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer" id="waterAttackButton" onclick="duelStart(event)">Water</div>
+                    <div class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer" id="grassAttackButton" onclick="duelStart(event)">Grass</div>
+                    <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer" id="physicalAttackButton" onclick="duelStart(event)">Physical</div>
                 </div>
         </div>
         
