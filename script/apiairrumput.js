@@ -29,6 +29,7 @@ let enemyDamageThisTurn;
 let enemyAttackThisTurn;
 
 function duelStart(e){
+    alert('duel start')
     enemyAttackThisTurn = enemyAttackArray[Math.floor(Math.random() * enemyAttackArray.length)];
     let yourHPValue = 100;
     yourHP.style.width = `${yourHPValue}%`;
