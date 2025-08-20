@@ -28,12 +28,21 @@ let enemyDamageThisTurn;
 
 let enemyAttackThisTurn;
 
-function duelStart(e){
-    alert('duel start')
-    enemyAttackThisTurn = enemyAttackArray[Math.floor(Math.random() * enemyAttackArray.length)];
     let yourHPValue = 100;
+
+        let enemyHPValue = 100;
+
+// fireAttackButton.addEventListener("click", () => alert("Fire attack clicked"));
+// waterAttackButton.addEventListener("click", () => console.log("Water attack clicked"));
+// grassAttackButton.addEventListener("click", () => console.log("Grass attack clicked"));
+// physicalAttackButton.addEventListener("click", () => console.log("Physical attack clicked"));
+
+function duelStart(e){
+    // alert('duel start')
+    enemyAttackThisTurn = enemyAttackArray[Math.floor(Math.random() * enemyAttackArray.length)];
+
     yourHP.style.width = `${yourHPValue}%`;
-    let enemyHPValue = 100;
+
     enemyHP.style.width = `${enemyHPValue}%`;
     if(e.target.id === "fireAttackButton"){
         if(enemyAttackThisTurn === "Fire"){

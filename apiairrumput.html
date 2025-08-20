@@ -97,7 +97,7 @@
             <p class="text-lg text-gray-800 mb-3" id="welcomeDescription">Selamat datang di DUEL API AIR RUMPUT. Ayo kita BERDUEL!</p>
             <button id="startAdventureButton" class="border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Mulai Duel</button>
         </div>
-        <section class="hidden w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center border border-black" id="duelContainer">
+        <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center border border-black" id="duelContainer">
             <div class="bg-[url('./asset/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
                 <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end">
                     <div class="bg-white rounded-md border border-black w-[80%]">
@@ -129,11 +129,11 @@
 
         <div class="col-start-1 col-end-4 row-start-7 row-end-8 border border-black bg-white flex items-center justify-center" id="gameInstruction">Defeat your opponent!</div>
         <div class="col-start-4 col-end-5 row-start-7 row-end-8 bg-white border"> 
-                <div class="grid grid-cols-2 grid-rows-2 h-[100%] cursor-pointer">
-                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer" id="fireAttackButton" onclick="duelStart(event)">Fire</button>
-                    <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer" id="waterAttackButton" onclick="duelStart(event)">Water</button>
-                    <button class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer" id="grassAttackButton" onclick="duelStart(event)">Grass</button>
-                    <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer" id="physicalAttackButton" onclick="duelStart(event)">Physical</button>
+                <div class="grid grid-cols-2 grid-rows-2 h-[100%] cursor-pointer z-10">
+                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="fireAttackButton" onclick="duelStart(event)">Fire</button>
+                    <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="waterAttackButton" onclick="duelStart(event)">Water</button>
+                    <button class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="grassAttackButton" onclick="duelStart(event)">Grass</button>
+                    <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="physicalAttackButton" onclick="duelStart(event)">Physical</button>
                 </div>
         </div>
         
