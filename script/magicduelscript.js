@@ -2,10 +2,8 @@ const duelStartButton = document.getElementById('duelStartButton');
 const magicDuelMechanism = document.getElementById('magicDuelMechanism');
 const spellSpeed = document.getElementById('spellSpeed');
 
-
-
 let magicMeter = document.getElementById('magicMeter');
-let magicDuelLevel = document.getElementById('magicDuelLevel');
+const magicDuelLevel = document.getElementById('magicDuelLevel');
 let abraKadabraButton = document.getElementById('abraKadabraButton');
 
 
@@ -23,7 +21,7 @@ const magicDuelOutcomeExitButton = document.getElementById('magicDuelOutcomeExit
 const harrisspell = document.getElementById('harrisspell');
 const koklemotspellpower = document.getElementById('koklemotspellpower');
 
-
+var duelLevelCounter = 1;
 duelStartButton.addEventListener('click', () => { 
     let clickCounter = 0;
     magicDuelMechanism.classList.remove('hidden');
@@ -33,19 +31,13 @@ duelStartButton.addEventListener('click', () => {
 
     let magicToken = 10;
     let opponentMagicToken = 100-magicToken;
-
-    magicDuelLevel.textContent = 1;
-
+    magicDuelLevel.textContent = duelLevelCounter;
     magicMeterLeft.style.width = magicToken + '%';
     magicMeterRight.style.width = opponentMagicToken + '%';
 
-    spellSpeed.textContent = magicDuelLevel.textContent;
+    spellSpeed.textContent = duelLevelCounter;
 
     let magicDuelLevelInt = Number(magicDuelLevel.textContent);
-
-
-
-   
 
     abraKadabraButton.addEventListener('click', () => {
         magicToken += 5;
@@ -53,6 +45,8 @@ duelStartButton.addEventListener('click', () => {
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
         clickCounter++;
+
+        console.log(`magictoken simsalabim ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
 
         if(magicToken>=100){
                 // clearInterval(intervalId);
@@ -65,10 +59,6 @@ duelStartButton.addEventListener('click', () => {
                 magicToken=1000000000;
             }   
     }); 
-
-
-
-
 
 
     magicDuelOutcomeLoseButton.addEventListener('click', () => {
@@ -93,29 +83,24 @@ duelStartButton.addEventListener('click', () => {
         magicDuelClickCount.textContent = '';
         magicDuelOutcomeWinButton.classList.add('hidden');
         magicDuelOutcomeLoseButton.classList.add('hidden');
+        console.log(`magictoken win button ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
         magicToken = 10;
         opponentMagicToken = 100 - magicToken;
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
           const levelNow = parseInt(magicDuelLevel.textContent, 10) || 0;
-        const nextLevel = levelNow + 1;
-        magicDuelLevel.textContent = String(nextLevel);
-            console.log(`magicDuelLevel.textContent: ${magicDuelLevel.textContent}`);
-            console.log(typeof(magicDuelLevel.textContent));
-        spellSpeed.textContent = magicDuelLevel.textContent;
+        duelLevelCounter = duelLevelCounter + 1;
+        console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
+        magicDuelLevel.textContent = duelLevelCounter;
+        spellSpeed.textContent = duelLevelCounter;
         magicDuelLevelInt = Number(magicDuelLevel.textContent);
-
-
-
-        
-    },  { once: true });
+    });
 
      const intervalId = setInterval(() => {
         magicToken--;
         opponentMagicToken++;
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
-        // console.log(`magicDuelLevelInt: ${magicDuelLevelInt}`);
         if(magicToken<=0){
                 // clearInterval(intervalId);
                 magicDuelOutcomeContainer.classList.remove('hidden');
@@ -126,7 +111,7 @@ duelStartButton.addEventListener('click', () => {
                 magicDuelOutcomeLoseButton.classList.remove('hidden');
 
         }
-        }, 500/magicDuelLevelInt);
+        }, 500/duelLevelCounter);
 
 
 
@@ -140,15 +125,17 @@ duelStartButton.addEventListener('click', () => {
         koklemotspellpower.classList.add('hidden');
         magicDuelOutcomeWinButton.classList.add('hidden');
         magicDuelOutcomeLoseButton.classList.add('hidden');
-        magicToken = 0;
+        magicToken = 10;
         opponentMagicToken = 100 - magicToken;
+        console.log(`magictoken exit button ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
         magicMeterLeft.style.width = '';
         magicMeterRight.style.width = '';
         magicDuelMechanism.classList.add('hidden');
         duelStartButton.classList.remove('hidden');
-         magicDuelLevel.textContent = '1';     // reset level dengan jelas
-        spellSpeed.textContent = '1';
-        magicDuelLevelInt = 1;
+        duelLevelCounter = 1;  // reset level dengan jelas
+        console.log(`duelLevelCounter exit button: ${duelLevelCounter}`);
+        spellSpeed.textContent = duelLevelCounter;
+        // magicDuelLevelInt = 1;
         // console.log(`magicDuelLevel.textContent: ${magicDuelLevel.textContent}`);
         // console.log(typeof(magicDuelLevel.textContent));
         clearInterval(intervalId);

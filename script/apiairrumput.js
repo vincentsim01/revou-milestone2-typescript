@@ -21,6 +21,10 @@ const waterAttackCount = document.getElementById("waterAttackCount");
 const grassAttackCount = document.getElementById("grassAttackCount");
 const physicalAttackCount = document.getElementById("physicalAttackCount");
 const totalRoundCount = document.getElementById("totalRoundCount");
+const enemyPokemonContainer = document.getElementById("enemyPokemonContainer");
+const yourPokemonContainer = document.getElementById("yourPokemonContainer");
+const elementEnemy = document.getElementById("elementEnemy");
+const elementYou = document.getElementById("elementYou");
 
 var roundCounter = 0;
 
@@ -40,6 +44,8 @@ startAdventureButton.addEventListener("click", () => {
     welcomeTitle.classList.add("hidden");
     welcomeContainer.classList.add("hidden");
 });
+
+const iconArray = ['fire.png', 'water.png', 'grass.png', 'physical.png'];
 
 const enemyAttackArray = ["Fire", "Water", "Grass", "Physical"];
 
@@ -125,10 +131,14 @@ function duelStart(e){
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
                 enemyHP.style.width = `${enemyHPValue}%`;
                 normallyEffectiveContainer++;
+                elementYou.innerHTML = `<img src="./asset/fire.png" alt="Fire Icon">`;
+                elementEnemy.innerHTML = `<img src="./asset/fire.png" alt="Fire Icon">`;
                 resultCheck()
 
             }, 1000);
             setTimeout(() => {
+                                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -153,9 +163,13 @@ function duelStart(e){
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
                 enemyHP.style.width = `${enemyHPValue}%`;
                 notEffectiveContainer++;
+                elementYou.innerHTML = `<img src="./asset/fire.png" alt="Fire Icon">`;
+                elementEnemy.innerHTML = `<img src="./asset/water.png" alt="Water Icon">`;
                 resultCheck()
             }, 1000);
                         setTimeout(() => {
+                                            elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -179,9 +193,13 @@ function duelStart(e){
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
                 enemyHP.style.width = `${enemyHPValue}%`;
                 superEffectiveContainer++;
+                elementYou.innerHTML = `<img src="./asset/fire.png" alt="Fire Icon">`;
+                elementEnemy.innerHTML = `<img src="./asset/grass.png" alt="Grass Icon">`;
                 resultCheck()
             }, 1000);
             setTimeout(() => {
+                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -213,6 +231,8 @@ function duelStart(e){
                     resultCheck()
                 }, 1000);
                                         setTimeout(() => {
+                                                            elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -239,6 +259,8 @@ function duelStart(e){
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
+                                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -265,6 +287,8 @@ function duelStart(e){
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
+                                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -296,6 +320,8 @@ function duelStart(e){
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
+                                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
