@@ -27,6 +27,33 @@ let magicToken = 10;
 let opponentMagicToken = 100-magicToken;
 
 let intervalId = null;
+
+
+        function startInterval() {
+            // Clear existing interval before starting new
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+            intervalId = setInterval(() => {
+                magicToken--;
+                opponentMagicToken++;
+                magicMeterLeft.style.width = magicToken + '%';
+                magicMeterRight.style.width = opponentMagicToken + '%';
+                if(magicToken<=0){
+                        // clearInterval(intervalId);
+                        magicDuelOutcomeContainer.classList.remove('hidden');
+                        magicDuelOutcome.classList.remove('hidden');
+                        magicDuelResult.textContent = 'You lose!';
+                        magicDuelMessage.textContent = 'Better luck next time!';
+                        magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
+                        magicDuelOutcomeLoseButton.classList.remove('hidden');
+
+                }
+            }, 500/duelLevelCounter);
+    }
+
+
+
 duelStartButton.addEventListener('click', () => { 
     // let clickCounter = 0;
     magicDuelMechanism.classList.remove('hidden');
@@ -41,6 +68,8 @@ duelStartButton.addEventListener('click', () => {
     magicMeterRight.style.width = opponentMagicToken + '%';
 
     spellSpeed.textContent = duelLevelCounter;
+
+    startInterval();
 
     let magicDuelLevelInt = Number(magicDuelLevel.textContent);
 
@@ -101,22 +130,22 @@ duelStartButton.addEventListener('click', () => {
     //     magicDuelLevelInt = Number(magicDuelLevel.textContent);
     // });
 
-     intervalId = setInterval(() => {
-        magicToken--;
-        opponentMagicToken++;
-        magicMeterLeft.style.width = magicToken + '%';
-        magicMeterRight.style.width = opponentMagicToken + '%';
-        if(magicToken<=0){
-                // clearInterval(intervalId);
-                magicDuelOutcomeContainer.classList.remove('hidden');
-                magicDuelOutcome.classList.remove('hidden');
-                magicDuelResult.textContent = 'You lose!';
-                magicDuelMessage.textContent = 'Better luck next time!';
-                magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
-                magicDuelOutcomeLoseButton.classList.remove('hidden');
+    //  intervalId = setInterval(() => {
+    //     magicToken--;
+    //     opponentMagicToken++;
+    //     magicMeterLeft.style.width = magicToken + '%';
+    //     magicMeterRight.style.width = opponentMagicToken + '%';
+    //     if(magicToken<=0){
+    //             // clearInterval(intervalId);
+    //             magicDuelOutcomeContainer.classList.remove('hidden');
+    //             magicDuelOutcome.classList.remove('hidden');
+    //             magicDuelResult.textContent = 'You lose!';
+    //             magicDuelMessage.textContent = 'Better luck next time!';
+    //             magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
+    //             magicDuelOutcomeLoseButton.classList.remove('hidden');
 
-        }
-        }, 500/duelLevelCounter);
+    //     }
+    //     }, 500/duelLevelCounter);
 
     //         magicDuelOutcomeExitButton.addEventListener('click', () => {
     //     magicDuelOutcomeContainer.classList.add('hidden');
@@ -175,11 +204,6 @@ abraKadabraButton.addEventListener('click', () => {
     
 
 
-        function startInterval() {
-            // Clear existing interval before starting new
-            if (intervalId) {
-                clearInterval(intervalId);
-        }}
 
 
     magicDuelOutcomeLoseButton.addEventListener('click', () => {
@@ -213,6 +237,7 @@ abraKadabraButton.addEventListener('click', () => {
         console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
         magicDuelLevel.textContent = duelLevelCounter;
         spellSpeed.textContent = duelLevelCounter;
+        startInterval();
         // magicDuelLevelInt = Number(magicDuelLevel.textContent);
     });
 
