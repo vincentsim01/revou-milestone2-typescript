@@ -49,7 +49,7 @@ let intervalId = null;
                         magicDuelOutcomeLoseButton.classList.remove('hidden');
 
                 }
-            }, 500/duelLevelCounter);
+            }, 1000/duelLevelCounter);
     }
 
 
