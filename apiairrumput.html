@@ -97,16 +97,16 @@
             <p class="text-lg text-gray-800 mb-3" id="welcomeDescription">Selamat datang di DUEL API AIR RUMPUT. Ayo kita BERDUEL!</p>
             <button id="startAdventureButton" class="border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Mulai Duel</button>
         </div>
-        <div id="duelResultContainer" class="w-[100%] h-[100%] hidden relative">
+        <div id="duelResultContainer" class="w-[100%] h-[100%] hidden absolute inset-0 bg-gray-800/50 flex items-center justify-center z-20">
             <div id="duelResultOverlay" class="absolute inset-0 bg-white opacity-30 flex items-center justify-center"></div>
                 <div class="bg-white p-4 rounded-md shadow-md z-10 border border-black shadow-lg>
                     <h2 class="text-2xl font-bold mb-2">Duel Result</h2>
                     <p id="duelResultText" class="text-lg"></p>
-                    <div>You have <span id="duelResultSuperEffective"></span> Super Effective Attacks</div>
+                    <div>You have <span id="duelResultSuperEffective"></span>   Super Effective Attacks</div>
                     <div>You have <span id="duelResultNormallyEffective"></span> Normally Effective Attacks</div>
                     <div>You have <span id="duelResultNotEffective"></span> Not Effective Attacks</div>
                     <div>Total Round is <span id="totalRoundCount"></span> Rounds</div>
-                    <div>You Used <span id="fireAttackCount"></span> Fire Attacks, <span id="waterAttackCount"></span> Water Attacks, <span id="grassAttackCount"></span> Grass Attacks</div>
+                    <div>You Used <span id="fireAttackCount"></span> Fire Attacks, <span id="waterAttackCount"></span> Water Attacks, <span id="grassAttackCount"></span> Grass Attacks, <span id="physicalAttackCount"></span> Physical Attacks</div>
                 </div>
         </div>
         <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center border border-black" id="duelContainer">

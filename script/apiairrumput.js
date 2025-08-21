@@ -13,6 +13,25 @@ const enemyHPContainer = document.getElementById("enemyHPContainer");
 const enemyHP = document.getElementById("enemyHP");
 const duelResultContainer = document.getElementById("duelResultContainer");
 const duelResultText = document.getElementById("duelResultText");
+const duelResultSuperEffective = document.getElementById("duelResultSuperEffective");
+const duelResultNotEffective = document.getElementById("duelResultNotEffective");
+const duelResultNormallyEffective = document.getElementById("duelResultNormallyEffective");
+const fireAttackCount = document.getElementById("fireAttackCount");
+const waterAttackCount = document.getElementById("waterAttackCount");
+const grassAttackCount = document.getElementById("grassAttackCount");
+const physicalAttackCount = document.getElementById("physicalAttackCount");
+const totalRoundCount = document.getElementById("totalRoundCount");
+
+var roundCounter = 0;
+
+var fireAttackCounter = 0;
+var waterAttackCounter = 0;
+var grassAttackCounter = 0;
+var physicalAttackCounter = 0;
+
+var superEffectiveContainer =0;
+var normallyEffectiveContainer = 0;
+var notEffectiveContainer = 0;
 startAdventureButton.addEventListener("click", () => {
     const duelContainer = document.getElementById("duelContainer");
     duelContainer.classList.remove("hidden");
@@ -40,25 +59,47 @@ let enemyHPValue = 100;
 // physicalAttackButton.addEventListener("click", () => console.log("Physical attack clicked"));
 
 function resultCheck(){
-    if(yourHPValue <= 0 && enemyHPValue != 0){
+    if(yourHPValue <= 0 && enemyHPValue > 0){
         gameInstruction.textContent = "You have been defeated!";
         duelResultContainer.classList.remove("hidden");
         duelResultText.textContent = "You lost the duel!";
+        fireAttackCount.textContent = fireAttackCounter;
+        waterAttackCount.textContent = waterAttackCounter;
+        grassAttackCount.textContent = grassAttackCounter;
+        duelResultSuperEffective.textContent = superEffectiveContainer;
+        duelResultNormallyEffective.textContent = normallyEffectiveContainer;
+        duelResultNotEffective.textContent = notEffectiveContainer;
+        totalRoundCount.textContent = roundCounter;
         return;
-    }else if(yourHPValue != 0 && enemyHPValue <= 0){
+    }else if(yourHPValue > 0 && enemyHPValue <= 0){
         gameInstruction.textContent = "You won the duel!";
         duelResultContainer.classList.remove("hidden");
         duelResultText.textContent = "You won the duel!";
+        fireAttackCount.textContent = fireAttackCounter;
+        waterAttackCount.textContent = waterAttackCounter;
+        grassAttackCount.textContent = grassAttackCounter;
+        duelResultSuperEffective.textContent = superEffectiveContainer;
+        duelResultNormallyEffective.textContent = normallyEffectiveContainer;
+        duelResultNotEffective.textContent = notEffectiveContainer;
+        totalRoundCount.textContent = roundCounter;
         return;
     }else if(yourHPValue <= 0 && enemyHPValue <= 0){
         gameInstruction.textContent = "Both you and the enemy have been defeated!";
         duelResultContainer.classList.remove("hidden");
         duelResultText.textContent = "It's a draw!";
+        fireAttackCount.textContent = fireAttackCounter;
+        waterAttackCount.textContent = waterAttackCounter;
+        grassAttackCount.textContent = grassAttackCounter;
+        duelResultSuperEffective.textContent = superEffectiveContainer;
+        duelResultNormallyEffective.textContent = normallyEffectiveContainer;
+        duelResultNotEffective.textContent = notEffectiveContainer;
+        totalRoundCount.textContent = roundCounter;
         return;
     }
 }
 
 function duelStart(e){
+    roundCounter++;
     enemyAttackThisTurn = enemyAttackArray[Math.floor(Math.random() * enemyAttackArray.length)];
     yourHP.style.width = `${yourHPValue}%`;
     enemyHP.style.width = `${enemyHPValue}%`;
@@ -72,6 +113,7 @@ function duelStart(e){
     grassAttackButton.classList.add('text-gray-100');
     physicalAttackButton.classList.add('text-gray-100');
     if(e.target.id === "fireAttackButton"){
+        fireAttackCounter++;
         if(enemyAttackThisTurn === "Fire"){
             gameInstruction.textContent = "Enemy used Fire attack! It's a tie!";
             playerDamageThisTurn = 10;
@@ -82,7 +124,8 @@ function duelStart(e){
                 yourHP.style.width = `${yourHPValue}%`;
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
                 enemyHP.style.width = `${enemyHPValue}%`;
-                resultCheck();
+                normallyEffectiveContainer++;
+                resultCheck()
 
             }, 1000);
             setTimeout(() => {
@@ -109,7 +152,8 @@ function duelStart(e){
                 yourHP.style.width = `${yourHPValue}%`;
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
                 enemyHP.style.width = `${enemyHPValue}%`;
-                resultChe   ck();
+                notEffectiveContainer++;
+                resultCheck()
             }, 1000);
                         setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
@@ -134,7 +178,8 @@ function duelStart(e){
                 yourHP.style.width = `${yourHPValue}%`;
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
                 enemyHP.style.width = `${enemyHPValue}%`;
-                resultCheck();
+                superEffectiveContainer++;
+                resultCheck()
             }, 1000);
             setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
@@ -153,6 +198,7 @@ function duelStart(e){
 
     }
     else if(e.target.id === "waterAttackButton"){
+        waterAttackCounter++;
             if(enemyAttackThisTurn === "Fire"){
                 gameInstruction.textContent = "Enemy used Fire attack! your attack wins!";
                 playerDamageThisTurn = 20;
@@ -163,8 +209,22 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
-                    resultCheck();
+                    superEffectiveContainer++;
+                    resultCheck()
                 }, 1000);
+                                        setTimeout(() => {
+                gameInstruction.textContent = `Let's continue the duel`;
+                fireAttackButton.classList.remove('cursor-not-allowed');
+                waterAttackButton.classList.remove('cursor-not-allowed');
+                grassAttackButton.classList.remove('cursor-not-allowed');
+                physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                fireAttackButton.classList.remove('text-gray-100');
+                waterAttackButton.classList.remove('text-gray-100');
+                grassAttackButton.classList.remove('text-gray-100');
+                physicalAttackButton.classList.remove('text-gray-100');
+                return;
+            }, 2000);
             }else if(enemyAttackThisTurn === "Water"){
                 gameInstruction.textContent = "Enemy used Water attack! It's a tie!";
                 playerDamageThisTurn = 10;
@@ -175,7 +235,8 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
-                    resultCheck();
+                    normallyEffectiveContainer++;
+                    resultCheck()
                 }, 1000);
             setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
@@ -200,7 +261,8 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
-                    resultCheck();
+                    notEffectiveContainer++;
+                    resultCheck()
                 }, 1000);
             setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
@@ -219,6 +281,7 @@ function duelStart(e){
 
         }
     else if(e.target.id === "grassAttackButton"){
+        grassAttackCounter++;
             if(enemyAttackThisTurn === "Fire"){
                 gameInstruction.textContent = "Enemy used Fire attack! Your attack loses!";
                 playerDamageThisTurn = 5;
@@ -229,7 +292,8 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
-                                    resultCheck();
+                    notEffectiveContainer++;
+                    resultCheck()
                 }, 1000);
             setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
@@ -254,7 +318,8 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
-                                    resultCheck();
+                    superEffectiveContainer++;
+                    resultCheck()
                 }, 1000);
             setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
@@ -279,7 +344,8 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
-                                    resultCheck();
+                    normallyEffectiveContainer++;
+                    resultCheck()
                 }, 1000);
                 setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
@@ -298,6 +364,7 @@ function duelStart(e){
 
          }
      else if(e.target.id === "physicalAttackButton"){
+            physicalAttackCounter++;
               gameInstruction.innerHTML = `Enemy used  ${enemyAttackThisTurn} attack! However it doesn't matter since you use physical!`;
                 playerDamageThisTurn = 15;
                 enemyDamageThisTurn = 15;
@@ -307,7 +374,8 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
-                                    resultCheck();
+                    normallyEffectiveContainer++;
+                    resultCheck()
                 }, 1000);
             setTimeout(() => {
                 gameInstruction.textContent = `Let's continue the duel`;
