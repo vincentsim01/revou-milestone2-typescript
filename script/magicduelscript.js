@@ -7,6 +7,8 @@ const magicDuelLevel = document.getElementById('magicDuelLevel');
 let abraKadabraButton = document.getElementById('abraKadabraButton');
 
 
+const avadakedavra = document.getElementById('avadakedavra');
+
 let magicMeterLeft = document.getElementById('magicMeterLeft');
 let magicMeterRight = document.getElementById('magicMeterRight');
 
@@ -188,8 +190,14 @@ abraKadabraButton.addEventListener('click', () => {
 
         console.log(`magictoken simsalabim ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
 
+        
+
         if(magicToken>=100){
                 // clearInterval(intervalId);
+            // avadakedavra.classList.remove('hidden');
+            // setTimeout(() => {
+            //     avadakedavra.classList.add('hidden');
+            // }, 2300);
                 magicDuelOutcomeContainer.classList.remove('hidden');
                 magicDuelOutcome.classList.remove('hidden');
                 magicDuelResult.textContent = 'You win!';
@@ -198,6 +206,9 @@ abraKadabraButton.addEventListener('click', () => {
                 magicDuelOutcomeWinButton.classList.remove('hidden');
                 magicToken=1000000000;
             }   
+        else if(magicToken>=98){
+
+        }
     }); 
 
 
