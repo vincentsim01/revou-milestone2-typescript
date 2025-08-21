@@ -264,6 +264,7 @@ abraKadabraButton.addEventListener('click', () => {
         console.log(`duelLevelCounter exit button: ${duelLevelCounter}`);
         spellSpeed.textContent = duelLevelCounter;
         clearInterval(intervalId);
+        clickCounter=0;
 
     });
 
