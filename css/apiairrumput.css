@@ -1,0 +1,132 @@
+.yourelementWin{
+   animation: yourattackWin 1.5s;
+}
+
+.yourelementLose{
+   animation: yourattackLose 1.5s;
+}
+
+.yourelementTie{
+   animation: yourattackTie 1.5s;
+}
+
+.enemyelementWin{
+   animation: enemyattackWin 1.5s;
+}
+
+.enemyelementLose{
+   animation: enemyattackLose 1.5s;
+}
+
+.enemyelementTie{
+   animation: enemyattackTie 1.5s;
+}
+
+.hidden {
+   display: none;
+}
+
+.getHit{
+    animation: getHit 0.7s;
+}
+
+
+@keyframes yourattackWin {
+     0% {
+         transform: translateX(0px) translateY(0px);
+
+     }
+     100% {
+         transform: translateX(550px) translateY(-150px);
+;
+     }
+ }
+    
+
+ @keyframes yourattackLose {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     50%{
+        transform: translateX(225px) translateY(-75px);
+          opacity:10%;
+     }
+     100% {
+         transform: translateX(225px) translateY(-75px);
+        opacity:10%;
+     }
+ }
+    
+@keyframes yourattackTie {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     100% {
+         transform: translateX(225px) translateY(-75px) scale(1.1);
+     }
+ }
+
+ @keyframes enemyattackWin {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     100% {
+         transform: translateX(-550px) translateY(200px);
+     }
+ }
+
+ 
+ @keyframes enemyattackLose {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     50% {
+         transform: translateX(-225px) translateY(100px);
+         opacity:10%;
+         
+
+     }
+    100% {
+         transform: translateX(-225px) translateY(100px);
+        opacity:10%;
+     }
+ }
+
+ 
+ 
+ @keyframes enemyattackTie {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     100% {
+         transform: translateX(-290px) translateY(130px) scale(1.1);
+     }
+ }
+    
+@keyframes getHit {
+	0%,
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+	90%,
+	100% {
+		opacity: 1;
+	}
+    15%,
+	25%,
+    35%,
+    45%,
+    55%,
+    65%,
+	75%,
+    85%,
+    95% {
+		opacity: 0;
+	}
+}
+    
