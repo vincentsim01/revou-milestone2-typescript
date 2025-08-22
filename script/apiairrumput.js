@@ -29,6 +29,7 @@ const enemyPokemon = document.getElementById("enemyPokemon");
 const yourPokemon = document.getElementById("yourPokemon");
 const superEffectiveSound = document.getElementById("superEffectiveSound");
 const NotEffectiveSound = document.getElementById("NotEffectiveSound");
+const playAgainButton = document.getElementById("playAgainButton");
 var roundCounter = 0;
 
 var fireAttackCounter = 0;
@@ -58,9 +59,40 @@ let enemyDamageThisTurn;
 
 let enemyAttackThisTurn;
 
-let yourHPValue = 100;
+var yourHPValue = 100;
 
-let enemyHPValue = 100;
+var enemyHPValue = 100;
+
+
+
+// function resetGame(){
+//     duelResultContainer.classList.add("hidden");
+//     gameInstruction.textContent = "";
+//     duelResultText.textContent = "";
+//     fireAttackCount.textContent = "";
+//     waterAttackCount.textContent = "";
+//     grassAttackCount.textContent = "";
+//     physicalAttackCount.textContent = "";
+//     duelResultSuperEffective.textContent = "";
+//     duelResultNormallyEffective.textContent = "";
+//     duelResultNotEffective.textContent = "";
+//     totalRoundCount.textContent = "";
+//     yourHPValue = 100;
+//     enemyHPValue = 100;
+//     gameInstruction.textContent = `Let's continue the duel`;
+//     roundCounter = 0;
+//     fireAttackCounter = 0;
+//     waterAttackCounter = 0;
+//     grassAttackCounter = 0;
+//     physicalAttackCounter = 0;
+//     superEffectiveContainer =0;
+//     normallyEffectiveContainer = 0;
+//     notEffectiveContainer = 0;
+//     yourHP.style.width = `${yourHPValue}%`;
+//     enemyHP.style.width = `${enemyHPValue}%`;
+// };
+
+// playAgainButton.addEventListener("click", resetGame);
 
 // fireAttackButton.addEventListener("click", () => alert("Fire attack clicked"));
 // waterAttackButton.addEventListener("click", () => console.log("Water attack clicked"));
@@ -110,6 +142,8 @@ function resultCheck(){
         return;
     }
     },1000);
+
+    // resetGame();
 
 }
 
@@ -557,5 +591,45 @@ function duelStart(e){
 
         }
 
+
+
+
+
 }
+
+
+
+        playAgainButton.addEventListener("click", ()=>{
+                duelResultContainer.classList.add("hidden");
+                // gameInstruction.textContent = "";
+                // duelResultText.textContent = "";
+                // fireAttackCount.textContent = "";
+                // waterAttackCount.textContent = "";
+                // grassAttackCount.textContent = "";
+                // physicalAttackCount.textContent = "";
+                // duelResultSuperEffective.textContent = "";
+                // duelResultNormallyEffective.textContent = "";
+                // duelResultNotEffective.textContent = "";
+                // totalRoundCount.textContent = "";
+                yourHPValue = 100;
+                enemyHPValue = 100;
+                // gameInstruction.textContent = `Let's continue the duel`;
+                // roundCounter = 0;
+                // fireAttackCounter = 0;
+                // waterAttackCounter = 0;
+                // grassAttackCounter = 0;
+                // physicalAttackCounter = 0;
+                // superEffectiveContainer =0;
+                // normallyEffectiveContainer = 0;
+                // notEffectiveContainer = 0;
+                yourHP.style.width = `${yourHPValue}%`;
+                enemyHP.style.width = `${enemyHPValue}%`;
+                duelContainer.classList.add("hidden");
+                // welcomeDescription.classList.remove("hidden");
+                startAdventureButton.classList.remove("hidden");
+                // welcomeTitle.classList.remove("hidden");
+                welcomeContainer.classList.remove("hidden");
+                // alert('this button works')
+        });
+
 
