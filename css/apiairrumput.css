@@ -30,6 +30,18 @@
     animation: getHit 0.7s;
 }
 
+.youMoveRight{
+    animation: youMoveRight 1s;
+}
+
+.enemyMoveLeft{
+    animation: enemyMoveLeft 1s;
+}
+
+.selected{
+    outline: 2px solid red;
+}
+
 
 @keyframes yourattackWin {
      0% {
@@ -129,4 +141,22 @@
 		opacity: 0;
 	}
 }
-    
+
+
+@keyframes youMoveRight {
+    0% {
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes enemyMoveLeft {
+    0% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(-0px);
+    }
+}

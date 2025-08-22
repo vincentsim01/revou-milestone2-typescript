@@ -93,15 +93,26 @@
     <section id="apiAirRumputContainer" class="flex items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('./asset/firewatergrassbackground.png');">
         <audio id="superEffectiveSound" src="./asset/hit-super-effective.mp3"></audio>
         <audio id="NotEffectiveSound" src="./asset/not-very-effective.mp3"></audio>
-        <audio id="battleSong" src="./asset/battle song.mp3"></audio>
+        <audio id="battleSong" src="./asset/battle song.mp3" loop></audio>
         <audio id="victorySong" src="./asset/victorysong.mp3"></audio>
         <audio id="defeatedSong" src="./asset/defeatedSong.mp3"></audio>
         <audio id="tieSong" src="./asset/pokemonCenter.mp3"></audio>
+        <audio id="opening" src="./asset/opening.mp3"></audio>
         <div class="absolute inset-0 bg-white opacity-10"></div>
-        <div class="relative z-10 p-4" id="welcomeContainer">
-            <h1 class="text-4xl font-bold mb-4 text-gray-800" id="welcomeTitle">DUEL API AIR RUMPUT</h1>
-            <p class="text-lg text-gray-800 mb-3" id="welcomeDescription">Selamat datang di DUEL API AIR RUMPUT. Ayo kita BERDUEL!</p>
-            <button id="startAdventureButton" class="border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Mulai Duel</button>
+
+        <div class="relative z-10 p-4 text-center" id="welcomeContainer">
+            <h1 class="text-4xl font-bold mb-4 text-gray-800 font-preahvihear animate-bounce" id="welcomeTitle">DUEL API-AIR-RUMPUT</h1>
+            <p class="text-lg text-gray-800 mb-3 font-preahvihear animate-bounce" id="welcomeDescription">Selamat datang di DUEL API-AIR-RUMPUT. Ayo kita BERDUEL!</p>
+            <button id="chooseCharacterButton" class="border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Pilih Karakter</button>
+            <br><br>
+            <div class="hidden w-[90%]" id="characterSelectionContainer">
+                <div class="font-preahvihear text-center">Choose Your Character</div>
+                <div class="flex justify-center items-center mt-4 flex justify-center" id="characterDisplayContainer"></div>
+                    <br><br>
+                    <button id="startAdventureButton" class="border hidden border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Mulai Duel</button>
+            </div>
+
+        </div>
         </div>
 
         <div id="duelResultContainer" class="w-[100%] h-[100%] hidden absolute inset-0 bg-gray-800/50 flex items-center justify-center z-20">
@@ -133,7 +144,7 @@
             <div class="bg-[url('./asset/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
                 <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end">
                     <div class="bg-white rounded-md w-[80%]">
-                        <p>Charmander</p>
+                        <p>Aang</p>
                         <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="enemyHPContainer" class=" inline-block w-[85%]"><div id="enemyHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>
@@ -141,7 +152,7 @@
                 <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center"> 
                     <div class="relative" id="enemyPokemonContainer">
                         <div class="w-[50px] absolute z-2 text-start -left-10" id="elementEnemy"></div>
-                        <img src="./asset/charmander.png" id="enemyPokemon" alt="Charmander" class="mx-auto w-[100px]">
+                        <img src="./asset/aang.png" id="enemyPokemon" alt="Aang" class="mx-auto w-[200px]">
                     </div>
                 </div>
 
@@ -153,7 +164,7 @@
                 </div>
                 <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-start justify-start">
                     <div class="bg-white rounded-md w-[80%]">
-                        <p>Bulbasaur</p>
+                        <p id="yourName">Bulbasaur</p>
                          <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>

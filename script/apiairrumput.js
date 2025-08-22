@@ -34,6 +34,12 @@ const battleSong = document.getElementById("battleSong");
 const victorySong = document.getElementById("victorySong");
 const defeatedSong = document.getElementById('defeatedSong');
 const tieSong = document.getElementById('tieSong');
+const opening = document.getElementById('opening');
+const characterSelectionContainer = document.getElementById('characterSelectionContainer');
+const chooseCharacterButton = document.getElementById('chooseCharacterButton');
+const characterDisplayContainer = document.getElementById('characterDisplayContainer');
+const yourName = document.getElementById('yourName');
+
 var roundCounter = 0;
 
 var fireAttackCounter = 0;
@@ -44,6 +50,74 @@ var physicalAttackCounter = 0;
 var superEffectiveContainer =0;
 var normallyEffectiveContainer = 0;
 var notEffectiveContainer = 0;
+
+// window.onclick = () => {
+//     opening.play();
+// };
+
+chooseCharacterButton.addEventListener('click', () => {
+    characterSelectionContainer.classList.remove('hidden');
+    opening.play();
+});
+
+const characterArray = ['charmander', 'bulbasaur','squirtle'];
+
+characterArray.forEach((item) => {
+    // let newDiv = document.createElement('div');
+    // newDiv.textContent = `${item.charAt(0).toUpperCase() + item.slice(1)}`;
+    let newImg = document.createElement('img');
+    newImg.src = `./asset/${item}.png`;
+    newImg.alt = item;
+    newImg.id = `${item}Character`;
+    newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto`;
+    newImg.classList.add('w-24', 'h-24');
+    // characterDisplayContainer.appendChild(newDiv);
+    characterDisplayContainer.appendChild(newImg);
+
+
+})
+
+  const items = document.querySelectorAll(".character");
+
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      // Remove selection from all
+      items.forEach(i => i.classList.remove("selected"));
+      // Add selection to clicked
+      item.classList.add("selected");
+    });
+  });
+
+const squirtleCharacter = document.getElementById("squirtleCharacter");
+const charmanderCharacter = document.getElementById('charmanderCharacter');
+const bulbasaurCharacter = document.getElementById('bulbasaurCharacter');
+
+    squirtleCharacter.addEventListener('click', () => {
+        yourPokemon.src = "./asset/squirtle.png";
+        yourName.textContent = "Squirtle";
+        startAdventureButton.classList.remove('hidden');
+    });
+
+
+
+
+    charmanderCharacter.addEventListener('click', () => {
+        yourPokemon.src = "./asset/charmander.png";
+        yourName.textContent = "Charmander";
+        startAdventureButton.classList.remove('hidden');
+    });
+
+
+
+
+    bulbasaurCharacter.addEventListener('click', () => {
+        yourPokemon.src = "./asset/bulbasaur.png";
+        yourName.textContent = "Bulbasaur";
+        startAdventureButton.classList.remove('hidden');
+    });
+
+
+
 startAdventureButton.addEventListener("click", () => {
     const duelContainer = document.getElementById("duelContainer");
     duelContainer.classList.remove("hidden");
@@ -51,6 +125,13 @@ startAdventureButton.addEventListener("click", () => {
     startAdventureButton.classList.add("hidden");
     welcomeTitle.classList.add("hidden");
     welcomeContainer.classList.add("hidden");
+    yourPokemon.classList.add('youMoveRight');
+    enemyPokemon.classList.add('enemyMoveLeft');
+    setTimeout(()=>{
+        yourPokemon.classList.remove('youMoveRight');
+        enemyPokemon.classList.remove('enemyMoveLeft');
+    }, 1000);
+    opening.pause();
     battleSong.play();
 });
 
@@ -649,6 +730,7 @@ function duelStart(e){
                 startAdventureButton.classList.remove("hidden");
                 // welcomeTitle.classList.remove("hidden");
                 welcomeContainer.classList.remove("hidden");
+                chooseCharacterButton.classList.add('hidden');
                 // alert('this button works')
         });
 
