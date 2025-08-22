@@ -189,7 +189,7 @@ function duelStart(e){
                 resultCheck()
             }, 1000);
                         setTimeout(() => {
-                                            elementYou.innerHTML = "";
+                    elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
@@ -263,10 +263,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     superEffectiveContainer++;
+                    elementYou.innerHTML = `<img src="./asset/water.png" alt="Water Icon">`;
+                    elementYou.classList.add('yourelementWin');
+                    elementEnemy.innerHTML = `<img src="./asset/fire.png" alt="Fire Icon">`;
+                    elementEnemy.classList.add('enemyelementLose');
+                    setTimeout(() => {
+                        enemyPokemon.classList.add('getHit');
+                        superEffectiveSound.play();
+
+                    }, 600);
                     resultCheck()
                 }, 1000);
-                                        setTimeout(() => {
-                                                            elementYou.innerHTML = "";
+                setTimeout(() => {
+                elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
@@ -278,6 +287,10 @@ function duelStart(e){
                 waterAttackButton.classList.remove('text-gray-100');
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
+
+                elementYou.classList.remove('yourelementWin');
+                elementEnemy.classList.remove('enemyelementLose');
+                enemyPokemon.classList.remove('getHit');
                 return;
             }, 2500);
             }else if(enemyAttackThisTurn === "Water"){
@@ -291,10 +304,18 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     normallyEffectiveContainer++;
+
+                    elementYou.innerHTML = `<img src="./asset/water.png" alt="Water Icon">`;
+                    elementYou.classList.add('yourelementTie');
+                    elementEnemy.innerHTML = `<img src="./asset/water.png" alt="Water Icon">`;
+                    elementEnemy.classList.add('enemyelementTie');
+                setTimeout(()=>{
+                    NotEffectiveSound.play();
+                },500);
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
-                                elementYou.innerHTML = "";
+                elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
@@ -306,6 +327,9 @@ function duelStart(e){
                 waterAttackButton.classList.remove('text-gray-100');
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
+
+                elementYou.classList.remove('yourelementTie');
+                elementEnemy.classList.remove('enemyelementTie');
                 return;
             }, 2500);
             }else if(enemyAttackThisTurn === "Grass"){
@@ -318,11 +342,20 @@ function duelStart(e){
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
+                    elementYou.innerHTML = `<img src="./asset/water.png" alt="Water Icon">`;
+                    elementYou.classList.add('yourelementLose');
+                    elementEnemy.innerHTML = `<img src="./asset/grass.png" alt="Grass Icon">`;
+                    elementEnemy.classList.add('enemyelementWin');
+                setTimeout(() => {
+                    yourPokemon.classList.add('getHit');
+                    superEffectiveSound.play();
+
+                }, 600);
                     notEffectiveContainer++;
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
-                                elementYou.innerHTML = "";
+                elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
@@ -334,6 +367,11 @@ function duelStart(e){
                 waterAttackButton.classList.remove('text-gray-100');
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
+
+
+                elementYou.classList.remove('yourelementLose');
+                elementEnemy.classList.remove('enemyelementWin');
+                yourPokemon.classList.remove('getHit');
                 return;
             }, 2500);
             }
@@ -345,17 +383,29 @@ function duelStart(e){
                 gameInstruction.textContent = "Enemy used Fire attack! Your attack loses!";
                 playerDamageThisTurn = 5;
                 enemyDamageThisTurn = 20;
-                setTimeout(() => {
+                setTimeout(() => {                
+                    elementYou.innerHTML = "";
+                    elementEnemy.innerHTML = "";
                     gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's not effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     notEffectiveContainer++;
+
+                    elementYou.innerHTML = `<img src="./asset/grass.png" alt="Grass Icon">`;
+                    elementYou.classList.add('yourelementLose');
+                    elementEnemy.innerHTML = `<img src="./asset/fire.png" alt="Fire Icon">`;
+                    elementEnemy.classList.add('enemyelementWin');
+                setTimeout(() => {
+                    yourPokemon.classList.add('getHit');
+                    superEffectiveSound.play();
+
+                }, 600);
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
-                                elementYou.innerHTML = "";
+                elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
@@ -367,22 +417,39 @@ function duelStart(e){
                 waterAttackButton.classList.remove('text-gray-100');
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
+
+
+                elementYou.classList.remove('yourelementLose');
+                elementEnemy.classList.remove('enemyelementWin');
+                yourPokemon.classList.remove('getHit');
                 return;
-            }, 2000);
+            }, 2500);
             }else if(enemyAttackThisTurn === "Water"){
                 gameInstruction.textContent = "Enemy used Water attack! Your attack wins!";
                 playerDamageThisTurn = 20;
                 enemyDamageThisTurn = 5;
                 setTimeout(() => {
+
                     gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's super effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     superEffectiveContainer++;
+                    elementYou.innerHTML = `<img src="./asset/grass.png" alt="Grass Icon">`;
+                    elementYou.classList.add('yourelementWin');
+                    elementEnemy.innerHTML = `<img src="./asset/water.png" alt="Water Icon">`;
+                    elementEnemy.classList.add('enemyelementLose');
+                    setTimeout(() => {
+                        enemyPokemon.classList.add('getHit');
+                        superEffectiveSound.play();
+
+                    }, 600);
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
+                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -393,8 +460,12 @@ function duelStart(e){
                 waterAttackButton.classList.remove('text-gray-100');
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
+
+                elementYou.classList.remove('yourelementWin');
+                elementEnemy.classList.remove('enemyelementLose');
+                enemyPokemon.classList.remove('getHit');
                 return;
-            }, 2000);
+            }, 2500);
             }else if(enemyAttackThisTurn === "Grass"){
                 gameInstruction.textContent = "Enemy used Grass attack! It's a tie!";
                 playerDamageThisTurn = 10;
@@ -406,21 +477,35 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     normallyEffectiveContainer++;
+
+                    elementYou.innerHTML = `<img src="./asset/grass.png" alt="Grass Icon">`;
+                    elementYou.classList.add('yourelementTie');
+                    elementEnemy.innerHTML = `<img src="./asset/grass.png" alt="Grass Icon">`;
+                    elementEnemy.classList.add('enemyelementTie');
+        
+                    setTimeout(()=>{
+                        NotEffectiveSound.play();
+                    },500);
                     resultCheck()
                 }, 1000);
                 setTimeout(() => {
-                gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
+                    gameInstruction.textContent = `Let's continue the duel`;
+                    fireAttackButton.classList.remove('cursor-not-allowed');
+                    waterAttackButton.classList.remove('cursor-not-allowed');
+                    grassAttackButton.classList.remove('cursor-not-allowed');
+                    physicalAttackButton.classList.remove('cursor-not-allowed');
 
-                fireAttackButton.classList.remove('text-gray-100');
-                waterAttackButton.classList.remove('text-gray-100');
-                grassAttackButton.classList.remove('text-gray-100');
-                physicalAttackButton.classList.remove('text-gray-100');
-                return;
-            }, 2000);
+                    fireAttackButton.classList.remove('text-gray-100');
+                    waterAttackButton.classList.remove('text-gray-100');
+                    grassAttackButton.classList.remove('text-gray-100');
+                    physicalAttackButton.classList.remove('text-gray-100');
+
+                    elementYou.classList.remove('yourelementTie');
+                    elementEnemy.classList.remove('enemyelementTie');
+                    return;
+                }, 2500);
             }
 
          }
@@ -436,9 +521,19 @@ function duelStart(e){
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     normallyEffectiveContainer++;
+
+                    elementYou.innerHTML = `<img src="./asset/muscle.png" alt="Muscle Icon">`;
+                    elementYou.classList.add('yourelementTie');
+                    elementEnemy.innerHTML = `<img src="./asset/muscle.png" alt="Muscle Icon">`;
+                    elementEnemy.classList.add('enemyelementTie');
+                setTimeout(()=>{
+                    NotEffectiveSound.play();
+                },500);
                     resultCheck()
                 }, 1000);
             setTimeout(() => {
+                elementYou.innerHTML = "";
+                elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
                 fireAttackButton.classList.remove('cursor-not-allowed');
                 waterAttackButton.classList.remove('cursor-not-allowed');
@@ -449,8 +544,11 @@ function duelStart(e){
                 waterAttackButton.classList.remove('text-gray-100');
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
+
+                elementYou.classList.remove('yourelementTie');
+                elementEnemy.classList.remove('enemyelementTie');
                 return;
-            }, 2000);
+            }, 2500);
 
         }
 
