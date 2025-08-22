@@ -68,13 +68,15 @@ let enemyHPValue = 100;
 // physicalAttackButton.addEventListener("click", () => console.log("Physical attack clicked"));
 
 function resultCheck(){
-    if(yourHPValue <= 0 && enemyHPValue > 0){
+    setTimeout(()=>{
+            if(yourHPValue <= 0 && enemyHPValue > 0){
         gameInstruction.textContent = "You have been defeated!";
         duelResultContainer.classList.remove("hidden");
         duelResultText.textContent = "You lost the duel!";
         fireAttackCount.textContent = fireAttackCounter;
         waterAttackCount.textContent = waterAttackCounter;
         grassAttackCount.textContent = grassAttackCounter;
+        physicalAttackCount.textContent = physicalAttackCounter;
         duelResultSuperEffective.textContent = superEffectiveContainer;
         duelResultNormallyEffective.textContent = normallyEffectiveContainer;
         duelResultNotEffective.textContent = notEffectiveContainer;
@@ -87,6 +89,7 @@ function resultCheck(){
         fireAttackCount.textContent = fireAttackCounter;
         waterAttackCount.textContent = waterAttackCounter;
         grassAttackCount.textContent = grassAttackCounter;
+        physicalAttackCount.textContent = physicalAttackCounter;
         duelResultSuperEffective.textContent = superEffectiveContainer;
         duelResultNormallyEffective.textContent = normallyEffectiveContainer;
         duelResultNotEffective.textContent = notEffectiveContainer;
@@ -99,12 +102,15 @@ function resultCheck(){
         fireAttackCount.textContent = fireAttackCounter;
         waterAttackCount.textContent = waterAttackCounter;
         grassAttackCount.textContent = grassAttackCounter;
+        physicalAttackCount.textContent = physicalAttackCounter;
         duelResultSuperEffective.textContent = superEffectiveContainer;
         duelResultNormallyEffective.textContent = normallyEffectiveContainer;
         duelResultNotEffective.textContent = notEffectiveContainer;
         totalRoundCount.textContent = roundCounter;
         return;
     }
+    },1000);
+
 }
 
 function duelStart(e){
@@ -128,7 +134,7 @@ function duelStart(e){
             playerDamageThisTurn = 10;
             enemyDamageThisTurn = 10;
             setTimeout(() => {
-                gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's normally effective`;
+                gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective`;
                 yourHPValue = yourHPValue - enemyDamageThisTurn;
                 yourHP.style.width = `${yourHPValue}%`;
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -171,7 +177,7 @@ function duelStart(e){
             playerDamageThisTurn = 5;
             enemyDamageThisTurn = 20;
             setTimeout(() => {
-                gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's not effective!`;
+                gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's not effective!`;
                 yourHPValue = yourHPValue - enemyDamageThisTurn;
                 yourHP.style.width = `${yourHPValue}%`;
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -211,7 +217,7 @@ function duelStart(e){
             playerDamageThisTurn = 20;
             enemyDamageThisTurn = 5;
             setTimeout(() => {
-                gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's super effective!`;
+                gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
                 yourHPValue = yourHPValue - enemyDamageThisTurn;
                 yourHP.style.width = `${yourHPValue}%`;
                 enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -257,7 +263,7 @@ function duelStart(e){
                 playerDamageThisTurn = 20;
                 enemyDamageThisTurn = 5;
                 setTimeout(() => {
-                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's super effective`;
+                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -298,7 +304,7 @@ function duelStart(e){
                 playerDamageThisTurn = 10;
                 enemyDamageThisTurn = 10;
                 setTimeout(() => {
-                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's normally effective!`;
+                    gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -337,7 +343,7 @@ function duelStart(e){
                 playerDamageThisTurn = 5;
                 enemyDamageThisTurn = 20;
                 setTimeout(() => {
-                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's not effective!`;
+                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's not effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -386,7 +392,7 @@ function duelStart(e){
                 setTimeout(() => {                
                     elementYou.innerHTML = "";
                     elementEnemy.innerHTML = "";
-                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's not effective!`;
+                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's not effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -430,7 +436,7 @@ function duelStart(e){
                 enemyDamageThisTurn = 5;
                 setTimeout(() => {
 
-                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's super effective!`;
+                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -471,7 +477,7 @@ function duelStart(e){
                 playerDamageThisTurn = 10;
                 enemyDamageThisTurn = 10;
                 setTimeout(() => {
-                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's normally effective!`;
+                    gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
@@ -512,20 +518,19 @@ function duelStart(e){
      else if(e.target.id === "physicalAttackButton"){
             physicalAttackCounter++;
               gameInstruction.innerHTML = `Enemy used  ${enemyAttackThisTurn} attack! However it doesn't matter since you use physical!`;
-                playerDamageThisTurn = 15;
-                enemyDamageThisTurn = 15;
+                playerDamageThisTurn = 3;
+                enemyDamageThisTurn = 3;
                 setTimeout(() => {
-                    gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage! It's okay effective!`;
+                    gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's okay effective!`;
                     yourHPValue = yourHPValue - enemyDamageThisTurn;
                     yourHP.style.width = `${yourHPValue}%`;
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     normallyEffectiveContainer++;
 
-                    elementYou.innerHTML = `<img src="./asset/muscle.png" alt="Muscle Icon">`;
-                    elementYou.classList.add('yourelementTie');
-                    elementEnemy.innerHTML = `<img src="./asset/muscle.png" alt="Muscle Icon">`;
-                    elementEnemy.classList.add('enemyelementTie');
+                    yourPokemon.classList.add('yourelementTie');
+
+                    enemyPokemon.classList.add('enemyelementTie');
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
@@ -545,8 +550,8 @@ function duelStart(e){
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
 
-                elementYou.classList.remove('yourelementTie');
-                elementEnemy.classList.remove('enemyelementTie');
+                yourPokemon.classList.remove('yourelementTie');
+                enemyPokemon.classList.remove('enemyelementTie');
                 return;
             }, 2500);
 
