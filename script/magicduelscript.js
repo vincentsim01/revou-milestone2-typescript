@@ -68,8 +68,9 @@ duelStartButton.addEventListener('click', () => {
     magicDuelLevel.textContent = duelLevelCounter;
     magicMeterLeft.style.width = magicToken + '%';
     magicMeterRight.style.width = opponentMagicToken + '%';
+    let spellspeed = 1 / duelLevelCounter;
 
-    spellSpeed.textContent = `1 Spell every ${1/duelLevelCounter} Seconds`;
+    spellSpeed.textContent = `1 Spell every ${spellspeed.toFixed(2)} Seconds`;
 
     startInterval();
 
@@ -245,9 +246,10 @@ abraKadabraButton.addEventListener('click', () => {
 
           const levelNow = parseInt(magicDuelLevel.textContent, 10) || 0;
         duelLevelCounter = duelLevelCounter + 1;
-        console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
+        // console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
         magicDuelLevel.textContent = duelLevelCounter;
-        spellSpeed.textContent = `1 Spell every ${1/duelLevelCounter} seconds`;
+        let spellspeed = 1 / duelLevelCounter;
+        spellSpeed.textContent = `1 Spell every ${spellspeed.toFixed(2)} seconds`;
         startInterval();
         // magicDuelLevelInt = Number(magicDuelLevel.textContent);
     });
