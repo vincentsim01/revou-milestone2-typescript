@@ -69,7 +69,7 @@ duelStartButton.addEventListener('click', () => {
     magicMeterLeft.style.width = magicToken + '%';
     magicMeterRight.style.width = opponentMagicToken + '%';
 
-    spellSpeed.textContent = duelLevelCounter;
+    spellSpeed.textContent = `1 Spell every ${1/duelLevelCounter} Seconds`;
 
     startInterval();
 
@@ -188,7 +188,7 @@ abraKadabraButton.addEventListener('click', () => {
         magicMeterRight.style.width = opponentMagicToken + '%';
         clickCounter++;
 
-        console.log(`magictoken simsalabim ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
+        // console.log(`magictoken simsalabim ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
 
         
 
@@ -247,7 +247,7 @@ abraKadabraButton.addEventListener('click', () => {
         duelLevelCounter = duelLevelCounter + 1;
         console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
         magicDuelLevel.textContent = duelLevelCounter;
-        spellSpeed.textContent = duelLevelCounter;
+        spellSpeed.textContent = `1 Spell every ${1/duelLevelCounter} seconds`;
         startInterval();
         // magicDuelLevelInt = Number(magicDuelLevel.textContent);
     });
