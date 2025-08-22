@@ -93,6 +93,10 @@
     <section id="apiAirRumputContainer" class="flex items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('./asset/firewatergrassbackground.png');">
         <audio id="superEffectiveSound" src="./asset/hit-super-effective.mp3"></audio>
         <audio id="NotEffectiveSound" src="./asset/not-very-effective.mp3"></audio>
+        <audio id="battleSong" src="./asset/battle song.mp3"></audio>
+        <audio id="victorySong" src="./asset/victorysong.mp3"></audio>
+        <audio id="defeatedSong" src="./asset/defeatedSong.mp3"></audio>
+        <audio id="tieSong" src="./asset/pokemonCenter.mp3"></audio>
         <div class="absolute inset-0 bg-white opacity-10"></div>
         <div class="relative z-10 p-4" id="welcomeContainer">
             <h1 class="text-4xl font-bold mb-4 text-gray-800" id="welcomeTitle">DUEL API AIR RUMPUT</h1>
@@ -125,30 +129,30 @@
 
 
         </div>
-        <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center border border-black" id="duelContainer">
+        <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center" id="duelContainer">
             <div class="bg-[url('./asset/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
                 <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end">
-                    <div class="bg-white rounded-md border border-black w-[80%]">
+                    <div class="bg-white rounded-md w-[80%]">
                         <p>Charmander</p>
                         <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="enemyHPContainer" class=" inline-block w-[85%]"><div id="enemyHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>
 
-                <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex border border-black justify-center items-center"> 
+                <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center"> 
                     <div class="relative" id="enemyPokemonContainer">
                         <div class="w-[50px] absolute z-2 text-start -left-10" id="elementEnemy"></div>
                         <img src="./asset/charmander.png" id="enemyPokemon" alt="Charmander" class="mx-auto w-[100px]">
                     </div>
                 </div>
 
-                <div class="col-start-1 col-end-2 row-start-2 row-end-3 border"> 
+                <div class="col-start-1 col-end-2 row-start-2 row-end-3"> 
                     <div class="relative" id="yourPokemonContainer">
                         <div class="w-[50px] absolute z-2 ml-[70%]" id="elementYou"></div>
                         <img src="./asset/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="ml-[60%] w-[100px]">
                     </div>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-start justify-start">
-                    <div class="bg-white rounded-md border border-black w-[80%]">
+                    <div class="bg-white rounded-md w-[80%]">
                         <p>Bulbasaur</p>
                          <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>

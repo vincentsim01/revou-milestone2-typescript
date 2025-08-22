@@ -30,6 +30,10 @@ const yourPokemon = document.getElementById("yourPokemon");
 const superEffectiveSound = document.getElementById("superEffectiveSound");
 const NotEffectiveSound = document.getElementById("NotEffectiveSound");
 const playAgainButton = document.getElementById("playAgainButton");
+const battleSong = document.getElementById("battleSong");
+const victorySong = document.getElementById("victorySong");
+const defeatedSong = document.getElementById('defeatedSong');
+const tieSong = document.getElementById('tieSong');
 var roundCounter = 0;
 
 var fireAttackCounter = 0;
@@ -47,6 +51,7 @@ startAdventureButton.addEventListener("click", () => {
     startAdventureButton.classList.add("hidden");
     welcomeTitle.classList.add("hidden");
     welcomeContainer.classList.add("hidden");
+    battleSong.play();
 });
 
 const iconArray = ['fire.png', 'water.png', 'grass.png', 'physical.png'];
@@ -102,52 +107,62 @@ var enemyHPValue = 100;
 function resultCheck(){
     setTimeout(()=>{
             if(yourHPValue <= 0 && enemyHPValue > 0){
-        gameInstruction.textContent = "You have been defeated!";
-        duelResultContainer.classList.remove("hidden");
-        duelResultText.textContent = "You lost the duel!";
-        fireAttackCount.textContent = fireAttackCounter;
-        waterAttackCount.textContent = waterAttackCounter;
-        grassAttackCount.textContent = grassAttackCounter;
-        physicalAttackCount.textContent = physicalAttackCounter;
-        duelResultSuperEffective.textContent = superEffectiveContainer;
-        duelResultNormallyEffective.textContent = normallyEffectiveContainer;
-        duelResultNotEffective.textContent = notEffectiveContainer;
-        totalRoundCount.textContent = roundCounter;
-        return;
-    }else if(yourHPValue > 0 && enemyHPValue <= 0){
-        gameInstruction.textContent = "You won the duel!";
-        duelResultContainer.classList.remove("hidden");
-        duelResultText.textContent = "You won the duel!";
-        fireAttackCount.textContent = fireAttackCounter;
-        waterAttackCount.textContent = waterAttackCounter;
-        grassAttackCount.textContent = grassAttackCounter;
-        physicalAttackCount.textContent = physicalAttackCounter;
-        duelResultSuperEffective.textContent = superEffectiveContainer;
-        duelResultNormallyEffective.textContent = normallyEffectiveContainer;
-        duelResultNotEffective.textContent = notEffectiveContainer;
-        totalRoundCount.textContent = roundCounter;
-        return;
-    }else if(yourHPValue <= 0 && enemyHPValue <= 0){
-        gameInstruction.textContent = "Both you and the enemy have been defeated!";
-        duelResultContainer.classList.remove("hidden");
-        duelResultText.textContent = "It's a draw!";
-        fireAttackCount.textContent = fireAttackCounter;
-        waterAttackCount.textContent = waterAttackCounter;
-        grassAttackCount.textContent = grassAttackCounter;
-        physicalAttackCount.textContent = physicalAttackCounter;
-        duelResultSuperEffective.textContent = superEffectiveContainer;
-        duelResultNormallyEffective.textContent = normallyEffectiveContainer;
-        duelResultNotEffective.textContent = notEffectiveContainer;
-        totalRoundCount.textContent = roundCounter;
-        return;
-    }
+                battleSong.pause();
+                battleSong.currentTime = 0;
+                defeatedSong.play();
+                gameInstruction.textContent = "You have been defeated!";
+                duelResultContainer.classList.remove("hidden");
+                duelResultText.textContent = "You lost the duel!";
+                fireAttackCount.textContent = fireAttackCounter;
+                waterAttackCount.textContent = waterAttackCounter;
+                grassAttackCount.textContent = grassAttackCounter;
+                physicalAttackCount.textContent = physicalAttackCounter;
+                duelResultSuperEffective.textContent = superEffectiveContainer;
+                duelResultNormallyEffective.textContent = normallyEffectiveContainer;
+                duelResultNotEffective.textContent = notEffectiveContainer;
+                totalRoundCount.textContent = roundCounter;
+                return;
+            }else if(yourHPValue > 0 && enemyHPValue <= 0){
+                battleSong.pause();
+                battleSong.currentTime = 0;
+                victorySong.play();
+                gameInstruction.textContent = "You won the duel!";
+                duelResultContainer.classList.remove("hidden");
+                duelResultText.textContent = "You won the duel!";
+                fireAttackCount.textContent = fireAttackCounter;
+                waterAttackCount.textContent = waterAttackCounter;
+                grassAttackCount.textContent = grassAttackCounter;
+                physicalAttackCount.textContent = physicalAttackCounter;
+                duelResultSuperEffective.textContent = superEffectiveContainer;
+                duelResultNormallyEffective.textContent = normallyEffectiveContainer;
+                duelResultNotEffective.textContent = notEffectiveContainer;
+                totalRoundCount.textContent = roundCounter;
+                return;
+            }else if(yourHPValue <= 0 && enemyHPValue <= 0){
+                battleSong.pause();
+                battleSong.currentTime = 0;
+                tieSong.play();
+                gameInstruction.textContent = "Both you and the enemy have been defeated!";
+                duelResultContainer.classList.remove("hidden");
+                duelResultText.textContent = "It's a draw!";
+                fireAttackCount.textContent = fireAttackCounter;
+                waterAttackCount.textContent = waterAttackCounter;
+                grassAttackCount.textContent = grassAttackCounter;
+                physicalAttackCount.textContent = physicalAttackCounter;
+                duelResultSuperEffective.textContent = superEffectiveContainer;
+                duelResultNormallyEffective.textContent = normallyEffectiveContainer;
+                duelResultNotEffective.textContent = notEffectiveContainer;
+                totalRoundCount.textContent = roundCounter;
+                return;
+            }
     },1000);
 
-    // resetGame();
+
 
 }
 
 function duelStart(e){
+
     roundCounter++;
     enemyAttackThisTurn = enemyAttackArray[Math.floor(Math.random() * enemyAttackArray.length)];
     yourHP.style.width = `${yourHPValue}%`;
@@ -601,6 +616,11 @@ function duelStart(e){
 
         playAgainButton.addEventListener("click", ()=>{
                 duelResultContainer.classList.add("hidden");
+                tieSong.pause();
+                victorySong.pause();
+                defeatedSong.pause();
+                battleSong.pause();
+                battleSong.currentTime = 0;
                 // gameInstruction.textContent = "";
                 // duelResultText.textContent = "";
                 // fireAttackCount.textContent = "";
