@@ -121,11 +121,11 @@
         <div id="duelResultContainer" class="w-[100%] h-[100%] hidden absolute inset-0 bg-gray-800/50 flex items-center justify-center z-20">
             <div id="duelResultOverlay" class="absolute inset-0 bg-white opacity-30 flex items-center justify-center"></div>
                 <div class="bg-white p-8 rounded-md shadow-md z-10 border border-black shadow-lg text-center">
-                    <h2 class="text-4xl font-bold mb-2">Duel Result</h2>
+                    <h2 class="text-4xl font-bold mb-2 font-preahvihear">Duel Result</h2>
                     <br>
                     <p id="duelResultText" class="text-2xl underline"></p>
                     <br>
-                    <table class="w-full text-xs p-5">
+                    <table class="w-full text-xs p-5 font-preahvihear">
                         <tr><th class="p-3">Effective Attack</th><th class="p-3">Qty</th><th class="p-3">Element Attack</th><th class="p-3">Qty</th></tr>
                         <tr><td class="p-3">Super Effective</td><td><span id="duelResultSuperEffective"></span></td><td class="p-3">Fire</td><td><span id="fireAttackCount"></span></td></tr>
                         <tr><td class="p-3">Normal Effective</td><td><span id="duelResultNormallyEffective"></span></td><td class="p-3">Water</td><td><span id="waterAttackCount"></span></td></tr>
@@ -138,7 +138,7 @@
                     <div>You have <span id="duelResultNotEffective"></span> Not Effective Attacks</div>
                     <div>Total Round is <span id="totalRoundCount"></span> Rounds</div>
                     <div>You Used <span id="fireAttackCount"></span> Fire Attacks, <span id="waterAttackCount"></span> Water Attacks, <span id="grassAttackCount"></span> Grass Attacks, <span id="physicalAttackCount"></span> Physical Attacks</div> -->
-                    <button id="playAgainButton" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Play Again</button>
+                    <button id="playAgainButton" class="text-black border border-black hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-white">Play Again</button>
                 </div>
 
 
@@ -153,16 +153,16 @@
                 </div>
 
                 <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center"> 
-                    <div class="relative" id="enemyPokemonContainer">
+                    <div class="relative  hover:animate-bounce" id="enemyPokemonContainer">
                         <div class="w-[50px] absolute z-2 text-start -left-10" id="elementEnemy"></div>
                         <img src="./asset/aang.png" id="enemyPokemon" alt="Aang" class="mx-auto w-[200px]">
                     </div>
                 </div>
 
                 <div class="col-start-1 col-end-2 row-start-2 row-end-3"> 
-                    <div class="relative" id="yourPokemonContainer">
+                    <div class="relative hover:animate-bounce" id="yourPokemonContainer">
                         <div class="w-[50px] absolute z-2 ml-[70%]" id="elementYou"></div>
-                        <img src="./asset/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="ml-[60%] w-[100px]">
+                        <img src="./asset/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="ml-[60%] w-[100px] ">
                     </div>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-start">
