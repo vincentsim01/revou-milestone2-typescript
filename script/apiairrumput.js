@@ -58,6 +58,7 @@ var notEffectiveContainer = 0;
 chooseCharacterButton.addEventListener('click', () => {
     characterSelectionContainer.classList.remove('hidden');
     opening.play();
+    characterDisplayContainer.classList.add('slowlyAppear');
 });
 
 const characterArray = ['charmander', 'bulbasaur','squirtle'];
@@ -119,6 +120,7 @@ const bulbasaurCharacter = document.getElementById('bulbasaurCharacter');
 
 
 startAdventureButton.addEventListener("click", () => {
+    characterSelectionContainer.classList.add('hidden');
     const duelContainer = document.getElementById("duelContainer");
     duelContainer.classList.remove("hidden");
     welcomeDescription.classList.add("hidden");
@@ -730,6 +732,7 @@ function duelStart(e){
                 startAdventureButton.classList.remove("hidden");
                 // welcomeTitle.classList.remove("hidden");
                 welcomeContainer.classList.remove("hidden");
+                characterSelectionContainer.classList.remove('hidden');
                 chooseCharacterButton.classList.add('hidden');
                 // alert('this button works')
         });

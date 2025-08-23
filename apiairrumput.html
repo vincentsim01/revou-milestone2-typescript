@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Tailwind CDN -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Font Awesome -->
@@ -57,7 +59,7 @@
     <title>RevoFun</title>
 </head>
 <body class="z-0 relative">
-    <header class="flex justify-between items-center bg-black sticky top-0 shadow-lg z-0">
+    <header class="flex justify-between items-center bg-black sticky top-0 shadow-lg z-1">
         <div class="md:hidden bg-gray-800 text-white p-4 cursor-pointer" id="burgericon">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -73,7 +75,7 @@
                 </ul>
             </nav>
         </div>
-        <nav class="hidden md:flex bg-gray-800 text-white p-4" id="navdesktop">
+        <nav class="md:flex bg-gray-800 text-white p-4" id="navdesktop">
             <ul class="flex space-x-4">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -85,7 +87,7 @@
         </nav>
         <div class="text-lg font-bold text-white">Vincent Game Company</div>
         <div class="flex justify-between items-center p-4 bg-gray-800 text-white">
-            <div class="hidden md:block">
+            <div class=" md:block">
                 <i class="fa-solid fa-search"></i>
                 <i class="fa-solid fa-user"></i>
             </div>
@@ -105,15 +107,16 @@
             <p class="text-lg text-gray-800 mb-3 font-preahvihear animate-bounce" id="welcomeDescription">Selamat datang di DUEL API-AIR-RUMPUT. Ayo kita BERDUEL!</p>
             <button id="chooseCharacterButton" class="border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Pilih Karakter</button>
             <br><br>
-            <div class="hidden w-[90%]" id="characterSelectionContainer">
-                <div class="font-preahvihear text-center">Choose Your Character</div>
-                <div class="flex justify-center items-center mt-4 flex justify-center" id="characterDisplayContainer"></div>
-                    <br><br>
-                    <button id="startAdventureButton" class="border hidden border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Mulai Duel</button>
-            </div>
+
 
         </div>
         </div>
+            <div class="hidden w-[100%] h-[100%] bg-black absolute z-20 flex flex-col items-center justify-center" id="characterSelectionContainer">
+                <div class="font-preahvihear text-center text-white">Choose Your Character</div>
+                <div class="flex justify-center items-center mt-4 flex justify-center" id="characterDisplayContainer"></div>
+                    <br><br>
+                    <button id="startAdventureButton" class=" text-white border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-white">Mulai Duel</button>
+            </div>
 
         <div id="duelResultContainer" class="w-[100%] h-[100%] hidden absolute inset-0 bg-gray-800/50 flex items-center justify-center z-20">
             <div id="duelResultOverlay" class="absolute inset-0 bg-white opacity-30 flex items-center justify-center"></div>
@@ -142,10 +145,10 @@
         </div>
         <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center" id="duelContainer">
             <div class="bg-[url('./asset/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
-                <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end">
-                    <div class="bg-white rounded-md w-[80%]">
-                        <p>Aang</p>
-                        <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="enemyHPContainer" class=" inline-block w-[85%]"><div id="enemyHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
+                <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end ">
+                    <div class="bg-white rounded-md w-[60%] border border-black rounded-lg border-8 border-double">
+                        <p class="font-preahvihear">Aang</p>
+                        <div class="border"><div class="w-[10%] inline-block font-preahvihear">HP:</div><div id="enemyHPContainer" class=" inline-block w-[85%]"><div id="enemyHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>
 
@@ -162,10 +165,10 @@
                         <img src="./asset/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="ml-[60%] w-[100px]">
                     </div>
                 </div>
-                <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-start justify-start">
-                    <div class="bg-white rounded-md w-[80%]">
-                        <p id="yourName">Bulbasaur</p>
-                         <div class="border"><div class="w-[10%] inline-block">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
+                <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-start">
+                    <div class="bg-white rounded-md w-[60%] border border-black rounded-lg border-8 border-double">
+                        <p id="yourName" class="font-preahvihear">Bulbasaur</p>
+                         <div class="border"><div class="w-[10%] inline-block font-preahvihear">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>
   
@@ -173,13 +176,13 @@
             
         </div>  
 
-        <div class="col-start-1 col-end-4 row-start-7 row-end-8 border border-black bg-white flex items-center justify-center" id="gameInstruction">Defeat your opponent!</div>
-        <div class="col-start-4 col-end-5 row-start-7 row-end-8 bg-white border"> 
+        <div class="col-start-1 col-end-4 row-start-7 row-end-8 border border-black rounded-lg border-8 border-double bg-white flex items-center justify-center font-preahvihear" id="gameInstruction">Defeat your opponent!</div>
+        <div class="col-start-4 col-end-5 row-start-7 row-end-8 bg-white border border-black rounded-lg border-8 border-double"> 
                 <div class="grid grid-cols-2 grid-rows-2 h-[100%] cursor-pointer z-10">
-                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="fireAttackButton" onclick="duelStart(event)">Fire</button>
-                    <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="waterAttackButton" onclick="duelStart(event)">Water</button>
-                    <button class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="grassAttackButton" onclick="duelStart(event)">Grass</button>
-                    <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200" id="physicalAttackButton" onclick="duelStart(event)">Physical</button>
+                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="fireAttackButton" onclick="duelStart(event)">Fire</button>
+                    <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="waterAttackButton" onclick="duelStart(event)">Water</button>
+                    <button class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="grassAttackButton" onclick="duelStart(event)">Grass</button>
+                    <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="physicalAttackButton" onclick="duelStart(event)">Physical</button>
                 </div>
         </div>
         
