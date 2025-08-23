@@ -70,8 +70,8 @@ characterArray.forEach((item) => {
     newImg.src = `./asset/${item}.png`;
     newImg.alt = item;
     newImg.id = `${item}Character`;
-    newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto`;
-    newImg.classList.add('w-24', 'h-24');
+    newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
+    newImg.classList.add('w-34', 'h-34');
     // characterDisplayContainer.appendChild(newDiv);
     characterDisplayContainer.appendChild(newImg);
 
