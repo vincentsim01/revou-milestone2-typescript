@@ -42,6 +42,7 @@ const yourName = document.getElementById('yourName');
 const enemyName = document.getElementById('enemyName');
 const gameStory = document.getElementById('gameStory');
 const chooseCharacterText = document.getElementById('chooseCharacterText');
+const generationList = document.getElementById('generationList');
 
 var roundCounter = 0;
 
@@ -56,37 +57,153 @@ var notEffectiveContainer = 0;
 
 let chosenEnemy;
 
-// window.onclick = () => {
-//     opening.play();
-// };
+const pokemonGenerationArray = 
+[
+    {
+        'RedBlue':{
+            fire:'charmander',
+            water:'squirtle',
+            grass:'bulbasaur'
+        }
+    },
+    {
+        'GoldSilver':{
+            fire:'cyndaquil',
+            water:'totodile',
+            grass:'chikorita'
+        }
+    },
+    {
+        'RubySapphire':{
+            fire:'torchic',
+            water:'mudkip',
+            grass:'treecko'
+        }
+    },
+    {
+        'DiamondPearl':{
+            fire:'chimchar',
+            water:'piplup',
+            grass:'turtwig'
+        }
+    },
+    {
+        'BlackWhite':{
+            fire:'tepig',
+            water:'oshawott',
+            grass:'snivy'
+        }
+    },
+    {
+        'XY':{
+            fire:'fennekin',
+            water:'froakie',
+            grass:'chespin'
+        }
+    },
+    {
+        'SunMoon':{
+            fire:'litten',
+            water:'popplio',
+            grass:'rowlet'
+        }
+    },
+    {
+        'SwordShield':{
+            fire:'scorbunny',
+            water:'sobble',
+            grass:'grookey'
+        }
+    }
+    // ,
+    // {
+    //     'ScarletViolet':{
+    //         fire:'fuecoco',
+    //         water:'quaxly',
+    //         grass:'sprigatito'
+    //     }
+    // }
+]
+
+
+let randomGenObj = pokemonGenerationArray[Math.floor(Math.random() * pokemonGenerationArray.length)];
+let pokemons = Object.values(Object.values(randomGenObj)[0]);
+// let gameVersion = pokemonGenerationArray.map(genObj => Object.keys(genObj)[0]);
+
+// console.log(`gameVersion: ${gameVersion}`);
+
+// let firstGenValues = Object.values(Object.values(pokemonGenerationArray[0])[0])
+
+let characterArray = [...pokemons];
+
+
+// pokemonGenerationArray.forEach((item) => {
+//     let newDiv = document.createElement('button');
+//     newDiv.textContent = Object.keys(item)[0];
+//     newDiv.classList = `text-white ml-3 mr-3`;
+//     newDiv.id = `generation-${Object.keys(item)[0]}`;
+//     console.log(`generation-${Object.keys(item)[0]}`);
+//     generationList.appendChild(newDiv);
+// });
+
+// gameVersion.forEach((item)=>{
+//     let versionSelected = document.getElementById(`generation-${item}`);
+//     versionSelected.addEventListener('click', ()=>{
+//         const findVersion = Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]);
+//         console.log(Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]));
+//         characterArray = [...findVersion];
+//         DisplayCharacter(characterArray);
+
+//     });
+// });
+
 const enemyArray = ['aang' , 'kakashi', 'brewmaster' ];
 chooseCharacterButton.addEventListener('click', () => {
     characterSelectionContainer.classList.remove('hidden');
+    DisplayCharacter(characterArray);
     opening.play();
     chooseCharacterText.classList.add('slowlyAppear');
     characterDisplayContainer.classList.add('slowlyAppear');
+    generationList.classList.add('slowlyAppear');
     gameStory.classList.remove('hidden');
     gameStory.classList.add('starWarsText');
 
 
 });
 
-const characterArray = ['charmander', 'bulbasaur','squirtle'];
-
-characterArray.forEach((item) => {
-    // let newDiv = document.createElement('div');
-    // newDiv.textContent = `${item.charAt(0).toUpperCase() + item.slice(1)}`;
-    let newImg = document.createElement('img');
-    newImg.src = `./asset/${item}.png`;
-    newImg.alt = item;
-    newImg.id = `${item}Character`;
-    newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
-    newImg.classList.add('w-34');
-    // characterDisplayContainer.appendChild(newDiv);
-    characterDisplayContainer.appendChild(newImg);
 
 
+// const characterArray = ['charmander', 'bulbasaur','squirtle'];
+
+
+function DisplayCharacter(characterArray){
+       characterDisplayContainer.innerHTML = '';
+       characterArray.forEach((item) => {
+        let newImg = document.createElement('img');
+        newImg.src = `./asset/${item}.png`;
+        newImg.alt = item;
+        newImg.id = `${item}Character`;
+        newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
+        newImg.classList.add('w-34');
+        characterDisplayContainer.appendChild(newImg);
+
+ 
 })
+
+       clickPokemon();
+}
+
+// characterArray.forEach((item) => {
+//     let newImg = document.createElement('img');
+//     newImg.src = `./asset/${item}.png`;
+//     newImg.alt = item;
+//     newImg.id = `${item}Character`;
+//     newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
+//     newImg.classList.add('w-34');
+//     characterDisplayContainer.appendChild(newImg);
+
+
+// })
 
   const items = document.querySelectorAll(".character");
 
@@ -99,27 +216,41 @@ characterArray.forEach((item) => {
     });
   });
 
-const squirtleCharacter = document.getElementById("squirtleCharacter");
-const charmanderCharacter = document.getElementById('charmanderCharacter');
-const bulbasaurCharacter = document.getElementById('bulbasaurCharacter');
 
-    squirtleCharacter.addEventListener('click', () => {
-        yourPokemon.src = "./asset/squirtle.png";
-        yourName.textContent = "Squirtle";
-        startAdventureButton.classList.remove('hidden');
+  function clickPokemon(){
+      pokemons.forEach(pokemon => {
+    const pokemonCharacter = document.getElementById(`${pokemon}Character`);
+    pokemonCharacter.addEventListener('click', () => {
+      yourPokemon.src = `./asset/${pokemon}.png`;
+      yourName.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
+      startAdventureButton.classList.remove('hidden');
     });
+  });
 
-    charmanderCharacter.addEventListener('click', () => {
-        yourPokemon.src = "./asset/charmander.png";
-        yourName.textContent = "Charmander";
-        startAdventureButton.classList.remove('hidden');
-    });
 
-    bulbasaurCharacter.addEventListener('click', () => {
-        yourPokemon.src = "./asset/bulbasaur.png";
-        yourName.textContent = "Bulbasaur";
-        startAdventureButton.classList.remove('hidden');
-    });
+  }
+
+// const squirtleCharacter = document.getElementById("squirtleCharacter");
+// const charmanderCharacter = document.getElementById('charmanderCharacter');
+// const bulbasaurCharacter = document.getElementById('bulbasaurCharacter');
+
+//     squirtleCharacter.addEventListener('click', () => {
+//         yourPokemon.src = "./asset/squirtle.png";
+//         yourName.textContent = "Squirtle";
+//         startAdventureButton.classList.remove('hidden');
+//     });
+
+//     charmanderCharacter.addEventListener('click', () => {
+//         yourPokemon.src = "./asset/charmander.png";
+//         yourName.textContent = "Charmander";
+//         startAdventureButton.classList.remove('hidden');
+//     });
+
+//     bulbasaurCharacter.addEventListener('click', () => {
+//         yourPokemon.src = "./asset/bulbasaur.png";
+//         yourName.textContent = "Bulbasaur";
+//         startAdventureButton.classList.remove('hidden');
+//     });
 
 
 
@@ -743,6 +874,7 @@ function duelStart(e){
                 startAdventureButton.classList.remove("hidden");
                 // welcomeTitle.classList.remove("hidden");
                 welcomeContainer.classList.remove("hidden");
+                DisplayCharacter(characterArray);
                 characterSelectionContainer.classList.remove('hidden');
                 chooseCharacterButton.classList.add('hidden');
                 // alert('this button works')
