@@ -39,6 +39,7 @@ const characterSelectionContainer = document.getElementById('characterSelectionC
 const chooseCharacterButton = document.getElementById('chooseCharacterButton');
 const characterDisplayContainer = document.getElementById('characterDisplayContainer');
 const yourName = document.getElementById('yourName');
+const enemyName = document.getElementById('enemyName');
 
 var roundCounter = 0;
 
@@ -51,14 +52,18 @@ var superEffectiveContainer =0;
 var normallyEffectiveContainer = 0;
 var notEffectiveContainer = 0;
 
+let chosenEnemy;
+
 // window.onclick = () => {
 //     opening.play();
 // };
-
+const enemyArray = ['aang' , 'kakashi', 'brewmaster' ];
 chooseCharacterButton.addEventListener('click', () => {
     characterSelectionContainer.classList.remove('hidden');
     opening.play();
     characterDisplayContainer.classList.add('slowlyAppear');
+
+
 });
 
 const characterArray = ['charmander', 'bulbasaur','squirtle'];
@@ -71,7 +76,7 @@ characterArray.forEach((item) => {
     newImg.alt = item;
     newImg.id = `${item}Character`;
     newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
-    newImg.classList.add('w-34', 'h-34');
+    newImg.classList.add('w-34');
     // characterDisplayContainer.appendChild(newDiv);
     characterDisplayContainer.appendChild(newImg);
 
@@ -99,17 +104,11 @@ const bulbasaurCharacter = document.getElementById('bulbasaurCharacter');
         startAdventureButton.classList.remove('hidden');
     });
 
-
-
-
     charmanderCharacter.addEventListener('click', () => {
         yourPokemon.src = "./asset/charmander.png";
         yourName.textContent = "Charmander";
         startAdventureButton.classList.remove('hidden');
     });
-
-
-
 
     bulbasaurCharacter.addEventListener('click', () => {
         yourPokemon.src = "./asset/bulbasaur.png";
@@ -120,6 +119,11 @@ const bulbasaurCharacter = document.getElementById('bulbasaurCharacter');
 
 
 startAdventureButton.addEventListener("click", () => {
+    chosenEnemy = enemyArray[Math.floor(Math.random() * enemyArray.length)];
+    enemyPokemon.src = `./asset/${chosenEnemy}.png`;
+    enemyPokemon.classList.add('w-[18%]');
+    enemyPokemon.classList.add('h-[18%]');
+    enemyName.textContent = chosenEnemy;
     characterSelectionContainer.classList.add('hidden');
     const duelContainer = document.getElementById("duelContainer");
     duelContainer.classList.remove("hidden");
