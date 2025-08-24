@@ -40,6 +40,8 @@ const chooseCharacterButton = document.getElementById('chooseCharacterButton');
 const characterDisplayContainer = document.getElementById('characterDisplayContainer');
 const yourName = document.getElementById('yourName');
 const enemyName = document.getElementById('enemyName');
+const gameStory = document.getElementById('gameStory');
+const chooseCharacterText = document.getElementById('chooseCharacterText');
 
 var roundCounter = 0;
 
@@ -61,7 +63,10 @@ const enemyArray = ['aang' , 'kakashi', 'brewmaster' ];
 chooseCharacterButton.addEventListener('click', () => {
     characterSelectionContainer.classList.remove('hidden');
     opening.play();
+    chooseCharacterText.classList.add('slowlyAppear');
     characterDisplayContainer.classList.add('slowlyAppear');
+    gameStory.classList.remove('hidden');
+    gameStory.classList.add('starWarsText');
 
 
 });
@@ -123,6 +128,8 @@ startAdventureButton.addEventListener("click", () => {
     enemyPokemon.src = `./asset/${chosenEnemy}.png`;
     enemyPokemon.classList.add('w-[18%]');
     enemyPokemon.classList.add('h-[18%]');
+    gameStory.classList.add('hidden');
+    gameStory.classList.remove('starWarsText');
     enemyName.textContent = chosenEnemy;
     characterSelectionContainer.classList.add('hidden');
     const duelContainer = document.getElementById("duelContainer");

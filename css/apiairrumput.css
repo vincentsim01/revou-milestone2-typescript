@@ -44,6 +44,10 @@
     box-shadow: 4px 6px 12px rgba(232, 100, 100, 0.3);
 }
 
+.starWarsText {
+    animation: starWarsText 20s forwards;
+}
+
 #charmanderCharacter::after{
     content: 'Charmander is a fire type Pokemon and has been learning water and grass type movement too';
     display: block;
@@ -57,7 +61,7 @@
 }
 
 .slowlyAppear {
-    animation: slowlyAppear 5s forwards;
+    animation: slowlyAppear 14s forwards;
 }
 
 @keyframes yourattackWin {
@@ -192,5 +196,16 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes starWarsText {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
     }
 }

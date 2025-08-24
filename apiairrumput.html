@@ -112,10 +112,19 @@
         </div>
         </div>
             <div class="hidden w-[100%] h-[100%] bg-black absolute z-20 flex flex-col items-center justify-center" id="characterSelectionContainer">
-                <div class="font-preahvihear text-center text-white">Choose Your Character</div>
+                <div id="gameStory" class="hidden text-white w-[60%] font-preahvihear">
+                    <p class="text-lg">Selamat datang di dunia Monster Kantong.
+                        Di dunia ini semua karakter telah menguasai elemen api air dan rumput.
+                        Dan mereka sering berduel untuk mengasah kemampuan mereka.
+                        Ayo berduel dengan para master elemen!
+                    </p>
+
+                </div>
+                <div class="font-preahvihear text-center text-white" id="chooseCharacterText">Choose Your Character</div>
+
                 <div class="flex justify-center items-center mt-4 flex justify-center" id="characterDisplayContainer"></div>
                     <br><br>
-                    <button id="startAdventureButton" class=" text-white border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-white">Mulai Duel</button>
+                    <button id="startAdventureButton" class="hidden text-white border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-white">Mulai Duel</button>
             </div>
 
         <div id="duelResultContainer" class="w-[100%] h-[100%] hidden absolute inset-0 bg-gray-800/50 flex items-center justify-center z-20">
