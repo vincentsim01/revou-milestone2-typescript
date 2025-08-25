@@ -58,7 +58,7 @@ function selectRandomPairs(data, count = 6) {
 
 let randomKataMutiara = shuffleArray(kataMutiara);
 
-let randomKataFive = selectRandomPairs(randomKataMutiara, 4);
+let randomKataFive = selectRandomPairs(randomKataMutiara, 5);
 
 let firstKataArray = [];
 let secondKataArray = [];
@@ -100,7 +100,7 @@ function runCountDown(){
     intervalId = setInterval(() => {
     if (timeCounter > 0) {
         timeCounter--;
-        countdownText.textContent = `Waktu tersisa: ${timeCounter} detik`;
+        countdownText.textContent = ` ${timeCounter} detik`;
     } else {
         clearInterval(intervalId);
         countdownText.textContent = "Waktu habis!";
@@ -124,7 +124,7 @@ function runCountDown(){
  function createBoard() {
             // firstKataMutiara.innerHTML = "";
             // secondKataMutiara.innerHTML = "";
-            runCountDown();
+            setTimeout(runCountDown, 3000);
 
             randomKataFive.forEach((item) => {
                 // firstKataArray.push(item[Object.keys(item)[0]][0]);
@@ -137,8 +137,10 @@ function runCountDown(){
                 card1.classList.add("m-3");
                 card1.textContent = '?';
                 // card1.style.backgroundColor = "rgb(51, 102, 204)";
+                // card1.style.backgroundImage = "url('../asset/bordersea.jpg')";
                 card1.dataset.Content = item[Object.keys(item)[0]][0];
                 card1.dataset.id = item[Object.keys(item)[0]];
+                card1.classList.add("firstPhraseMove");
                 card1.addEventListener("click", flipCard);
                 firstKataMutiara.appendChild(card1);
 
@@ -150,8 +152,12 @@ function runCountDown(){
                 card2.style.backgroundPosition = "left";
                 card2.dataset.Content = item[Object.keys(item)[0]][1];
                 card2.dataset.id = item[Object.keys(item)[0]];
+                card2.classList.add("secondPhraseMove");
                 card2.addEventListener("click", flipCard);
                 secondKataMutiara.appendChild(card2);
+
+
+                
             });
 
             const divs = Array.from(firstKataMutiara.children);
