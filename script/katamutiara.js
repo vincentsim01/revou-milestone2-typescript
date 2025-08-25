@@ -88,7 +88,7 @@ letPlayButton.addEventListener("click", () => {
     createBoard();
 });
 
-let timeCounter = 30;
+let timeCounter = 31;
 let intervalId=null;
 function runCountDown(){
     // clearInterval(intervalId);
