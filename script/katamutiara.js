@@ -89,8 +89,13 @@ letPlayButton.addEventListener("click", () => {
 });
 
 let timeCounter = 30;
-
-const intervalId = setInterval(() => {
+let intervalId=null;
+function runCountDown(){
+    // clearInterval(intervalId);
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+    intervalId = setInterval(() => {
     if (timeCounter > 0) {
         timeCounter--;
         countdownText.textContent = `Waktu tersisa: ${timeCounter} detik`;
@@ -102,6 +107,8 @@ const intervalId = setInterval(() => {
 
     }
 }, 1000);
+}
+
 
 // function youLose() {
 //             clearInterval(intervalId);
@@ -115,12 +122,14 @@ const intervalId = setInterval(() => {
  function createBoard() {
             // firstKataMutiara.innerHTML = "";
             // secondKataMutiara.innerHTML = "";
+            runCountDown();
 
             randomKataFive.forEach((item) => {
                 // firstKataArray.push(item[Object.keys(item)[0]][0]);
                 // shuffledfirstKataArray = shuffleArray(firstKataArray);
                 // secondKataArray.push(item[Object.keys(item)[0]][1]);
                 // shuffledsecondKataArray = shuffleArray(secondKataArray);
+
                 const card1 = document.createElement("div");
                 card1.classList.add("card");
                 card1.classList.add("m-3");
@@ -268,12 +277,15 @@ const intervalId = setInterval(() => {
             secondKataMutiara.textContent="";
             resultContainer.classList.add("hidden");
             resultText.textContent = "";
-            // timeCounter = 30;
-            countdownContainer.classList.add("hidden");
+
+            // countdownContainer.classList.add("hidden");
+
             createBoard();
         }
 
         playAgainButton.addEventListener("click", () => {
+            clearInterval(intervalId);
+            timeCounter = 31;
             playAgain();
             // timeCounter = 30;
         })
