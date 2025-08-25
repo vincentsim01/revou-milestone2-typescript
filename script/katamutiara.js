@@ -9,6 +9,8 @@ const countdownText = document.getElementById("countdownText");
 const undertheseaSong = document.getElementById("udertheseaSong");
 const cardmoveSound = document.getElementById("cardmoveSound");
 const cardokSound = document.getElementById("cardokSound");
+const cardvictorySound = document.getElementById("cardvictorySound");
+const cardlostSound = document.getElementById("cardlostSound");
 // item[Object.keys(item)[0]][0]
 // item[Object.keys(item)[0]][1]
 const kataMutiara = [
@@ -106,6 +108,7 @@ function runCountDown(){
     } else {
         clearInterval(intervalId);
         countdownText.textContent = "Waktu habis!";
+        cardlostSound.play();
         resultContainer.classList.remove("hidden");
         resultText.textContent = "You Lose!";
 
@@ -327,6 +330,8 @@ function runCountDown(){
                         {
                         resultContainer.classList.remove("hidden");
                         resultText.textContent = "🎉 You Win!";
+                        cardvictorySound.play();
+
                     },
                      500);
             }
