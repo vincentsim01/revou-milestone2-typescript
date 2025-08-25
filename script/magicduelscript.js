@@ -22,6 +22,7 @@ const magicDuelOutcomeLoseButton = document.getElementById('magicDuelOutcomeLose
 const magicDuelOutcomeExitButton = document.getElementById('magicDuelOutcomeExitButton');
 const harrisspell = document.getElementById('harrisspell');
 const koklemotspellpower = document.getElementById('koklemotspellpower');
+const hedwigTheme = document.getElementById('hedwigTheme');
 
 var duelLevelCounter = 1;
 let clickCounter = 0;
@@ -57,6 +58,7 @@ let intervalId = null;
 
 
 duelStartButton.addEventListener('click', () => { 
+    hedwigTheme.play();
     // let clickCounter = 0;
     magicDuelMechanism.classList.remove('hidden');
     duelStartButton.classList.add('hidden');
