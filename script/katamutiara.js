@@ -7,6 +7,8 @@ const kataMutiaraDescription = document.getElementById("kataMutiaraDescription")
 const countdownContainer = document.getElementById("countdownContainer");
 const countdownText = document.getElementById("countdownText");
 const undertheseaSong = document.getElementById("udertheseaSong");
+const cardmoveSound = document.getElementById("cardmoveSound");
+const cardokSound = document.getElementById("cardokSound");
 // item[Object.keys(item)[0]][0]
 // item[Object.keys(item)[0]][1]
 const kataMutiara = [
@@ -204,6 +206,7 @@ function runCountDown(){
         if (this.classList.contains("flipped")) return;    
         this.textContent = this.dataset.Content;
         this.classList.add("flipped");
+        cardmoveSound.play();
 
         if (!firstCard) {
             firstCard = this;
@@ -270,6 +273,7 @@ function runCountDown(){
             if (firstCard.dataset.id === secondCard.dataset.id) {
                 firstCard.classList.add("matched");
                 secondCard.classList.add("matched");
+                cardokSound.play();
                 resetTurn();
 
             } 
