@@ -6,6 +6,7 @@ const playAgainButton = document.getElementById("playAgainButton");
 const kataMutiaraDescription = document.getElementById("kataMutiaraDescription");
 const countdownContainer = document.getElementById("countdownContainer");
 const countdownText = document.getElementById("countdownText");
+const undertheseaSong = document.getElementById("udertheseaSong");
 // item[Object.keys(item)[0]][0]
 // item[Object.keys(item)[0]][1]
 const kataMutiara = [
@@ -69,6 +70,7 @@ let secondCard = null;
 const letPlayButton = document.getElementById("letPlayButton");
 
 letPlayButton.addEventListener("click", () => {
+    undertheseaSong.play();
     letPlayButton.classList.add("hidden");
     firstKataMutiara.classList.remove("hidden");
     secondKataMutiara.classList.remove("hidden");
