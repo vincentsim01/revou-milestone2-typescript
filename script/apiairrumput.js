@@ -392,10 +392,20 @@ function duelStart(e){
     enemyAttackThisTurn = enemyAttackArray[Math.floor(Math.random() * enemyAttackArray.length)];
     yourHP.style.width = `${yourHPValue}%`;
     enemyHP.style.width = `${enemyHPValue}%`;
-    fireAttackButton.classList.add('cursor-not-allowed');
-    waterAttackButton.classList.add('cursor-not-allowed');
-    grassAttackButton.classList.add('cursor-not-allowed');
-    physicalAttackButton.classList.add('cursor-not-allowed');
+    // fireAttackButton.classList.add('cursor-not-allowed');
+    // waterAttackButton.classList.add('cursor-not-allowed');
+    // grassAttackButton.classList.add('cursor-not-allowed');
+    // physicalAttackButton.classList.add('cursor-not-allowed');
+
+    // fireAttackButton.classList.add('hidden');
+    // waterAttackButton.classList.add('hidden');
+    // grassAttackButton.classList.add('hidden');
+    // physicalAttackButton.classList.add('hidden');
+
+    fireAttackButton.classList.remove('cursor-pointer');
+    waterAttackButton.classList.remove('cursor-pointer');
+    grassAttackButton.classList.remove('cursor-pointer');
+    physicalAttackButton.classList.remove('cursor-pointer');
 
     fireAttackButton.classList.add('text-gray-100');
     waterAttackButton.classList.add('text-gray-100');
@@ -428,10 +438,20 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
                 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -472,10 +492,20 @@ function duelStart(e){
                     elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+                    fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -512,10 +542,20 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+                                        fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -558,10 +598,21 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+                                        fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -598,10 +649,21 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+
+                                        fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -638,10 +700,20 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+                                        fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -688,10 +760,20 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                                    fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -731,10 +813,20 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+                                        fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
@@ -772,10 +864,20 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                     gameInstruction.textContent = `Let's continue the duel`;
-                    fireAttackButton.classList.remove('cursor-not-allowed');
-                    waterAttackButton.classList.remove('cursor-not-allowed');
-                    grassAttackButton.classList.remove('cursor-not-allowed');
-                    physicalAttackButton.classList.remove('cursor-not-allowed');
+                    // fireAttackButton.classList.remove('cursor-not-allowed');
+                    // waterAttackButton.classList.remove('cursor-not-allowed');
+                    // grassAttackButton.classList.remove('cursor-not-allowed');
+                    // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+                                        fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                     fireAttackButton.classList.remove('text-gray-100');
                     waterAttackButton.classList.remove('text-gray-100');
@@ -814,10 +916,20 @@ function duelStart(e){
                 elementYou.innerHTML = "";
                 elementEnemy.innerHTML = "";
                 gameInstruction.textContent = `Let's continue the duel`;
-                fireAttackButton.classList.remove('cursor-not-allowed');
-                waterAttackButton.classList.remove('cursor-not-allowed');
-                grassAttackButton.classList.remove('cursor-not-allowed');
-                physicalAttackButton.classList.remove('cursor-not-allowed');
+                // fireAttackButton.classList.remove('cursor-not-allowed');
+                // waterAttackButton.classList.remove('cursor-not-allowed');
+                // grassAttackButton.classList.remove('cursor-not-allowed');
+                // physicalAttackButton.classList.remove('cursor-not-allowed');
+
+                    fireAttackButton.classList.remove('hidden');
+                    waterAttackButton.classList.remove('hidden');
+                    grassAttackButton.classList.remove('hidden');
+                    physicalAttackButton.classList.remove('hidden');
+
+                                        fireAttackButton.classList.add('cursor-pointer');
+                    waterAttackButton.classList.add('cursor-pointer');
+                    grassAttackButton.classList.add('cursor-pointer');
+                    physicalAttackButton.classList.add('cursor-pointer');
 
                 fireAttackButton.classList.remove('text-gray-100');
                 waterAttackButton.classList.remove('text-gray-100');
