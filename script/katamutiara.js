@@ -157,7 +157,7 @@ function runCountDown(){
                 secondKataMutiara.appendChild(card2);
 
 
-                
+
             });
 
             const divs = Array.from(firstKataMutiara.children);
@@ -167,6 +167,18 @@ function runCountDown(){
             const divs2 = Array.from(secondKataMutiara.children);
             let shuffleddivs2 = shuffleArray2(divs2)
             shuffleddivs2.forEach(div => secondKataMutiara.appendChild(div));  
+
+            setTimeout(()=>{
+                const firstPhraseMoveElements = document.querySelectorAll('.firstPhraseMove');
+                firstPhraseMoveElements.forEach(element => {
+                    element.classList.remove('firstPhraseMove');
+                });
+
+                const secondPhraseMoveElements = document.querySelectorAll('.secondPhraseMove');
+                secondPhraseMoveElements.forEach(element => {
+                    element.classList.remove('secondPhraseMove');
+                });
+            }, 4000);
     }
 
     // function randomizeDiv(){

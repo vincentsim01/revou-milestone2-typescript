@@ -1,12 +1,13 @@
 
  .card {
       width: 150px;
-      height: 150px;
+      height: 175px;
       background: radial-gradient(circle,rgb(252, 245, 111) 0%, rgb(196, 131, 35) 80%, rgb(151, 49, 5) 100%);
         /* background-image: url('../asset/bordersea.jpg'); */
         background-size:cover;
       color: black;
-      font-size: 0.8 em;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      font-size: 0.5 em;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -16,6 +17,7 @@
       color:black;
       font-family:'preahvihear', sans-serif;
       position: relative;
+      transition: transform 0.3s;
       /* box-sizing: border-box;
       margin:0.2em;
       padding:0.2em;
@@ -25,12 +27,13 @@
 
      .card2 {
       width: 150px;
-      height: 150px;
+      height: 175px;
       background: radial-gradient(circle,rgba(222, 253, 255, 1) 0%, rgba(44, 215, 245, 1) 61%, rgb(3, 73, 215) 100%);
         /* background-image: url('../asset/greenbeach.jpg'); */
         background-size:cover;
       color: black;
-      font-size: 0.8 em;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      font-size: 0.5 em;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,6 +43,7 @@
       color:black;
       font-family:'preahvihear', sans-serif;
       position: relative;
+      transition: transform 0.3s;
 
     }
 
@@ -52,19 +56,19 @@
   }
 
 .card:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .card2:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 .flipped {
-        background:linear-gradient(to bottom, #555960 0%, #fefeff 100%);
+        background: radial-gradient(circle,rgb(191, 191, 191) 0%, rgb(130, 133, 130) 61%, rgb(68, 69, 68) 100%);
       pointer-events: none;
     }
 
 .matched {
-    background: linear-gradient(to bottom, #009933 0%, #99ff33 100%);
+    background: radial-gradient(circle,rgb(132, 202, 92) 0%, rgb(51, 228, 51) 61%, rgb(2, 144, 31) 100%);
 
       cursor: default;
     }
