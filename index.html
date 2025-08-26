@@ -21,9 +21,16 @@
 
     <!-- Harry Potter Font -->
     <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
         .font-harrypotter{
             font-family: 'Harry Potter', sans-serif;
+        }
+
+        .font-lexend{
+            font-family: 'lexend', sans-serif;
         }
     </style>
 
@@ -45,13 +52,13 @@
     <title>RevoFun</title>
 </head>
 <body class="z-0 relative">
-    <header class="flex justify-between items-center bg-black sticky top-0 shadow-lg z-0">
+    <header class="flex justify-between items-center bg-yellow-400 sticky top-0 shadow-lg z-1">
         <div class="md:hidden bg-gray-800 text-white p-4 cursor-pointer" id="burgericon">
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="hidden absolute bg-white/60 top-0 w-[100%] h-[100vh]" id="navmobilecontainer">
             <nav class="left-0 z-3 w-[60%] h-[80vh] bg-black shadow-lg text-white p-4" id="navmobile">
-                <ul class="">
+                <ul class="font-lexend">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="magicduel.html">Magic Duel</a></li>
@@ -61,25 +68,26 @@
                 </ul>
             </nav>
         </div>
-        <nav class="hidden md:flex bg-gray-800 text-white p-4" id="navdesktop">
-            <ul class="flex space-x-4">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="magicduel.html">Magic Duel</a></li>
-                <li><a href="katamutiara.html">Kata Mutiara</a></li>
-                <li><a href="apiairrumput.html">Api-Air-Rumput</a></li>
-                <li><a href="#">Contact</a></li>
+        <nav class="hidden md:flex bg-yellow-400 text-white p-4" id="navdesktop">
+            <ul class="flex space-x-4 font-lexend">
+                <li class="hover:underline active:scale-90 hover:scale-110"><a href="index.html">Home</a></li>
+                <li class="hover:underline active:scale-90 hover:scale-110"><a href="about.html">About</a></li>
+                <li class="hover:underline active:scale-90 hover:scale-110"><a href="magicduel.html">Magic Duel</a></li>
+                <li class="hover:underline active:scale-90 hover:scale-110"><a href="katamutiara.html">Kata Mutiara</a></li>
+                <li class="hover:underline active:scale-90 hover:scale-110"><a href="apiairrumput.html">Api-Air-Rumput</a></li>
+                <li class="hover:underline active:scale-90 hover:scale-110"><a href="#">Contact</a></li>
             </ul>
         </nav>
-        <div class="text-lg font-bold text-white">RevoFun</div>
-        <div class="flex justify-between items-center p-4 bg-gray-800 text-white">
+        <div class="text-lg font-bold text-white font-lexend"><a href="index.html"><img src="./asset/revofun logo.png" alt="RevoFun Logo" class="w-[100px] hover:rotate-3 active:scale-90"></a></div>
+        <div class="flex justify-between items-center p-4 bg-yellow-400 text-white">
             <div class="hidden md:block">
                 <i class="fa-solid fa-search"></i>
                 <i class="fa-solid fa-user"></i>
             </div>
     </header>
-    <section>
-        <h1>Welcome to RevoFun</h1>
+    <section id="welcomeBanner" class="grid grid-cols-3 grid-rows-5 relative z-0 h-[100vh] bg-[url('.asset/revofunwelcomebackground.png')]">
+        <div id="welcomeBannerOverlay" class="inset-0 absolute bg-black/20 z-2"></div>
+        <div class="col-start-1 col-end-4 row-start-1 row-end-3 items-center flex justify-center items-center bg-[url('.asset/revofunwelcomebackground.png')]"><h1 class=" font-lexend">Welcome to RevoFun</h1></div>
         <p>Your one-stop destination for the latest and greatest in gaming.</p>
     </section>
 
