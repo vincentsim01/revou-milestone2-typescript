@@ -87,9 +87,39 @@
     </header>
     <section id="welcomeBanner" class="grid grid-cols-3 grid-rows-5 relative z-0 h-[100vh] bg-[url('./asset/revofunwelcomebackground.png')] bg-cover bg-center bg-no-repeat">
         <div id="welcomeBannerOverlay" class="inset-0 absolute bg-white/40 z-2"></div>
-        <div class="col-start-1 col-end-4 row-start-1 row-end-4 items-center flex justify-center items-center z-3"><h1 class=" font-lexend text-6xl text-shadow">Welcome to RevoFun</h1></div>
-        <div class="mx-auto col-start-1 col-end-4 row-start-4 row-end-5">Your one-stop destination for the latest and greatest in gaming.</div>
+        <div class="col-start-1 col-end-4 row-start-1 row-end-4 flex flex-col justify-center z-3">
+            <h1 class=" font-lexend text-6xl text-shadow text-center">
+                <b>Welcome to </b><img src="./asset/revofun logo.png" alt="RevoFun Logo" class="inline-block w-[250px]"></img>
+            </h1>
+             
+             <div class="mx-auto col-start-1 col-end-4 row-start-4 row-end-5 font-lexend text-lg">Your one-stop destination for the latest and greatest in gaming.</div>      
+        </div>
+
     </section>
+    <article>
+        <section class="my-10 mx-5 p-5 rounded-lg bg-white shadow-lg">
+            <h2 class="text-4xl font-lexend text-center mb-5">Featured Games</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="./asset/magicduel.png" alt="Magic Duel" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-2">Magic Duel</h3>
+                    <p class="text-gray-700 mb-4">Engage in epic battles with spells and strategy in Magic Duel.</p>
+                    <a href="magicduel.html" class="text-blue-500 hover:underline">Play Now</a>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="./asset/katamutiara.png" alt="Kata Mutiara" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-2">Kata Mutiara</h3>
+                    <p class="text-gray-700 mb-4">Discover inspiring quotes and wisdom in Kata Mutiara.</p>
+                    <a href="katamutiara.html" class="text-blue-500 hover:underline">Explore Now</a>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="./asset/apiairrumput.png" alt="Api-Air-Rumput" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-2">Api-Air-Rumput</h3>
+                    <p class="text-gray-700 mb-4">Master the elements in the thrilling game of Api-Air-Rumput.</p>
+                    <a href="apiairrumput.html" class="text-blue-500 hover:underline">Join the Adventure</a>
+                </div>
+            </div>
+    </article>
 
 
 
