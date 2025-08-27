@@ -179,17 +179,21 @@ chooseCharacterButton.addEventListener('click', () => {
 function DisplayCharacter(characterArray){
        characterDisplayContainer.innerHTML = '';
        characterArray.forEach((item) => {
+        let newDiv = document.createElement('div');
         let newImg = document.createElement('img');
         newImg.src = `./asset/${item}.png`;
         newImg.alt = item;
         newImg.id = `${item}Character`;
         newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
         newImg.classList.add('w-34');
-        let newName = document.createElement('p');
+        let newbr = document.createElement('br');
+        let newName = document.createElement('div');
         newName.textContent = item.charAt(0).toUpperCase() + item.slice(1);
         newName.classList = 'text-center text-white font-lexend mt-2 mb-4';
-        characterDisplayContainer.appendChild(newImg);
-        characterDisplayContainer.appendChild(newName);
+        newDiv.appendChild(newImg);
+        newDiv.appendChild(newbr);
+        newDiv.appendChild(newName);
+        characterDisplayContainer.appendChild(newDiv);
 })
 
        clickPokemon();
