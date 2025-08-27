@@ -185,9 +185,11 @@ function DisplayCharacter(characterArray){
         newImg.id = `${item}Character`;
         newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
         newImg.classList.add('w-34');
+        let newName = document.createElement('p');
+        newName.textContent = item.charAt(0).toUpperCase() + item.slice(1);
+        newName.classList = 'text-center text-white font-lexend mt-2 mb-4';
         characterDisplayContainer.appendChild(newImg);
-
- 
+        characterDisplayContainer.appendChild(newName);
 })
 
        clickPokemon();

@@ -206,3 +206,46 @@
         opacity: 0;
     }
 }
+
+@media (max-width: 400px) {
+    #burgericon{
+        display: block;
+    }
+    #navdesktop{
+        display:none;
+    }
+
+    #rightHeaderContainer{
+        display:flex;
+    }
+
+    #userIcon{
+        display:none;
+    }
+}
+
+@media (max-width: 768px) {
+    #burgericon{
+        display: inline-block;
+    }
+    #navdesktop{
+        display:none;
+    }
+    #rightHeaderContainer{
+        display:flex;
+    }
+
+}
+
+@media (min-width: 768px) {
+    #burgericon{
+        display: none;
+    }
+    #navdesktop{
+        display:flex;
+    }
+    #rightHeaderContainer{
+        display:flex;
+    }
+}
+
