@@ -48,6 +48,10 @@
     animation: starWarsText 20s forwards;
 }
 
+.hidden{
+    display:none;
+}
+
 /* #charmanderCharacter:hover{
     box-shadow: 4px 6px 12px rgba(247, 243, 243, 0.993);
     cursor: pointer;
