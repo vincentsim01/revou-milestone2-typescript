@@ -43,6 +43,7 @@ const enemyName = document.getElementById('enemyName');
 const gameStory = document.getElementById('gameStory');
 const chooseCharacterText = document.getElementById('chooseCharacterText');
 const generationList = document.getElementById('generationList');
+const charactersClass = document.getElementsByClassName('character');
 
 var roundCounter = 0;
 
@@ -171,7 +172,7 @@ chooseCharacterButton.addEventListener('click', () => {
 
 });
 
-
+  const itemsCharacter = document.querySelectorAll(".character");
 
 // const characterArray = ['charmander', 'bulbasaur','squirtle'];
 
@@ -184,7 +185,7 @@ function DisplayCharacter(characterArray){
         newImg.src = `./asset/${item}.png`;
         newImg.alt = item;
         newImg.id = `${item}Character`;
-        newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
+        newImg.classList = `character cursor-pointer active:scale-90 active:border active:border-red-300 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
         newImg.classList.add('w-34');
         let newbr = document.createElement('br');
         let newName = document.createElement('div');
@@ -197,6 +198,8 @@ function DisplayCharacter(characterArray){
 })
 
        clickPokemon();
+
+       
 }
 
 // characterArray.forEach((item) => {
@@ -211,23 +214,28 @@ function DisplayCharacter(characterArray){
 
 // })
 
-  const items = document.querySelectorAll(".character");
 
-  items.forEach(item => {
+
+  itemsCharacter.forEach(item => {
     item.addEventListener("click", () => {
       // Remove selection from all
-      items.forEach(i => i.classList.remove("selected"));
+      itemsCharacter.forEach(i => i.classList.remove('selected'));
       // Add selection to clicked
       item.classList.add("selected");
     });
   });
 
 
+
   function clickPokemon(){
       pokemons.forEach(pokemon => {
     const pokemonCharacter = document.getElementById(`${pokemon}Character`);
+    // itemsCharacter.forEach(item, ()=>{
+    //     item.classList.remove('selected');
+    // })
     pokemonCharacter.addEventListener('click', () => {
       yourPokemon.src = `./asset/${pokemon}.png`;
+    //   pokemonCharacter.classList.add('selected');
       yourName.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
       startAdventureButton.classList.remove('hidden');
     });

@@ -39,9 +39,10 @@
 }
 
 .selected{
-    outline: 2px solid red;
-    transform: scale(1.1);
-    box-shadow: 4px 6px 12px rgba(232, 100, 100, 0.3);
+    /* outline: 2px solid red; */
+    transform: rotateX(20deg);
+    border: 3px solid green;              /* border */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* shadow */
 }
 
 .starWarsText {
