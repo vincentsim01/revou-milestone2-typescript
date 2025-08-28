@@ -918,9 +918,9 @@ function duelStart(e){
                     enemyHP.style.width = `${enemyHPValue}%`;
                     normallyEffectiveContainer++;
 
-                    yourPokemon.classList.add('yourelementTie');
+                    yourPokemon.classList.add('yourelementPhysical');
 
-                    enemyPokemon.classList.add('enemyelementTie');
+                    enemyPokemon.classList.add('enemyelementPhysical');
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
@@ -935,12 +935,16 @@ function duelStart(e){
                 // grassAttackButton.classList.remove('cursor-not-allowed');
                 // physicalAttackButton.classList.remove('cursor-not-allowed');
 
+                    yourPokemon.classList.remove('yourelementPhysical');
+
+                    enemyPokemon.classList.remove('enemyelementPhysical');
+
                     fireAttackButton.classList.remove('hidden');
                     waterAttackButton.classList.remove('hidden');
                     grassAttackButton.classList.remove('hidden');
                     physicalAttackButton.classList.remove('hidden');
 
-                                        fireAttackButton.classList.add('cursor-pointer');
+                    fireAttackButton.classList.add('cursor-pointer');
                     waterAttackButton.classList.add('cursor-pointer');
                     grassAttackButton.classList.add('cursor-pointer');
                     physicalAttackButton.classList.add('cursor-pointer');
@@ -950,8 +954,8 @@ function duelStart(e){
                 grassAttackButton.classList.remove('text-gray-100');
                 physicalAttackButton.classList.remove('text-gray-100');
 
-                yourPokemon.classList.remove('yourelementTie');
-                enemyPokemon.classList.remove('enemyelementTie');
+                // yourPokemon.classList.remove('yourelementTie');
+                // enemyPokemon.classList.remove('enemyelementTie');
                 return;
             }, 2500);
 

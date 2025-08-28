@@ -10,6 +10,11 @@
    animation: yourattackTie 1.5s;
 }
 
+.yourelementPhysical{
+   animation: yourattackPhysical 1.5s;
+}
+
+
 .enemyelementWin{
    animation: enemyattackWin 1.5s;
 }
@@ -20,6 +25,10 @@
 
 .enemyelementTie{
    animation: enemyattackTie 1.5s;
+}
+
+.enemyelementPhysical{
+   animation: enemyattackPhysical 1.5s;
 }
 
 .hidden {
@@ -35,6 +44,10 @@
 }
 
 .enemyMoveLeft{
+    animation: enemyMoveLeft 1s;
+}
+
+.enemyMovePhysical{
     animation: enemyMoveLeft 1s;
 }
 
@@ -100,6 +113,18 @@
      }
  }
 
+ @keyframes yourattackPhysical {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     70%{
+        transform: translateX(225px) translateY(-75px);
+     }
+     100% {
+         transform: translateX(265px) translateY(-60px) scale(1.1);
+     }
+ }
+
  @keyframes enemyattackWin {
      0% {
          transform: translateX(0px) translateY(0px);
@@ -137,6 +162,18 @@
      }
      100% {
          transform: translateX(-290px) translateY(130px) scale(1.1); opacity:0.2;
+     }
+ }
+
+  @keyframes enemyattackPhysical {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     70%{ 
+         transform: translateX(-270px) translateY(140px) scale(1.1)
+     }
+     100% {
+         transform: translateX(-300px) translateY(100px) scale(1.1);
      }
  }
     
