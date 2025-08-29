@@ -144,7 +144,6 @@ pokemonGenerationArray.forEach((item) => {
     newImg.classList='w-[80px] '
     newDiv.appendChild(newImg);
     generationList.appendChild(newDiv);
-    // generationList.appendChild(newImg); 
 });
 
 gameVersion.forEach((item)=>{
@@ -199,30 +198,6 @@ function DisplayCharacter(characterArray){
        
 }
 
-// characterArray.forEach((item) => {
-//     let newImg = document.createElement('img');
-//     newImg.src = `./asset/${item}.png`;
-//     newImg.alt = item;
-//     newImg.id = `${item}Character`;
-//     newImg.classList = `character cursor-pointer active:scale-90 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
-//     newImg.classList.add('w-34');
-//     characterDisplayContainer.appendChild(newImg);
-
-
-// })
-
-// let itemsCharacter = document.querySelectorAll(".character");
-
-//   itemsCharacter.forEach(item => {
-//     item.addEventListener("click", () => {
-//       // Remove selection from all
-//       itemsCharacter.forEach(i => i.classList.remove('selected'));
-//       // Add selection to clicked
-//       item.classList.add("selected");
-//     });
-//   });
-
-
 
   function clickPokemon(){
         pokemons.forEach(pokemon => {
@@ -245,29 +220,6 @@ function DisplayCharacter(characterArray){
             }); 
         });
   }
-
-// const squirtleCharacter = document.getElementById("squirtleCharacter");
-// const charmanderCharacter = document.getElementById('charmanderCharacter');
-// const bulbasaurCharacter = document.getElementById('bulbasaurCharacter');
-
-//     squirtleCharacter.addEventListener('click', () => {
-//         yourPokemon.src = "./asset/squirtle.png";
-//         yourName.textContent = "Squirtle";
-//         startAdventureButton.classList.remove('hidden');
-//     });
-
-//     charmanderCharacter.addEventListener('click', () => {
-//         yourPokemon.src = "./asset/charmander.png";
-//         yourName.textContent = "Charmander";
-//         startAdventureButton.classList.remove('hidden');
-//     });
-
-//     bulbasaurCharacter.addEventListener('click', () => {
-//         yourPokemon.src = "./asset/bulbasaur.png";
-//         yourName.textContent = "Bulbasaur";
-//         startAdventureButton.classList.remove('hidden');
-//     });
-
 
 
 startAdventureButton.addEventListener("click", () => {
@@ -308,42 +260,6 @@ let enemyAttackThisTurn;
 var yourHPValue = 100;
 
 var enemyHPValue = 100;
-
-
-
-// function resetGame(){
-//     duelResultContainer.classList.add("hidden");
-//     gameInstruction.textContent = "";
-//     duelResultText.textContent = "";
-//     fireAttackCount.textContent = "";
-//     waterAttackCount.textContent = "";
-//     grassAttackCount.textContent = "";
-//     physicalAttackCount.textContent = "";
-//     duelResultSuperEffective.textContent = "";
-//     duelResultNormallyEffective.textContent = "";
-//     duelResultNotEffective.textContent = "";
-//     totalRoundCount.textContent = "";
-//     yourHPValue = 100;
-//     enemyHPValue = 100;
-//     gameInstruction.textContent = `Let's continue the duel`;
-//     roundCounter = 0;
-//     fireAttackCounter = 0;
-//     waterAttackCounter = 0;
-//     grassAttackCounter = 0;
-//     physicalAttackCounter = 0;
-//     superEffectiveContainer =0;
-//     normallyEffectiveContainer = 0;
-//     notEffectiveContainer = 0;
-//     yourHP.style.width = `${yourHPValue}%`;
-//     enemyHP.style.width = `${enemyHPValue}%`;
-// };
-
-// playAgainButton.addEventListener("click", resetGame);
-
-// fireAttackButton.addEventListener("click", () => alert("Fire attack clicked"));
-// waterAttackButton.addEventListener("click", () => console.log("Water attack clicked"));
-// grassAttackButton.addEventListener("click", () => console.log("Grass attack clicked"));
-// physicalAttackButton.addEventListener("click", () => console.log("Physical attack clicked"));
 
 function resultCheck(){
     setTimeout(()=>{
