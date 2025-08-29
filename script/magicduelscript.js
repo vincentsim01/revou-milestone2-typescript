@@ -23,7 +23,9 @@ const magicDuelOutcomeLoseButton = document.getElementById('magicDuelOutcomeLose
 const magicDuelOutcomeExitButton = document.getElementById('magicDuelOutcomeExitButton');
 const harrisspell = document.getElementById('harrisspell');
 const koklemotspellpower = document.getElementById('koklemotspellpower');
+
 const hedwigTheme = document.getElementById('hedwigTheme');
+const avadakedavrasound = document.getElementById('avadakedavrasound');
 
 var duelLevelCounter = 1;
 let clickCounter = 0;
@@ -83,109 +85,6 @@ duelStartButton.addEventListener('click', () => {
 
     let magicDuelLevelInt = Number(magicDuelLevel.textContent);
 
-    // abraKadabraButton.addEventListener('click', () => {
-    //     magicToken += 5;
-    //     opponentMagicToken -= 5;
-    //     magicMeterLeft.style.width = magicToken + '%';
-    //     magicMeterRight.style.width = opponentMagicToken + '%';
-    //     clickCounter++;
-
-    //     console.log(`magictoken simsalabim ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
-
-    //     if(magicToken>=100){
-    //             // clearInterval(intervalId);
-    //             magicDuelOutcomeContainer.classList.remove('hidden');
-    //             magicDuelOutcome.classList.remove('hidden');
-    //             magicDuelResult.textContent = 'You win!';
-    //             magicDuelMessage.textContent = 'Congratulations!';
-    //             magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
-    //             magicDuelOutcomeWinButton.classList.remove('hidden');
-    //             magicToken=1000000000;
-    //         }   
-    // }); 
-
-
-    // magicDuelOutcomeLoseButton.addEventListener('click', () => {
-    //     magicDuelOutcomeContainer.classList.add('hidden');
-    //     magicDuelOutcome.classList.add('hidden');
-    //     magicDuelResult.textContent = '';
-    //     magicDuelMessage.textContent = '';
-    //     magicDuelClickCount.textContent = '';
-    //     magicDuelOutcomeWinButton.classList.add('hidden');
-    //     magicDuelOutcomeLoseButton.classList.add('hidden');
-    //     magicToken = 10;
-    //     opponentMagicToken = 100 - magicToken;
-    //     magicMeterLeft.style.width = magicToken + '%';
-    //     magicMeterRight.style.width = opponentMagicToken + '%';
-    // });
-
-    // magicDuelOutcomeWinButton.addEventListener('click', () => {
-    //     magicDuelOutcomeContainer.classList.add('hidden');
-    //     magicDuelOutcome.classList.add('hidden');
-    //     magicDuelResult.textContent = '';
-    //     magicDuelMessage.textContent = '';
-    //     magicDuelClickCount.textContent = '';
-    //     magicDuelOutcomeWinButton.classList.add('hidden');
-    //     magicDuelOutcomeLoseButton.classList.add('hidden');
-    //     console.log(`magictoken win button ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
-    //     magicToken = 10;
-    //     opponentMagicToken = 100 - magicToken;
-    //     magicMeterLeft.style.width = magicToken + '%';
-    //     magicMeterRight.style.width = opponentMagicToken + '%';
-    //       const levelNow = parseInt(magicDuelLevel.textContent, 10) || 0;
-    //     duelLevelCounter = duelLevelCounter + 1;
-    //     console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
-    //     magicDuelLevel.textContent = duelLevelCounter;
-    //     spellSpeed.textContent = duelLevelCounter;
-    //     magicDuelLevelInt = Number(magicDuelLevel.textContent);
-    // });
-
-    //  intervalId = setInterval(() => {
-    //     magicToken--;
-    //     opponentMagicToken++;
-    //     magicMeterLeft.style.width = magicToken + '%';
-    //     magicMeterRight.style.width = opponentMagicToken + '%';
-    //     if(magicToken<=0){
-    //             // clearInterval(intervalId);
-    //             magicDuelOutcomeContainer.classList.remove('hidden');
-    //             magicDuelOutcome.classList.remove('hidden');
-    //             magicDuelResult.textContent = 'You lose!';
-    //             magicDuelMessage.textContent = 'Better luck next time!';
-    //             magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
-    //             magicDuelOutcomeLoseButton.classList.remove('hidden');
-
-    //     }
-    //     }, 500/duelLevelCounter);
-
-    //         magicDuelOutcomeExitButton.addEventListener('click', () => {
-    //     magicDuelOutcomeContainer.classList.add('hidden');
-    //     magicDuelOutcome.classList.add('hidden');
-    //     magicDuelResult.textContent = '';
-    //     magicDuelMessage.textContent = '';
-    //     magicDuelClickCount.textContent = '';
-    //     harrisspell.classList.add('hidden');
-    //     koklemotspellpower.classList.add('hidden');
-    //     magicDuelOutcomeWinButton.classList.add('hidden');
-    //     magicDuelOutcomeLoseButton.classList.add('hidden');
-    //     magicToken = 10;
-    //     opponentMagicToken = 100 - magicToken;
-    //     console.log(`magictoken exit buttonn ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
-    //     magicMeterLeft.style.width = '';
-    //     magicMeterRight.style.width = '';
-    //     magicDuelMechanism.classList.add('hidden');
-    //     duelStartButton.classList.remove('hidden');
-    //     duelLevelCounter = "";  // reset level dengan jelas
-    //     magicDuelLevel.textContent = duelLevelCounter;
-    //     console.log(`duelLevelCounter exit button: ${duelLevelCounter}`);
-    //     spellSpeed.textContent = duelLevelCounter;
-    //     clearInterval(intervalId);
-
-    // });
-
-
-
-
-
 });
 
 
@@ -196,13 +95,10 @@ abraKadabraButton.addEventListener('click', () => {
         magicMeterRight.style.width = opponentMagicToken + '%';
         clickCounter++;
 
-        // console.log(`magictoken simsalabim ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
-
-        
-
         if(magicToken>=100){
                 // clearInterval(intervalId);
                 avadakedavra.classList.remove('hidden');
+                avadakedavrasound.play();
                 setTimeout(() => {
                     avadakedavra.classList.add('hidden');
                 }, 2000);
@@ -272,8 +168,6 @@ abraKadabraButton.addEventListener('click', () => {
         koklemotspellpower.classList.add('hidden');
         magicDuelOutcomeWinButton.classList.add('hidden');
         magicDuelOutcomeLoseButton.classList.add('hidden');
-        // magicToken = 10;
-        // opponentMagicToken = 100 - magicToken;
         console.log(`magictoken exit buttonn ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
@@ -288,24 +182,3 @@ abraKadabraButton.addEventListener('click', () => {
 
     });
 
-
-
-
-
-
-
-        // let intervalId = setInterval(() => {
-        //     magicToken--;
-        //     opponentMagicToken++;
-        //     magicMeterLeft.style.width = magicToken + '%';
-        //     magicMeterRight.style.width = opponentMagicToken + '%';
-        //     if(magicToken<=0){
-
-        //             magicDuelOutcomeContainer.classList.remove('hidden');
-        //             magicDuelOutcome.classList.remove('hidden');
-        //             magicDuelResult.textContent = 'You lose!';
-        //             magicDuelMessage.textContent = 'Better luck next time!';
-        //             magicDuelOutcomeLoseButton.classList.remove('hidden');
-        //     }
-        //     }, 
-        //     2000/magicDuelLevel.textContent);
