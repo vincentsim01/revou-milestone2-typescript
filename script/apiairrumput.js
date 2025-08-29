@@ -137,10 +137,14 @@ let characterArray = [...pokemons];
 pokemonGenerationArray.forEach((item) => {
     let newDiv = document.createElement('button');
     newDiv.textContent = Object.keys(item)[0];
-    newDiv.classList = `text-white ml-3 mr-3`;
+    newDiv.classList = `text-white ml-3 mr-3 cursor-pointer hover:scale-110 active:scale-90 `;
     newDiv.id = `generation-${Object.keys(item)[0]}`;
-    console.log(`generation-${Object.keys(item)[0]}`);
+    let newImg = document.createElement('img');
+    newImg.src=`./asset/${Object.keys(item)[0]}.png`;
+    newImg.classList='w-[80px] '
+    newDiv.appendChild(newImg);
     generationList.appendChild(newDiv);
+    // generationList.appendChild(newImg); 
 });
 
 gameVersion.forEach((item)=>{
