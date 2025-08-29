@@ -102,6 +102,8 @@
                 <i class="fa-solid fa-user" id="userIcon"></i>
             </div>
     </header>
+
+
     <section id="apiAirRumputContainer" class="flex items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('./asset/fwg2.png');">
         <audio id="superEffectiveSound" src="./asset/hit-super-effective.mp3"></audio>
         <audio id="NotEffectiveSound" src="./asset/not-very-effective.mp3"></audio>
@@ -117,10 +119,8 @@
             <p class="text-lg text-gray-800 mb-3 font-preahvihear animate-bounce" id="welcomeDescription">Selamat datang di DUEL API-AIR-RUMPUT. Ayo kita BERDUEL!</p>
             <button id="chooseCharacterButton" class="border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Pilih Karakter</button>
             <br><br>
-
-
         </div>
-        </div>
+        
             <div class="hidden w-[100%] h-[100%] bg-black absolute z-20 flex flex-col items-center justify-center" id="characterSelectionContainer">
                 <div id="gameStory" class="hidden text-white w-[60%] font-preahvihear">
                     <p class="text-lg text-justify">Selamat datang di dunia Monster Kantong.
@@ -128,7 +128,6 @@
                         Dan mereka sering berduel untuk mengasah kemampuan mereka.
                         Ayo berduel dan menjadi yang terkuat!
                     </p>
-
                 </div>
                 <div class="font-preahvihear text-center text-white" id="chooseCharacterText">Choose Your Character</div>
 
@@ -161,8 +160,6 @@
                     <div>You Used <span id="fireAttackCount"></span> Fire Attacks, <span id="waterAttackCount"></span> Water Attacks, <span id="grassAttackCount"></span> Grass Attacks, <span id="physicalAttackCount"></span> Physical Attacks</div> -->
                     <button id="playAgainButton" class="text-black border border-black hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-white">Play Again</button>
                 </div>
-
-
         </div>
         <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center" id="duelContainer">
             <div class="bg-[url('./asset/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
@@ -207,8 +204,10 @@
                 </div>
         </div>
         
+        </section>
     </section>
-        <!-- <footer class="bg-yellow-400 text-white p-6 mt-10">
+    <br>
+    <footer class="bg-yellow-400 text-white p-6 mt-10 w-full relative">
         <div class="container mx-auto text-center">
             <p>&copy; 2025 RevoFun. All rights reserved.</p>
             <div class="mt-4">
@@ -216,7 +215,7 @@
                 <a href="#" class="mx-2 hover:underline">Terms of Service</a>
             </div>
         </div>
-    </footer> -->
+    </footer>
 
     <script src="./script/apiairrumput.js"></script>
     <script src="./script/script.js"></script>
