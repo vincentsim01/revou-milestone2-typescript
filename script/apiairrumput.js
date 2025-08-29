@@ -129,7 +129,7 @@ const pokemonGenerationArray =
 
 let randomGenObj = pokemonGenerationArray[Math.floor(Math.random() * pokemonGenerationArray.length)];
 let pokemons = Object.values(Object.values(randomGenObj)[0]);
-// let gameVersion = pokemonGenerationArray.map(genObj => Object.keys(genObj)[0]);
+let gameVersion = pokemonGenerationArray.map(genObj => Object.keys(genObj)[0]);
 
 // console.log(`gameVersion: ${gameVersion}`);
 
@@ -138,25 +138,25 @@ let pokemons = Object.values(Object.values(randomGenObj)[0]);
 let characterArray = [...pokemons];
 
 
-// pokemonGenerationArray.forEach((item) => {
-//     let newDiv = document.createElement('button');
-//     newDiv.textContent = Object.keys(item)[0];
-//     newDiv.classList = `text-white ml-3 mr-3`;
-//     newDiv.id = `generation-${Object.keys(item)[0]}`;
-//     console.log(`generation-${Object.keys(item)[0]}`);
-//     generationList.appendChild(newDiv);
-// });
+pokemonGenerationArray.forEach((item) => {
+    let newDiv = document.createElement('button');
+    newDiv.textContent = Object.keys(item)[0];
+    newDiv.classList = `text-white ml-3 mr-3`;
+    newDiv.id = `generation-${Object.keys(item)[0]}`;
+    console.log(`generation-${Object.keys(item)[0]}`);
+    generationList.appendChild(newDiv);
+});
 
-// gameVersion.forEach((item)=>{
-//     let versionSelected = document.getElementById(`generation-${item}`);
-//     versionSelected.addEventListener('click', ()=>{
-//         const findVersion = Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]);
-//         console.log(Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]));
-//         characterArray = [...findVersion];
-//         DisplayCharacter(characterArray);
+gameVersion.forEach((item)=>{
+    let versionSelected = document.getElementById(`generation-${item}`);
+    versionSelected.addEventListener('click', ()=>{
+        const findVersion = Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]);
+        console.log(Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]));
+        characterArray = [...findVersion];
+        DisplayCharacter(characterArray);
 
-//     });
-// });
+    });
+});
 
 const enemyArray = ['aang' , 'kakashi', 'brewmaster' ];
 chooseCharacterButton.addEventListener('click', () => {
@@ -171,10 +171,6 @@ chooseCharacterButton.addEventListener('click', () => {
 
 
 });
-
-
-
-// const characterArray = ['charmander', 'bulbasaur','squirtle'];
 
 
 function DisplayCharacter(characterArray){
@@ -195,6 +191,7 @@ function DisplayCharacter(characterArray){
         newDiv.appendChild(newbr);
         newDiv.appendChild(newName);
         characterDisplayContainer.appendChild(newDiv);
+        pokemons=[...characterArray];
 })
 
        clickPokemon();
@@ -231,14 +228,14 @@ function DisplayCharacter(characterArray){
         pokemons.forEach(pokemon => {
             let itemsCharacter = document.querySelectorAll(".character");
 
-  itemsCharacter.forEach(item => {
-    item.addEventListener("click", () => {
-      // Remove selection from all
-      itemsCharacter.forEach(i => i.classList.remove('selected'));
-      // Add selection to clicked
-      item.classList.add("selected");
-    });
-  });
+            itemsCharacter.forEach(item => {
+                item.addEventListener("click", () => {
+                // Remove selection from all
+                itemsCharacter.forEach(i => i.classList.remove('selected'));
+                // Add selection to clicked
+                item.classList.add("selected");
+                });
+            });
             const pokemonCharacter = document.getElementById(`${pokemon}Character`);
             
             pokemonCharacter.addEventListener('click', () => {
