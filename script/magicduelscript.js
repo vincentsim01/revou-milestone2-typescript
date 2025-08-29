@@ -8,6 +8,7 @@ let abraKadabraButton = document.getElementById('abraKadabraButton');
 
 
 const avadakedavra = document.getElementById('avadakedavra');
+const crucio = document.getElementById('crucio');
 
 let magicMeterLeft = document.getElementById('magicMeterLeft');
 let magicMeterRight = document.getElementById('magicMeterRight');
@@ -43,6 +44,10 @@ let intervalId = null;
                 magicMeterLeft.style.width = magicToken + '%';
                 magicMeterRight.style.width = opponentMagicToken + '%';
                 if(magicToken<=0){
+                        // crucio.classList.remove('hidden');
+                        // setTimeout(() => {
+                        //     crucio.classList.add('hidden');
+                        // }, 2000);
                         // clearInterval(intervalId);
                         magicDuelOutcomeContainer.classList.remove('hidden');
                         magicDuelOutcome.classList.remove('hidden');
@@ -197,10 +202,10 @@ abraKadabraButton.addEventListener('click', () => {
 
         if(magicToken>=100){
                 // clearInterval(intervalId);
-            // avadakedavra.classList.remove('hidden');
-            // setTimeout(() => {
-            //     avadakedavra.classList.add('hidden');
-            // }, 2300);
+                avadakedavra.classList.remove('hidden');
+                setTimeout(() => {
+                    avadakedavra.classList.add('hidden');
+                }, 2000);
                 magicDuelOutcomeContainer.classList.remove('hidden');
                 magicDuelOutcome.classList.remove('hidden');
                 magicDuelResult.textContent = 'You win!';
