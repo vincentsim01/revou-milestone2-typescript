@@ -154,7 +154,7 @@ abraKadabraButton.addEventListener('click', () => {
         let spellspeed = 1 / duelLevelCounter;
         spellSpeed.textContent = `1 Spell every ${spellspeed.toFixed(2)} seconds`;
         startInterval();
-        // magicDuelLevelInt = Number(magicDuelLevel.textContent);
+    
     });
 
 
