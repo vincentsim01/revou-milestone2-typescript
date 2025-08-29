@@ -172,7 +172,7 @@ chooseCharacterButton.addEventListener('click', () => {
 
 });
 
-  const itemsCharacter = document.querySelectorAll(".character");
+
 
 // const characterArray = ['charmander', 'bulbasaur','squirtle'];
 
@@ -214,7 +214,22 @@ function DisplayCharacter(characterArray){
 
 // })
 
+// let itemsCharacter = document.querySelectorAll(".character");
 
+//   itemsCharacter.forEach(item => {
+//     item.addEventListener("click", () => {
+//       // Remove selection from all
+//       itemsCharacter.forEach(i => i.classList.remove('selected'));
+//       // Add selection to clicked
+//       item.classList.add("selected");
+//     });
+//   });
+
+
+
+  function clickPokemon(){
+        pokemons.forEach(pokemon => {
+            let itemsCharacter = document.querySelectorAll(".character");
 
   itemsCharacter.forEach(item => {
     item.addEventListener("click", () => {
@@ -224,24 +239,14 @@ function DisplayCharacter(characterArray){
       item.classList.add("selected");
     });
   });
-
-
-
-  function clickPokemon(){
-      pokemons.forEach(pokemon => {
-    const pokemonCharacter = document.getElementById(`${pokemon}Character`);
-    // itemsCharacter.forEach(item, ()=>{
-    //     item.classList.remove('selected');
-    // })
-    pokemonCharacter.addEventListener('click', () => {
-      yourPokemon.src = `./asset/${pokemon}.png`;
-    //   pokemonCharacter.classList.add('selected');
-      yourName.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
-      startAdventureButton.classList.remove('hidden');
-    });
-  });
-
-
+            const pokemonCharacter = document.getElementById(`${pokemon}Character`);
+            
+            pokemonCharacter.addEventListener('click', () => {
+                yourPokemon.src = `./asset/${pokemon}.png`;
+                yourName.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
+                startAdventureButton.classList.remove('hidden');
+            }); 
+        });
   }
 
 // const squirtleCharacter = document.getElementById("squirtleCharacter");
