@@ -116,24 +116,20 @@ const pokemonGenerationArray =
             grass:'grookey'
         }
     }
-    // ,
-    // {
-    //     'ScarletViolet':{
-    //         fire:'fuecoco',
-    //         water:'quaxly',
-    //         grass:'sprigatito'
-    //     }
-    // }
+    ,
+    {
+        'ScarletViolet':{
+            fire:'fuecoco',
+            water:'quaxly',
+            grass:'sprigatito'
+        }
+    }
 ]
 
 
 let randomGenObj = pokemonGenerationArray[Math.floor(Math.random() * pokemonGenerationArray.length)];
 let pokemons = Object.values(Object.values(randomGenObj)[0]);
 let gameVersion = pokemonGenerationArray.map(genObj => Object.keys(genObj)[0]);
-
-// console.log(`gameVersion: ${gameVersion}`);
-
-// let firstGenValues = Object.values(Object.values(pokemonGenerationArray[0])[0])
 
 let characterArray = [...pokemons];
 
