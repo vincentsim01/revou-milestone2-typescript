@@ -249,7 +249,7 @@ startAdventureButton.addEventListener("click", () => {
 
 const iconArray = ['fire.png', 'water.png', 'grass.png', 'physical.png'];
 
-const enemyAttackArray = ["Fire", "Water", "Grass", "Physical"];
+const enemyAttackArray = ["Fire", "Water", "Grass"];
 
 let playerDamageThisTurn;
 
@@ -329,10 +329,10 @@ function duelStart(e){
     // grassAttackButton.classList.add('cursor-not-allowed');
     // physicalAttackButton.classList.add('cursor-not-allowed');
 
-    // fireAttackButton.classList.add('hidden');
-    // waterAttackButton.classList.add('hidden');
-    // grassAttackButton.classList.add('hidden');
-    // physicalAttackButton.classList.add('hidden');
+    fireAttackButton.classList.add('hidden');
+    waterAttackButton.classList.add('hidden');
+    grassAttackButton.classList.add('hidden');
+    physicalAttackButton.classList.add('hidden');
 
     fireAttackButton.classList.remove('cursor-pointer');
     waterAttackButton.classList.remove('cursor-pointer');
@@ -484,7 +484,7 @@ function duelStart(e){
                     grassAttackButton.classList.remove('hidden');
                     physicalAttackButton.classList.remove('hidden');
 
-                                        fireAttackButton.classList.add('cursor-pointer');
+                    fireAttackButton.classList.add('cursor-pointer');
                     waterAttackButton.classList.add('cursor-pointer');
                     grassAttackButton.classList.add('cursor-pointer');
                     physicalAttackButton.classList.add('cursor-pointer');
@@ -500,6 +500,7 @@ function duelStart(e){
                 return;
             }, 2500);
         }
+        
 
     }
     else if(e.target.id === "waterAttackButton"){
@@ -541,7 +542,7 @@ function duelStart(e){
                     grassAttackButton.classList.remove('hidden');
                     physicalAttackButton.classList.remove('hidden');
 
-                                        fireAttackButton.classList.add('cursor-pointer');
+                    fireAttackButton.classList.add('cursor-pointer');
                     waterAttackButton.classList.add('cursor-pointer');
                     grassAttackButton.classList.add('cursor-pointer');
                     physicalAttackButton.classList.add('cursor-pointer');
