@@ -88,11 +88,11 @@
     <audio src="../asset/magicDuel/sound/avadakedavra.mp3" id="avadakedavrasound"></audio>
         <section id="avraKedavraGameContainer" class="grid w-[100%] h-[100vh] relative grid-cols-6 grid-rows-4 bg-[url('../asset/magicDuel/background.png')] bg-cover bg-center">
         <div class='col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center'><div class="font-harrypotter text-2xl hover:rotate-2 transition-hover duration-200">Harris Poetra</div></div> 
-        <div class="col-start-2 col-end-3  row-start-2 row-end-3 flex justify-center items-center hidden" id="harrisspell"><div class="font-harrypotter">Cast Your Spell to Defeat Koklemot!  <i class="fa-solid fa-arrow-right"></i></div><button class="border border-black cursor-pointer p-5 rounded-md font-harrypotter shadow-lg hover:scale-105 active:scale-95 transition-active duration-200 active:shadow-2xl active:shadow-green-300" id="abraKadabraButton">Sim Salabim</button></div>
-        <div class="col-start-2 col-end-3  row-start-3 row-end-5 flex md:justify-center md:items-end justify-start items-end"><img src="../asset/magicDuel/harrispoetra.png" alt="Harris Poetra" title="Harris Poetra, a young wizard from school of HargaWas" class="h-[80px] md:h-[100%] hover:rotate-3 transition-hover duration-300"></div>
+        <div class="col-start-2 col-end-3  row-start-2 row-end-3 flex justify-center items-center hidden" id="harrisspell"><div class="font-harrypotter text-xs md:text-2xl">Cast Your Spell to Defeat Koklemot!  <i class="fa-solid fa-arrow-right"></i></div><button class="border border-black cursor-pointer md:p-5 md:ml-4 ml-2 p-3 rounded-md font-harrypotter shadow-lg hover:scale-105 active:scale-95 transition-active duration-200 active:shadow-2xl active:shadow-green-300 text-2xl md:text-2xl" id="abraKadabraButton">Sim Salabim</button></div>
+        <div class="col-start-2 col-end-3  row-start-3 row-end-5 flex md:justify-center md:items-end justify-start items-center"><img src="../asset/magicDuel/harrispoetra.png" alt="Harris Poetra" title="Harris Poetra, a young wizard from school of HargaWas" class="h-[80px] md:h-[100%] hover:rotate-3 transition-hover duration-300"></div>
         <div class="text-center col-start-3 col-end-5 row-start-1 row-end-3 flex justify-center items-center flex"><p class="font-harrypotter md:text-6xl text-2xl animate-bounce">Magic Duel <span id="magicDuelLevel" class="font-harrypotter"></span></p></div>
         <div class="col-start-3 col-end-5 row-start-4 row-end-5 justify-center items-bottom flex" id="magicDuelContainer">
-            <button id="duelStartButton" class="font-harrypotter rounded-full pl-5 pr-5 h-[50%] border border-black shadow-lg hover:scale-105 active:scale-95 active:shadow-green-300 active:shadow-2xl cursor-pointer">Start Duel</button>
+            <button id="duelStartButton" class="font-harrypotter rounded-full md:pl-5 md:pr-5 md:h-[50%] pl-3 pr-3 h-[50%] border border-black shadow-lg hover:scale-105 active:scale-95 active:shadow-green-300 active:shadow-2xl cursor-pointer">Start Duel</button>
             <div id="magicDuelMechanism" class="hidden w-[90%]">
 
                 <div id="magicMeter" class=" h-[70px] w-[100%] relative flex">
@@ -105,9 +105,9 @@
                 </div>
             </div>
             <div id="magicDuelOutcomeContainer" class="hidden bg-white/60 absolute top-0 left-0 w-[100%] h-[100vh] p-5 z-10 flex justify-center items-center">
-                    <div id="avadakedavra" class="hidden absolute z-30 w-[30%] h-[80%]">
+                    <div id="avadakedavra" class="hidden absolute z-30 md:w-[30%] md:h-[80%] w-[60%] h-[80%]">
                         
-                            <video  autoplay muted loop playsinline class="absolute mx-auto w-[85%] h-[95%] object-cover rounded-md -skew-x-8 border border-double border-[10px]">
+                            <video  autoplay muted loop playsinline class="absolute mx-auto md:w-[85%] md:h-[95%] w-[100%] h-[90%] object-cover rounded-md -skew-x-8 border border-double border-[10px]">
                                 <source src="../asset/magicDuel/video/avadakedavra.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -126,9 +126,9 @@
 
 
         </div>
-        <div class='col-start-5 col-end-6 row-start-1 row-end-2 flex justify-center items-center'><div class="font-harrypotter text-2xl hover:-rotate-2 transition-hover duration-200">Koklemot</div></div>
-        <div class="col-start-5 col-end-6 row-start-2 row-end-3 flex justify-center items-center font-harrypotter hidden" id="koklemotspellpower">Spell Speed: <span id="spellSpeed" class="font-harrypotter"></span></div>
-        <div class="col-start-5 col-end-6 row-start-3 row-end-5 flex justify-center items-end"><img src="../asset/magicDuel/voldemortleft.png" alt="Kok Lemot" title="Kok Lemot, a dark wizard and leader of the Slow Eaters" class="h-[80px] md:h-[60%] mt-30 hover:-rotate-3 transition-hover duration-300"></div>
+        <div class='col-start-5 col-end-6 row-start-1 row-end-2 flex justify-center items-center'><div class="font-harrypotter text-2xl hover:-rotate-2 transition-hover duration-200 ">Koklemot</div></div>
+        <div class="col-start-5 col-end-6 row-start-2 row-end-3 flex justify-center items-center font-harrypotter hidden text-xs md:text-2xl" id="koklemotspellpower">Spell Speed: <span id="spellSpeed" class="font-harrypotter text-xs md:text-2xl"></span></div>
+        <div class="col-start-5 col-end-6 row-start-3 row-end-5 flex justify-center items-start"><img src="../asset/magicDuel/voldemortleft.png" alt="Kok Lemot" title="Kok Lemot, a dark wizard and leader of the Slow Eaters" class="h-[80px] md:h-[60%] mt-30 hover:-rotate-3 transition-hover duration-300"></div>
 
     </section>
         <footer class="bg-yellow-400 text-white p-6 mt-10">
