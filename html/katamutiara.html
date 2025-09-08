@@ -57,7 +57,7 @@
     }
     </style>
 
-    <link rel="stylesheet" href="./css//katamutiara.css">
+    <link rel="stylesheet" href="../css//katamutiara.css">
 
 
     <title>RevoFun</title>
@@ -89,47 +89,61 @@
                 <!-- <li class="hover:underline active:scale-90 hover:scale-110"><a href="#">Contact</a></li> -->
             </ul>
         </nav>
-        <div class="text-lg font-bold text-white font-lexend"><a href="index.html"><img src="./asset/revofun logo.png" alt="RevoFun Logo" class="w-[100px] hover:rotate-3 active:scale-90"></a></div>
+        <div class="text-lg font-bold text-white font-lexend"><a href="index.html"><img src="../asset/Index/revofun logo.png" alt="RevoFun Logo" class="w-[100px] hover:rotate-3 active:scale-90"></a></div>
         <div class="flex justify-between items-center p-4 bg-yellow-400 text-white">
             <div class="hidden md:block">
                 <i class="fa-solid fa-search"></i>
                 <i class="fa-solid fa-user"></i>
             </div>
     </header>
-    <section class="flex flex-col items-center justify-center h-[100vh] h-screen bg-cover bg-no-repeat bg-center bg-right bg-[url('./asset/katamutiarabackground4.jpg')]">
-        <audio src="./asset/underthesea.mp3" id="udertheseaSong" loop></audio>
-        <audio src="./asset/cardmove.mp3" id="cardmoveSound"></audio>
-        <audio src="./asset/cardok.mp3" id="cardokSound"></audio>
-        <audio src="./asset/victorysong2.mp3" id="cardvictorySound"></audio>
-        <audio src="./asset/battlelostsong.mp3" id="cardlostSound"></audio>
-        <div class="text-4xl font-bold mb-4 text-2xl font-preahvihear"><h1 class="animate-bounce">Kata-Kata Mutiara</h1></div>
-        <div class="text-lg text-gray-900 mb-3 font-preahvihear" id="kataMutiaraDescription">Si Mutiara sering berkata-kata bijak tapi dia selalu lupa urutannya. Ayo bantu si Mutiara menyusun kata-kata bijaknya kembali</div>
-        <button id="letPlayButton" class=" border border-black hover:scale-105 shadow-lg rounded-lg p-5 text-2xl font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black">Let's Play</button>
-        <div id="countdownContainer" class="hidden border border-black rounded-md p-2 mb-2 text-md flex justify-center items-center font-preahvihear">
+    <section class="flex flex-col items-center justify-center h-[100vh] h-screen bg-cover bg-no-repeat bg-center bg-right -z-2 bg-[url('../asset/kataMutiara/katamutiarabackground4.jpg')]">
+    <div class="absolute inset-0 bg-white/20 -z-0"></div>
+        <audio src="../asset/kataMutiara/sound/underthesea.mp3" id="udertheseaSong" loop></audio>
+        <audio src="../asset/kataMutiara/sound/cardmove.mp3" id="cardmoveSound"></audio>
+        <audio src="../asset/kataMutiara/sound/cardok.mp3" id="cardokSound"></audio>
+        <audio src="../asset/kataMutiara/sound/victorysong2.mp3" id="cardvictorySound"></audio>
+        <audio src="../asset/kataMutiara/sound/battlelostsong.mp3" id="cardlostSound"></audio>
+        <div class="text-4xl font-bold mb-4 text-2xl font-preahvihear" id="titleContainer"><h1 class="animate-bounce">Kata-Kata Mutiara</h1></div>
+        <div class="text-lg text-gray-900 mb-3 font-preahvihear z-1" id="kataMutiaraDescription">
+            Si Mutiara sering berkata-kata bijak tapi dia selalu lupa urutannya. Ayo bantu si Mutiara menyusun kata-kata bijaknya kembali
+                <div class="font-preahvihear text-xs text-gray-900 mb-2 bg-white/30 border border-black rounded-md p-5" >
+
+                <b><u>Temukan pasangan kata yang cocok! </u></b>
+                <ul class='list-disc'>
+                <li>Si Mutiara mengucapkan beberapa kata bijak yang terdiri dari 2 frase </li>
+                <li>Frase pertama terletak di kotak atas dan frase kedua terletak di kotak bawah</li>
+                <li>Kalian harus memasangkan frase pertama dengan frase kedua yang tepat!</li>
+                <li>Mohon jangan terburu-buru dalam memilih pasangan! Karena Si Mutiara perlu waktu untuk memproses kedua frase yang dipilih</li>
+                </ul>
+                </div>
+        </div>
+        <button id="letPlayButton" class=" border border-black hover:scale-105 shadow-lg rounded-lg p-5 text-2xl font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black z-1">Let's Play</button>
+        <div id="countdownContainer" class="hidden border border-black rounded-md p-2 mb-2 text-md flex justify-center items-center font-preahvihear z-1">
             Waktu Tersisa:<div id="countdownText" class="text-md text-gray-600"></div>
         </div>
 
-        <div id="firstKataMutiara" class="border border-black hidden rounded-md p-2 mb-1 flex justify-center items-center font-preahvihear">
+        <div id="firstKataMutiara" class="border border-black hidden rounded-md p-2 mb-1 flex justify-center items-center font-preahvihear z-1">
 
 
         </div>
 
-        <div id="secondKataMutiara" class="border border-black hidden rounded-md p-2 mt-1 flex justify-center items-center font-preahvihear">
+        <div id="secondKataMutiara" class="border border-black hidden rounded-md p-2 mt-1 flex justify-center items-center font-preahvihear z-1">
 
 
         </div>
 
-        <div id="resultContainer" class="hidden border border-black rounded-md p-4 flex justify-center items-center absolute">
+        <div id="resultContainer" class="hidden rounded-lg p-5 flex justify-center items-center absolute z-2">
             <div id="overlayResult" class="fixed inset-0 bg-black opacity-50"></div>
-            <div class="relative z-10 text-center border border-black p-5 bg-white">
+            <div class="relative z-10 text-center p-5 bg-white">
                 <div id="resultText" class="text-lg text-gray-600"></div>
-                <button id="playAgainButton" class="border border-black hover:scale-105 shadow-lg rounded-lg p-2 text-lg ml-4">Play Again</button>
+                <button id="playAgainButton" class="border border-black hover:scale-105 shadow-lg rounded-lg p-2 text-lg ml-4 cursor-pointer">Play Again</button>
+                <button id="nextLevelButton" class="hidden border border-black hover:scale-105 shadow-lg rounded-lg p-2 text-lg ml-4 cursor-pointer">Next Level</button>
             </div>
 
         </div>
 
     </section>
-        <footer class="bg-yellow-400 text-white p-6 mt-10">
+        <footer class="bg-yellow-400 text-white p-6">
         <div class="container mx-auto text-center font-lexend">
             <p>&copy; 2025 RevoFun. All rights reserved.</p>
             <div class="mt-4 font-lexend">
@@ -141,7 +155,7 @@
 
 
 
-    <script src="./script/katamutiara.js"></script>
-    <script src="./script/script.js"></script>
+    <script src="../ts/kataMutiara.js"></script>
+    <script src="../ts/script.js"></script>
 </body>
 </html>
