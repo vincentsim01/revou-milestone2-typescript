@@ -23,23 +23,38 @@
 //   });
 // }
 
+export function initNavMenu(): void {
+  const burgericon = document.getElementById('burgericon');
+  const navmobilecontainer = document.getElementById('navmobilecontainer');
+  const navmobile = document.getElementById('navmobile');
 
-const burgericon = document.getElementById('burgericon');
-const navmobilecontainer = document.getElementById('navmobilecontainer');
-const navmobile = document.getElementById('navmobile');
+  burgericon?.addEventListener('click', () => {
+    navmobilecontainer?.classList.toggle('hidden');
+  });
 
-burgericon?.addEventListener('click', () =>{
-    navmobilecontainer.classList.toggle('hidden');
-
-})
-
-if(navmobilecontainer && navmobile){
-    navmobilecontainer.addEventListener('click', function(event:MouseEvent):void{
-
-
-        const target=event.target as Node;
-        if(!navmobile.contains(target)){
-            navmobilecontainer.classList.add('hidden');
-        }
-    })
+  if (navmobilecontainer && navmobile) {
+    navmobilecontainer.addEventListener('click', (event: MouseEvent): void => {
+      const target = event.target as Node;
+      if (!navmobile.contains(target)) {
+        navmobilecontainer.classList.add('hidden');
+      }
+    });
+  }
 }
+
+  const burgericon = document.getElementById('burgericon');
+  const navmobilecontainer = document.getElementById('navmobilecontainer');
+  const navmobile = document.getElementById('navmobile');
+
+  burgericon?.addEventListener('click', () => {
+    navmobilecontainer?.classList.toggle('hidden');
+  });
+
+  if (navmobilecontainer && navmobile) {
+    navmobilecontainer.addEventListener('click', (event: MouseEvent): void => {
+      const target = event.target as Node;
+      if (!navmobile.contains(target)) {
+        navmobilecontainer.classList.add('hidden');
+      }
+    });
+  }
