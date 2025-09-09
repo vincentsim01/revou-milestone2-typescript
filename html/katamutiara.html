@@ -104,11 +104,11 @@
         <audio src="../asset/kataMutiara/sound/victorysong2.mp3" id="cardvictorySound"></audio>
         <audio src="../asset/kataMutiara/sound/battlelostsong.mp3" id="cardlostSound"></audio>
         <div class="text-4xl font-bold mb-4 text-2xl font-preahvihear" id="titleContainer"><h1 class="animate-bounce">Kata Mutiara</h1></div>
-        <div class="text-lg text-gray-900 mb-3 font-preahvihear z-1" id="kataMutiaraDescription">
-            Si Mutiara sering berkata-kata bijak tapi dia selalu lupa urutannya. Ayo bantu si Mutiara menyusun kata-kata bijaknya kembali
-                <div class="font-preahvihear text-xs text-gray-900 mb-2 bg-white/30 border border-black rounded-md p-5" >
+        <div class="md:text-lg text-xs text-gray-900 mb-3 font-preahvihear z-1 p-3 w-[85%] md:w-[80%]" id="kataMutiaraDescription">
+            Si Mutiara sering berkata-kata bijak tapi dia selalu lupa urutannya. Ayo bantu si Mutiara menyusun kata-kata bijaknya kembali<br>
+                <div class="font-preahvihear text-xs text-gray-900 mb-2 bg-white/30 border border-black rounded-md p-10" >
 
-                <b><u>Temukan pasangan kata yang cocok! </u></b>
+                <b><u>Temukan pasangan kata yang cocok! </u></b><br><br>
                 <ul class='list-disc'>
                 <li>Si Mutiara mengucapkan beberapa kata bijak yang terdiri dari 2 frase </li>
                 <li>Frase pertama terletak di kotak atas dan frase kedua terletak di kotak bawah</li>
@@ -117,19 +117,34 @@
                 </ul>
                 </div>
         </div>
-        <button id="letPlayButton" class=" border border-black hover:scale-105 shadow-lg rounded-lg p-5 text-2xl font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-black z-1">Let's Play</button>
+        <button id="letPlayButton" class="hidden md:block border border-black hover:scale-105 shadow-lg rounded-lg p-5 text-2xl font-preahvihear cursor-pointer active:scale-90 active:bg-gray-400 active:text-black z-1">Let's Play Desktop</button>
+        <button id="letPlayButtonMobile" class="md:hidden border border-black hover:scale-105 shadow-lg rounded-lg p-5 text-2xl font-preahvihear cursor-pointer active:scale-90 active:bg-gray-400 active:text-black z-1">Let's Play Mobile</button>
         <div id="countdownContainer" class="hidden border border-black rounded-md p-2 mb-2 text-md flex justify-center items-center font-preahvihear z-1">
             Waktu Tersisa:<div id="countdownText" class="text-md text-gray-600"></div>
         </div>
 
-        <div id="firstKataMutiara" class="border border-black hidden rounded-md p-2 mb-1 flex justify-center items-center font-preahvihear z-1">
+        <div class="hidden" id="gameContainerDesktop">
+            <div id="firstKataMutiara" class=" border border-black rounded-md p-2 mb-1 flex md:flex-row md:justify-center md:items-center font-preahvihear z-1">
 
 
+            </div>
+
+            <div id="secondKataMutiara" class=" border border-black rounded-md p-2 mt-1 flex md:flex-row md:justify-center md:items-center font-preahvihear z-1">
+
+
+            </div>
         </div>
 
-        <div id="secondKataMutiara" class="border border-black hidden rounded-md p-2 mt-1 flex justify-center items-center font-preahvihear z-1">
+        <div class="hidden text-center" id="gameContainerMobile">
+            <div id="firstKataMutiaraMobile" class="inline-block w-[42%] border border-black rounded-md p-1 mr-3  flex flex-col justify-center items-center font-preahvihear z-1">
 
 
+            </div>
+
+            <div id="secondKataMutiaraMobile" class="inline-block w-[42%] border border-black rounded-md p-1 ml-3 flex flex-col justify-center items-center font-preahvihear z-1">
+
+
+            </div>
         </div>
 
         <div id="resultContainer" class="hidden rounded-lg p-5 flex justify-center items-center absolute z-2">

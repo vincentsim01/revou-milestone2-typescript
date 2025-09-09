@@ -4,7 +4,7 @@
       height: 175px;
       background: radial-gradient(circle,rgb(252, 245, 111) 0%, rgb(196, 131, 35) 80%, rgb(151, 49, 5) 100%);
         /* background-image: url('../asset/bordersea.jpg'); */
-        background-size:cover;
+      background-size:cover;
       color: black;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       font-size: 0.5 em;
@@ -18,11 +18,6 @@
       font-family:'preahvihear', sans-serif;
       position: relative;
       transition: transform 0.3s;
-      /* box-sizing: border-box;
-      margin:0.2em;
-      padding:0.2em;
-      border:1px; */
-
     }
 
      .card2 {
@@ -44,8 +39,54 @@
       font-family:'preahvihear', sans-serif;
       position: relative;
       transition: transform 0.3s;
-
     }
+
+ .cardMobile {
+      width: 60px;
+      height: 70px;
+      background: radial-gradient(circle,rgb(252, 245, 111) 0%, rgb(196, 131, 35) 80%, rgb(151, 49, 5) 100%);
+        /* background-image: url('../asset/bordersea.jpg'); */
+      background-size:cover;
+      color: black;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 1em;
+      color:black;
+      font-family:'preahvihear', sans-serif;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+     .card2Mobile {
+      width: 60px;
+      height: 70px;
+      background: radial-gradient(circle,rgba(222, 253, 255, 1) 0%, rgba(44, 215, 245, 1) 61%, rgb(3, 73, 215) 100%);
+        /* background-image: url('../asset/greenbeach.jpg'); */
+      background-size:cover;
+      color: black;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 1em;
+      color:black;
+      font-family:'preahvihear', sans-serif;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+
+
+
+
 
   .firstPhraseMove{
     animation: firstPhrase 3s ease-in-out 0s 1 normal forwards;

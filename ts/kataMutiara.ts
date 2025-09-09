@@ -1,5 +1,7 @@
 const firstKataMutiara = document.getElementById("firstKataMutiara") as HTMLElement | null;
 const secondKataMutiara = document.getElementById("secondKataMutiara") as HTMLElement | null;
+const firstKataMutiaraMobile = document.getElementById("firstKataMutiaraMobile") as HTMLElement | null;
+const secondKataMutiaraMobile = document.getElementById("secondKataMutiaraMobile") as HTMLElement | null;
 const resultContainer:any = document.getElementById("resultContainer");
 const resultText:any = document.getElementById("resultText");
 const playAgainButton = document.getElementById("playAgainButton") as HTMLElement | null;
@@ -13,6 +15,9 @@ const cardokSound:any = document.getElementById("cardokSound");
 const cardvictorySound:any = document.getElementById("cardvictorySound");
 const cardlostSound:any = document.getElementById("cardlostSound");
 const nextLevelButton = document.getElementById('nextLevelButton') as HTMLElement | null;
+const gameContainerDesktop = document.getElementById('gameContainerDesktop') as HTMLElement | null;
+const gameContainerMobile = document.getElementById('gameContainerMobile') as HTMLElement | null;
+const letPlayButtonMobile = document.getElementById("letPlayButtonMobile") as HTMLElement | null;
 
 let gameLevel:number = 5;
 
@@ -81,12 +86,25 @@ const letPlayButton = document.getElementById("letPlayButton") as HTMLElement | 
 letPlayButton.addEventListener("click", () => {
     undertheseaSong.play();
     letPlayButton.classList.add("hidden");
-    firstKataMutiara.classList.remove("hidden");
-    secondKataMutiara.classList.remove("hidden");
+    // firstKataMutiara.classList.remove("hidden");
+    // secondKataMutiara.classList.remove("hidden");
+    gameContainerDesktop?.classList.remove('hidden');
     kataMutiaraDescription.classList.add('hidden');
     titleContainer?.classList.add('hidden');
     countdownContainer.classList.remove("hidden");
     createBoard();
+});
+
+letPlayButtonMobile.addEventListener("click", () => {
+    undertheseaSong.play();
+    letPlayButtonMobile.classList.add("hidden");
+    // firstKataMutiara.classList.remove("hidden");
+    // secondKataMutiara.classList.remove("hidden");
+    gameContainerMobile?.classList.remove('hidden');
+    kataMutiaraDescription.classList.add('hidden');
+    titleContainer?.classList.add('hidden');
+    countdownContainer.classList.remove("hidden");
+    createBoardMobile();
 });
 
 let timeCounter:number = 46;
@@ -159,6 +177,56 @@ function runCountDown(){
                 });
             }, 4000);
     }
+
+     function createBoardMobile() {
+            setTimeout(runCountDown, 3000);
+
+            randomKataFive.forEach((item) => {
+                const card1 = document.createElement("div");
+                card1.classList.add("cardMobile");
+                card1.classList.add("m-3");
+                card1.textContent = '?';
+                card1.dataset.Content = item[Object.keys(item)[0]][0];
+                card1.dataset.id = item[Object.keys(item)[0]];
+                card1.classList.add("firstPhraseMove");
+                card1.addEventListener("click", flipCard);
+                firstKataMutiaraMobile.appendChild(card1);
+
+                const card2 = document.createElement("div");
+                card2.classList.add("card2Mobile");
+                card2.classList.add("m-3");
+                card2.textContent = '?';
+                card2.style.backgroundPosition = "left";
+                card2.dataset.Content = item[Object.keys(item)[0]][1];
+                card2.dataset.id = item[Object.keys(item)[0]];
+                card2.classList.add("secondPhraseMove");
+                card2.addEventListener("click", flipCard);
+                secondKataMutiaraMobile.appendChild(card2);
+            });
+
+            //from the array of cards for 1st phrase then we will randomize the order
+            const divs = Array.from(firstKataMutiaraMobile.children);
+            let shuffleddivs = shuffleArray2(divs)
+            shuffleddivs.forEach(div => firstKataMutiaraMobile.appendChild(div)); 
+
+            //from the array of cards for 2nd phrase then we will randomize the order
+            const divs2 = Array.from(secondKataMutiara.children);
+            let shuffleddivs2 = shuffleArray2(divs2)
+            shuffleddivs2.forEach(div => secondKataMutiaraMobile.appendChild(div));  
+
+            //moving intro animation for the cards set at 4 seconds and then the css is removed
+            setTimeout(()=>{
+                const firstPhraseMoveElements = document.querySelectorAll('.firstPhraseMove');
+                firstPhraseMoveElements.forEach(element => {
+                    element.classList.remove('firstPhraseMove');
+                });
+
+                const secondPhraseMoveElements = document.querySelectorAll('.secondPhraseMove');
+                secondPhraseMoveElements.forEach(element => {
+                    element.classList.remove('secondPhraseMove');
+                });
+            }, 4000);
+    }
     function flipCard() {
         if (this.classList.contains("flipped")) return;    
         this.textContent = this.dataset.Content;
@@ -212,6 +280,8 @@ function runCountDown(){
         function playAgain(){
             firstKataMutiara.textContent="";
             secondKataMutiara.textContent="";
+            firstKataMutiaraMobile.textContent="";
+            secondKataMutiaraMobile.textContent="";
             resultContainer.classList.add("hidden");
             resultText.textContent = "";
             //to randomize the whole array
@@ -226,6 +296,8 @@ function runCountDown(){
         function playAgainWin(){
             firstKataMutiara.textContent="";
             secondKataMutiara.textContent="";
+            firstKataMutiaraMobile.textContent="";
+            secondKataMutiaraMobile.textContent="";
             resultContainer.classList.add("hidden");
             resultText.textContent = "";
             //to randomize the whole array

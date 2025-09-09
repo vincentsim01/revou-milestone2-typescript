@@ -9,6 +9,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 var firstKataMutiara = document.getElementById("firstKataMutiara");
 var secondKataMutiara = document.getElementById("secondKataMutiara");
+var firstKataMutiaraMobile = document.getElementById("firstKataMutiaraMobile");
+var secondKataMutiaraMobile = document.getElementById("secondKataMutiaraMobile");
 var resultContainer = document.getElementById("resultContainer");
 var resultText = document.getElementById("resultText");
 var playAgainButton = document.getElementById("playAgainButton");
@@ -22,6 +24,9 @@ var cardokSound = document.getElementById("cardokSound");
 var cardvictorySound = document.getElementById("cardvictorySound");
 var cardlostSound = document.getElementById("cardlostSound");
 var nextLevelButton = document.getElementById('nextLevelButton');
+var gameContainerDesktop = document.getElementById('gameContainerDesktop');
+var gameContainerMobile = document.getElementById('gameContainerMobile');
+var letPlayButtonMobile = document.getElementById("letPlayButtonMobile");
 var gameLevel = 5;
 var kataMutiara = [
     { 1: ["Kamu memang seperti lempeng bumi", "bergeser sedikit saja sudah mengguncang hatiku"] },
@@ -80,23 +85,24 @@ var letPlayButton = document.getElementById("letPlayButton");
 letPlayButton.addEventListener("click", function () {
     undertheseaSong.play();
     letPlayButton.classList.add("hidden");
-    firstKataMutiara.classList.remove("hidden");
-    secondKataMutiara.classList.remove("hidden");
+    // firstKataMutiara.classList.remove("hidden");
+    // secondKataMutiara.classList.remove("hidden");
+    gameContainerDesktop === null || gameContainerDesktop === void 0 ? void 0 : gameContainerDesktop.classList.remove('hidden');
     kataMutiaraDescription.classList.add('hidden');
     titleContainer === null || titleContainer === void 0 ? void 0 : titleContainer.classList.add('hidden');
-    // kataMutiaraDescription.innerHTML = `
-    // <div class="font-preahvihear text-xs text-gray-900 mb-2 bg-white/30 border border-black rounded-md p-5" >
-    // <b><u>Temukan pasangan kata yang cocok! </u></b>
-    // <ul class='list-disc'>
-    // <li>Si Mutiara mengucapkan beberapa kata bijak yang terdiri dari 2 frase </li>
-    // <li>Frase pertama terletak di kotak atas dan frase kedua terletak di kotak bawah</li>
-    // <li>Kalian harus memasangkan frase pertama dengan frase kedua yang tepat!</li>
-    // <li>Mohon jangan terburu-buru dalam memilih pasangan! Karena Si Mutiara perlu waktu untuk memproses kedua frase yang dipilih</li>
-    // </ul>
-    // </div>
-    // `;
     countdownContainer.classList.remove("hidden");
     createBoard();
+});
+letPlayButtonMobile.addEventListener("click", function () {
+    undertheseaSong.play();
+    letPlayButtonMobile.classList.add("hidden");
+    // firstKataMutiara.classList.remove("hidden");
+    // secondKataMutiara.classList.remove("hidden");
+    gameContainerMobile === null || gameContainerMobile === void 0 ? void 0 : gameContainerMobile.classList.remove('hidden');
+    kataMutiaraDescription.classList.add('hidden');
+    titleContainer === null || titleContainer === void 0 ? void 0 : titleContainer.classList.add('hidden');
+    countdownContainer.classList.remove("hidden");
+    createBoardMobile();
 });
 var timeCounter = 46;
 var intervalId = null;
@@ -161,6 +167,49 @@ function createBoard() {
         });
     }, 4000);
 }
+function createBoardMobile() {
+    setTimeout(runCountDown, 3000);
+    randomKataFive.forEach(function (item) {
+        var card1 = document.createElement("div");
+        card1.classList.add("cardMobile");
+        card1.classList.add("m-3");
+        card1.textContent = '?';
+        card1.dataset.Content = item[Object.keys(item)[0]][0];
+        card1.dataset.id = item[Object.keys(item)[0]];
+        card1.classList.add("firstPhraseMove");
+        card1.addEventListener("click", flipCard);
+        firstKataMutiaraMobile.appendChild(card1);
+        var card2 = document.createElement("div");
+        card2.classList.add("card2Mobile");
+        card2.classList.add("m-3");
+        card2.textContent = '?';
+        card2.style.backgroundPosition = "left";
+        card2.dataset.Content = item[Object.keys(item)[0]][1];
+        card2.dataset.id = item[Object.keys(item)[0]];
+        card2.classList.add("secondPhraseMove");
+        card2.addEventListener("click", flipCard);
+        secondKataMutiaraMobile.appendChild(card2);
+    });
+    //from the array of cards for 1st phrase then we will randomize the order
+    var divs = Array.from(firstKataMutiaraMobile.children);
+    var shuffleddivs = shuffleArray2(divs);
+    shuffleddivs.forEach(function (div) { return firstKataMutiaraMobile.appendChild(div); });
+    //from the array of cards for 2nd phrase then we will randomize the order
+    var divs2 = Array.from(secondKataMutiara.children);
+    var shuffleddivs2 = shuffleArray2(divs2);
+    shuffleddivs2.forEach(function (div) { return secondKataMutiaraMobile.appendChild(div); });
+    //moving intro animation for the cards set at 4 seconds and then the css is removed
+    setTimeout(function () {
+        var firstPhraseMoveElements = document.querySelectorAll('.firstPhraseMove');
+        firstPhraseMoveElements.forEach(function (element) {
+            element.classList.remove('firstPhraseMove');
+        });
+        var secondPhraseMoveElements = document.querySelectorAll('.secondPhraseMove');
+        secondPhraseMoveElements.forEach(function (element) {
+            element.classList.remove('secondPhraseMove');
+        });
+    }, 4000);
+}
 function flipCard() {
     var _this = this;
     if (this.classList.contains("flipped"))
@@ -211,6 +260,8 @@ function checkMatch() {
 function playAgain() {
     firstKataMutiara.textContent = "";
     secondKataMutiara.textContent = "";
+    firstKataMutiaraMobile.textContent = "";
+    secondKataMutiaraMobile.textContent = "";
     resultContainer.classList.add("hidden");
     resultText.textContent = "";
     //to randomize the whole array
@@ -223,6 +274,8 @@ function playAgain() {
 function playAgainWin() {
     firstKataMutiara.textContent = "";
     secondKataMutiara.textContent = "";
+    firstKataMutiaraMobile.textContent = "";
+    secondKataMutiaraMobile.textContent = "";
     resultContainer.classList.add("hidden");
     resultText.textContent = "";
     //to randomize the whole array
