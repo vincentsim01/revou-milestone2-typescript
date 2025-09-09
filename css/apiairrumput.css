@@ -31,6 +31,45 @@
    animation: enemyattackPhysical 1.5s;
 }
 
+
+.yourelementWinMobile{
+   animation: yourattackWinMobile 1.5s;
+}
+
+.yourelementLoseMobile{
+   animation: yourattackLoseMobile 1.5s;
+}
+
+.yourelementTieMobile{
+   animation: yourattackTieMobile 1.5s;
+}
+
+.yourelementPhysicalMobile{
+   animation: yourattackPhysicalMobile 1.5s;
+}
+
+
+.enemyelementWinMobile{
+   animation: enemyattackWinMobile 1.5s;
+}
+
+.enemyelementLoseMobile{
+   animation: enemyattackLoseMobile 1.5s;
+}
+
+.enemyelementTieMobile{
+   animation: enemyattackTieMobile 1.5s;
+}
+
+.enemyelementPhysicalMobile{
+   animation: enemyattackPhysicalMobile 1.5s;
+}
+
+
+
+
+
+
 .hidden {
    display: none;
 }
@@ -176,7 +215,113 @@
          transform: translateX(-300px) translateY(100px) scale(1.1);
      }
  }
+
+
+
+@keyframes yourattackWinMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+
+     }
+     100% {
+         transform: translateX(20px) translateY(-150px);
+;
+     }
+ }
     
+
+ @keyframes yourattackLoseMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     50%{
+        transform: translateX(20px) translateY(-75px);
+          opacity:10%;
+     }
+     100% {
+         transform: translateX(20px) translateY(-75px);
+        opacity:10%;
+     }
+ }
+    
+@keyframes yourattackTieMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     90%{
+        transform: translateX(20px) translateY(-75px);
+     }
+     100% {
+         transform: translateX(20px) translateY(-75px) scale(1.1); opacity: 0.2;
+     }
+ }
+
+ @keyframes yourattackPhysicalMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     40%{
+        transform: translateX(20px) translateY(-75px);
+     }
+     100% {
+         transform: translateX(20px) translateY(-60px) scale(1.1);
+     }
+ }
+
+ @keyframes enemyattackWinMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     100% {
+         transform: translateX(-20px) translateY(200px);
+     }
+ }
+
+ 
+ @keyframes enemyattackLoseMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     50% {
+         transform: translateX(-20px) translateY(100px);
+         opacity:10%;
+         
+
+     }
+    100% {
+         transform: translateX(-20px) translateY(100px);
+        opacity:10%;
+     }
+ }
+
+ 
+ 
+ @keyframes enemyattackTieMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     90%{ 
+         transform: translateX(-20px) translateY(130px) scale(1.1)
+     }
+     100% {
+         transform: translateX(-20px) translateY(130px) scale(1.1); opacity:0.2;
+     }
+ }
+
+  @keyframes enemyattackPhysicalMobile {
+     0% {
+         transform: translateX(0px) translateY(0px);
+     }
+     40%{ 
+         transform: translateX(-20px) translateY(140px) scale(1.1)
+     }
+     100% {
+         transform: translateX(-30px) translateY(100px) scale(1.1);
+     }
+ }
+    
+
+
 @keyframes getHit {
 	0%,
     10%,

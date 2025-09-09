@@ -390,9 +390,16 @@ function duelStart(e:MouseEvent):void{
                 enemyHP.style.width = `${enemyHPValue}%`;
                 normallyEffectiveContainer++;
                 elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-                elementYou.classList.add('yourelementTie');
+   
                 elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-                elementEnemy.classList.add('enemyelementTie');
+       
+                if(window.innerWidth<=768){
+                    elementYou.classList.add('yourelementTieMobile');
+                    elementEnemy.classList.add('enemyelementTieMobile');
+                }else if(window.innerWidth>768){
+                    elementYou.classList.add('yourelementTie');
+                    elementEnemy.classList.add('enemyelementTie');
+                }
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
@@ -438,9 +445,17 @@ function duelStart(e:MouseEvent):void{
                 enemyHP.style.width = `${enemyHPValue}%`;
                 notEffectiveContainer++;
                 elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-                elementYou.classList.add('yourelementLose');
+     
                 elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
-                elementEnemy.classList.add('enemyelementWin');
+
+
+                if(window.innerWidth<=768){
+                    elementYou.classList.add('yourelementLoseMobile');
+                    elementEnemy.classList.add('enemyelementWinMobile');
+                }else if(window.innerWidth>768){
+                    elementYou.classList.add('yourelementLose');
+                    elementEnemy.classList.add('enemyelementWin');
+                }
                 setTimeout(() => {
                     yourPokemon.classList.add('getHit');
                     superEffectiveSound.play();
@@ -485,9 +500,16 @@ function duelStart(e:MouseEvent):void{
                 enemyHP.style.width = `${enemyHPValue}%`;
                 superEffectiveContainer++;
                 elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-                elementYou.classList.add('yourelementWin');
+
                 elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
-                elementEnemy.classList.add('enemyelementLose');
+
+                if(window.innerWidth<=768){
+                    elementYou.classList.add('yourelementWinMobile');
+                    elementEnemy.classList.add('enemyelementLoseMobile');
+                }else if(window.innerWidth>768){
+                    elementYou.classList.add('yourelementWin');
+                    elementEnemy.classList.add('enemyelementLose');
+                }
                 setTimeout(() => {
                     enemyPokemon.classList.add('getHit');
                     superEffectiveSound.play();
@@ -538,9 +560,17 @@ function duelStart(e:MouseEvent):void{
                     enemyHP.style.width = `${enemyHPValue}%`;
                     superEffectiveContainer++;
                     elementYou.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
-                    elementYou.classList.add('yourelementWin');
+
                     elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-                    elementEnemy.classList.add('enemyelementLose');
+      
+
+                    if(window.innerWidth<=768){
+                        elementYou.classList.add('yourelementWinMobile');
+                        elementEnemy.classList.add('enemyelementLoseMobile');
+                    }else if(window.innerWidth>768){
+                        elementYou.classList.add('yourelementWin');
+                        elementEnemy.classList.add('enemyelementLose');
+                    }
                     setTimeout(() => {
                         enemyPokemon.classList.add('getHit');
                         superEffectiveSound.play();
@@ -587,9 +617,18 @@ function duelStart(e:MouseEvent):void{
                     normallyEffectiveContainer++;
 
                     elementYou.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
-                    elementYou.classList.add('yourelementTie');
+        
                     elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
-                    elementEnemy.classList.add('enemyelementTie');
+       
+
+
+                    if(window.innerWidth<=768){
+                        elementYou.classList.add('yourelementTieMobile');
+                        elementEnemy.classList.add('enemyelementTieMobile');
+                    }else if(window.innerWidth>768){
+                        elementYou.classList.add('yourelementTie');
+                        elementEnemy.classList.add('enemyelementTie');
+                    }
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
@@ -632,9 +671,16 @@ function duelStart(e:MouseEvent):void{
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     elementYou.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
-                    elementYou.classList.add('yourelementLose');
+     
                     elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
-                    elementEnemy.classList.add('enemyelementWin');
+       
+                    if(window.innerWidth<=768){
+                        elementYou.classList.add('yourelementLoseMobile');
+                        elementEnemy.classList.add('enemyelementWinMobile');
+                    }else if(window.innerWidth>768){
+                        elementYou.classList.add('yourelementLose');
+                        elementEnemy.classList.add('enemyelementWin');
+                    }
                 setTimeout(() => {
                     yourPokemon.classList.add('getHit');
                     superEffectiveSound.play();
@@ -690,9 +736,17 @@ function duelStart(e:MouseEvent):void{
                     notEffectiveContainer++;
 
                     elementYou.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
-                    elementYou.classList.add('yourelementLose');
+       
                     elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-                    elementEnemy.classList.add('enemyelementWin');
+      
+
+                    if(window.innerWidth<=768){
+                        elementYou.classList.add('yourelementLoseMobile');
+                        elementEnemy.classList.add('enemyelementWinMobile');
+                    }else if(window.innerWidth>768){
+                        elementYou.classList.add('yourelementLose');
+                        elementEnemy.classList.add('enemyelementWin');
+                    }
                 setTimeout(() => {
                     yourPokemon.classList.add('getHit');
                     superEffectiveSound.play();
@@ -740,9 +794,17 @@ function duelStart(e:MouseEvent):void{
                     enemyHP.style.width = `${enemyHPValue}%`;
                     superEffectiveContainer++;
                     elementYou.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
-                    elementYou.classList.add('yourelementWin');
+
                     elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
-                    elementEnemy.classList.add('enemyelementLose');
+ 
+
+                    if(window.innerWidth<=768){
+                        elementYou.classList.add('yourelementWinMobile');
+                        elementEnemy.classList.add('enemyelementLoseMobile');
+                    }else if(window.innerWidth>768){
+                        elementYou.classList.add('yourelementWin');
+                        elementEnemy.classList.add('enemyelementLose');
+                    }
                     setTimeout(() => {
                         enemyPokemon.classList.add('getHit');
                         superEffectiveSound.play();
@@ -789,9 +851,17 @@ function duelStart(e:MouseEvent):void{
                     normallyEffectiveContainer++;
 
                     elementYou.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
-                    elementYou.classList.add('yourelementTie');
+
                     elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
-                    elementEnemy.classList.add('enemyelementTie');
+
+
+                    if(window.innerWidth<=768){
+                        elementYou.classList.add('yourelementTieMobile');
+                        elementEnemy.classList.add('enemyelementTieMobile');
+                    }else if(window.innerWidth>768){
+                        elementYou.classList.add('yourelementTie');
+                        elementEnemy.classList.add('enemyelementTie');
+                    }
         
                     setTimeout(()=>{
                         NotEffectiveSound.play();
@@ -838,8 +908,14 @@ function duelStart(e:MouseEvent):void{
                     enemyHPValue = enemyHPValue - playerDamageThisTurn;
                     enemyHP.style.width = `${enemyHPValue}%`;
                     normallyEffectiveContainer++;
-                    yourPokemon.classList.add('yourelementPhysical');
-                    enemyPokemon.classList.add('enemyelementPhysical');
+
+                    if(window.innerWidth<=768){
+                        elementYou.classList.add('yourelementPhysicalMobile');
+                        elementEnemy.classList.add('enemyelementPhysicalMobile');
+                    }else if(window.innerWidth>768){
+                        elementYou.classList.add('yourelementPhysical');
+                        elementEnemy.classList.add('enemyelementPhysical');
+                    }
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
