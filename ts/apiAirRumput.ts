@@ -139,11 +139,11 @@ let characterArray:any = [...pokemons];
 pokemonGenerationArray.forEach((item) => {
     let newDiv = document.createElement('button');
     newDiv.textContent = Object.keys(item)[0];
-    newDiv.classList = `text-white ml-3 mr-3 cursor-pointer hover:scale-110 active:scale-90 `;
+    newDiv.classList = `text-white ml-3 mr-3 md:text-lg text-sm cursor-pointer hover:scale-110 active:scale-90 `;
     newDiv.id = `generation-${Object.keys(item)[0]}`;
     let newImg = document.createElement('img');
     newImg.src=`../asset/apiAirRumput/${Object.keys(item)[0]}.png`;
-    newImg.classList='w-[80px] '
+    newImg.classList='md:w-[80px] w-[60px] mx-auto';
     newDiv.appendChild(newImg);
     generationList.appendChild(newDiv);
 });
@@ -152,7 +152,6 @@ gameVersion.forEach((item)=>{
     let versionSelected = document.getElementById(`generation-${item}`);
     versionSelected.addEventListener('click', ()=>{
         const findVersion = Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]);
-        console.log(Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]));
         characterArray = [...findVersion];
         DisplayCharacter(characterArray);
 
@@ -183,7 +182,8 @@ function DisplayCharacter(characterArray:any):void{
         newImg.alt = item;
         newImg.id = `${item}Character`;
         newImg.classList = `character cursor-pointer active:scale-90 active:border active:border-red-300 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6`;
-        newImg.classList.add('w-34');
+        newImg.classList.add('md:w-34');
+        newImg.classList.add('w-16');
         let newbr = document.createElement('br');
         let newName = document.createElement('div');
         newName.textContent = item.charAt(0).toUpperCase() + item.slice(1);

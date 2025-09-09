@@ -136,11 +136,11 @@ var characterArray = __spreadArray([], pokemons, true);
 pokemonGenerationArray.forEach(function (item) {
     var newDiv = document.createElement('button');
     newDiv.textContent = Object.keys(item)[0];
-    newDiv.classList = "text-white ml-3 mr-3 cursor-pointer hover:scale-110 active:scale-90 ";
+    newDiv.classList = "text-white ml-3 mr-3 md:text-lg text-sm cursor-pointer hover:scale-110 active:scale-90 ";
     newDiv.id = "generation-".concat(Object.keys(item)[0]);
     var newImg = document.createElement('img');
     newImg.src = "../asset/apiAirRumput/".concat(Object.keys(item)[0], ".png");
-    newImg.classList = 'w-[80px] ';
+    newImg.classList = 'md:w-[80px] w-[60px] mx-auto';
     newDiv.appendChild(newImg);
     generationList.appendChild(newDiv);
 });
@@ -148,7 +148,6 @@ gameVersion.forEach(function (item) {
     var versionSelected = document.getElementById("generation-".concat(item));
     versionSelected.addEventListener('click', function () {
         var findVersion = Object.values(Object.values(pokemonGenerationArray.find(function (gen) { return gen[item]; }))[0]);
-        console.log(Object.values(Object.values(pokemonGenerationArray.find(function (gen) { return gen[item]; }))[0]));
         characterArray = __spreadArray([], findVersion, true);
         DisplayCharacter(characterArray);
     });
@@ -173,7 +172,8 @@ function DisplayCharacter(characterArray) {
         newImg.alt = item;
         newImg.id = "".concat(item, "Character");
         newImg.classList = "character cursor-pointer active:scale-90 active:border active:border-red-300 active:shadow-lg hover:scale-110 transition-transform duration-300 mx-auto ml-6 mr-6";
-        newImg.classList.add('w-34');
+        newImg.classList.add('md:w-34');
+        newImg.classList.add('w-16');
         var newbr = document.createElement('br');
         var newName = document.createElement('div');
         newName.textContent = item.charAt(0).toUpperCase() + item.slice(1);

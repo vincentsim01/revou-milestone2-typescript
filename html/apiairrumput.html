@@ -123,7 +123,7 @@
         
             <div class="hidden w-[100%] h-[100%] bg-black absolute z-20 flex flex-col items-center justify-center" id="characterSelectionContainer">
                 <div id="gameStory" class="hidden text-white w-[60%] font-preahvihear">
-                    <p class="text-lg text-justify">Selamat datang di dunia Monster Kantong.
+                    <p class="text-xs md:text-lg text-justify">Selamat datang di dunia Monster Kantong.
                         Di dunia ini semua karakter telah menguasai elemen api air dan rumput.
                         Dan mereka sering berduel untuk mengasah kemampuan mereka.
                         Ayo berduel dan menjadi yang terkuat!
@@ -134,7 +134,7 @@
                 <div class="flex justify-center items-center mt-4 flex justify-center" id="characterDisplayContainer"></div>
                     <br><br>
                     
-                    <div id="generationList"></div>
+                    <div id="generationList" class="text-center"></div>
                     <br><br>
                     <button id="startAdventureButton" class="hidden text-white border border-white hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-white">Mulai Duel</button>
             </div>
@@ -158,31 +158,31 @@
                 </div>
         </div>
         <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center" id="duelContainer">
-            <div class="bg-[url('../asset/apiAirRumput/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
-                <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end ">
-                    <div class="bg-white rounded-md w-[60%] border border-black rounded-lg border-8 border-double">
+            <div class="md:bg-[url('../asset/apiAirRumput/pokemonbattlearena2.png')] bg-[url('../asset/apiAirRumput/pokemongoarena.jpg')] md:bg-[position:0px_-250px] bg-[position:0px_-50px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
+                <div class="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end ">
+                    <div class="bg-white rounded-md md:w-[60%] w-[95%] border border-black rounded-lg border-8 border-double">
                         <p id="enemyName" class="font-preahvihear">Aang</p>
-                        <div class="border"><div class="w-[10%] inline-block font-preahvihear">HP:</div><div id="enemyHPContainer" class=" inline-block w-[85%]"><div id="enemyHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
+                        <div class="border"><div class="md:w-[10%] w-[5%] inline-block font-preahvihear text-start">HP:</div><div id="enemyHPContainer" class=" inline-block md:w-[85%] w-[70%]"><div id="enemyHP" class="h-[10px] w-[100%] text-end bg-black rounded-md"> </div></div></div>
                     </div>
                 </div>
 
-                <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center"> 
+                <div class="md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center"> 
                     <div class="relative  hover:animate-bounce" id="enemyPokemonContainer">
                         <div class="w-[50px] absolute z-2 text-end left-60 top-10" id="elementEnemy"></div>
-                        <img src="../asset/apiAirRumput/aang.png" id="enemyPokemon" alt="Aang" class="mx-auto w-[20%]">
+                        <img src="../asset/apiAirRumput/aang.png" id="enemyPokemon" alt="Aang" class="mx-auto md:w-[20%] w-[50%]">
                     </div>
                 </div>
 
-                <div class="col-start-1 col-end-2 row-start-2 row-end-3"> 
+                <div class="col-start-1 col-end-2 row-start-2 row-end-3 flex md:items-start md:justify-center items-start justify-start"> 
                     <div class="relative hover:animate-bounce" id="yourPokemonContainer">
                         <div class="w-[50px] absolute z-2 ml-[70%]" id="elementYou"></div>
-                        <img src="../asset/apiAirRumput/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="ml-[60%] w-[100px] ">
+                        <img src="../asset/apiAirRumput/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="md:ml-[60%] w-[100px] ">
                     </div>
                 </div>
-                <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-start">
-                    <div class="bg-white rounded-md w-[60%] border border-black rounded-lg border-8 border-double">
+                <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-start md:justify-start justify-center">
+                    <div class="bg-white rounded-md md:w-[60%] w-[95%] border border-black rounded-lg border-8 border-double">
                         <p id="yourName" class="font-preahvihear">Bulbasaur</p>
-                        <div class="border"><div class="w-[10%] inline-block font-preahvihear">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
+                        <div class="border"><div class="md:w-[10%] w-[5%] inline-block font-preahvihear">HP:</div><div id="yourHPContainer" class=" inline-block md:w-[85%] w-[70%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
                          <div class="text-end font-preahvihear" id="yourHealthBar">A</div>
                     </div>
                 </div>
@@ -191,8 +191,8 @@
             
         </div>  
 
-        <div class="col-start-1 col-end-4 row-start-7 row-end-8 border border-black rounded-lg border-8 border-double bg-white flex items-center justify-center font-preahvihear" id="gameInstruction">Defeat your opponent!</div>
-        <div class="col-start-4 col-end-5 row-start-7 row-end-8 bg-white border border-black rounded-lg border-8 border-double"> 
+        <div class="md:col-start-1 md:col-end-4 md:row-start-7 md:row-end-8 col-start-1 col-end-5 row-start-6 row-end-7 border border-black rounded-lg border-8 border-double bg-white flex items-center justify-center font-preahvihear" id="gameInstruction">Defeat your opponent!</div>
+        <div class="md:col-start-4 md:col-end-5 md:row-start-7 md:row-end-8 col-start-1 col-end-5 row-start-7 row-end-8 bg-white border border-black rounded-lg border-8 border-double"> 
                 <div class="grid grid-cols-2 grid-rows-2 h-[100%] cursor-pointer z-10">
                     <!-- <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="fireAttackButton" onclick="duelStart(event)">Fire</button>
                     <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="waterAttackButton" onclick="duelStart(event)">Water</button>
@@ -200,7 +200,7 @@
                     <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="physicalAttackButton" onclick="duelStart(event)">Physical</button> -->
                     
 
-                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear z-30" id="fireAttackButton" >Fire</button>
+                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="fireAttackButton" >Fire</button>
                     <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="waterAttackButton" >Water</button>
                     <button class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="grassAttackButton" >Grass</button>
                     <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="physicalAttackButton">Physical</button>
