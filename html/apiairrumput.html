@@ -3,7 +3,7 @@
 <head>
 
     <!-- external css -->
-    <link rel="stylesheet" href="./css//apiairrumput.css">
+    <link rel="stylesheet" href="../css//apiairrumput.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://www.vincentgamecompany.com">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./asset/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../asset/favicon.png">
 
     <!-- Harry Potter Font -->
     <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
@@ -95,7 +95,7 @@
                 <!-- <li class="hover:underline active:scale-90 hover:scale-110"><a href="#">Contact</a></li> -->
             </ul>
         </nav>
-        <div class="text-lg font-bold text-white font-lexend"><a href="index.html"><img src="./asset/revofun logo.png" alt="RevoFun Logo" class="w-[100px] hover:rotate-3 active:scale-90"></a></div>
+        <div class="text-lg font-bold text-white font-lexend"><a href="index.html"><img src="../asset/Index/revofun logo.png" alt="RevoFun Logo" class="w-[100px] hover:rotate-3 active:scale-90"></a></div>
         <div class="justify-between items-center p-4 bg-yellow-400 text-white" id="rightHeaderContainer">
             <div class="" id="rightHeaderContainerContainer">
                 <i class="fa-solid fa-search"></i>
@@ -104,13 +104,13 @@
     </header>
 
 
-    <section id="apiAirRumputContainer" class="flex items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('./asset/fwg2.png');">
-        <audio id="superEffectiveSound" src="./asset/hit-super-effective.mp3"></audio>
-        <audio id="NotEffectiveSound" src="./asset/not-very-effective.mp3"></audio>
-        <audio id="battleSong" src="./asset/battle song.mp3" loop></audio>
-        <audio id="victorySong" src="./asset/victorysong.mp3"></audio>
-        <audio id="defeatedSong" src="./asset/defeatedSong.mp3"></audio>
-        <audio id="tieSong" src="./asset/pokemonCenter.mp3"></audio>
+    <section id="apiAirRumputContainer" class="flex items-center justify-center h-screen bg-cover bg-center relative" style="background-image: url('../asset/apiAirRumput/fwg2.png');">
+        <audio id="superEffectiveSound" src="../asset/apiAirRumput/sound/hit-super-effective.mp3"></audio>
+        <audio id="NotEffectiveSound" src="../asset/apiAirRumput/sound/not-very-effective.mp3"></audio>
+        <audio id="battleSong" src="../asset/apiAirRumput/sound/battle song.mp3" loop></audio>
+        <audio id="victorySong" src="../asset/apiAirRumput/sound/victorysong.mp3"></audio>
+        <audio id="defeatedSong" src="../asset/apiAirRumput/sound/defeatedSong.mp3"></audio>
+        <audio id="tieSong" src="../asset/apiAirRumput/sound/pokemonCenter.mp3"></audio>
         <audio id="opening" src="./asset/opening.mp3"></audio>
         <div class="absolute inset-0 bg-white opacity-10"></div>
 
@@ -154,16 +154,11 @@
                         <tr><td></td><td></td><td class="p-3">Physical</td><td><span id="physicalAttackCount"></span></td></tr>   
                     </table>
                     <br>
-                    <!-- <div>You have <span id="duelResultSuperEffective"></span>   Super Effective Attacks</div>
-                    <div>You have <span id="duelResultNormallyEffective"></span> Normally Effective Attacks</div>
-                    <div>You have <span id="duelResultNotEffective"></span> Not Effective Attacks</div>
-                    <div>Total Round is <span id="totalRoundCount"></span> Rounds</div>
-                    <div>You Used <span id="fireAttackCount"></span> Fire Attacks, <span id="waterAttackCount"></span> Water Attacks, <span id="grassAttackCount"></span> Grass Attacks, <span id="physicalAttackCount"></span> Physical Attacks</div> -->
                     <button id="playAgainButton" class="text-black border border-black hover:scale-105 shadow-lg rounded-lg p-2 text-lg font-preahvihear cursor-pointer active:scale-90 active:bg-blue-600 active:text-white">Play Again</button>
                 </div>
         </div>
         <section class="hidden z-10 w-full h-[100vh] grid grid-cols-4 grid-rows-7  text-center" id="duelContainer">
-            <div class="bg-[url('./asset/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
+            <div class="bg-[url('../asset/apiAirRumput/pokemonbattlearena2.png')] bg-[position:0px_-250px] bg-cover row-start-1 row-end-7 col-start-1 col-end-5 grid grid-cols-2 grid-rows-2">   
                 <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-end ">
                     <div class="bg-white rounded-md w-[60%] border border-black rounded-lg border-8 border-double">
                         <p id="enemyName" class="font-preahvihear">Aang</p>
@@ -174,20 +169,21 @@
                 <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex justify-center items-center"> 
                     <div class="relative  hover:animate-bounce" id="enemyPokemonContainer">
                         <div class="w-[50px] absolute z-2 text-end left-60 top-10" id="elementEnemy"></div>
-                        <img src="./asset/aang.png" id="enemyPokemon" alt="Aang" class="mx-auto w-[20%]">
+                        <img src="../asset/apiAirRumput/aang.png" id="enemyPokemon" alt="Aang" class="mx-auto w-[20%]">
                     </div>
                 </div>
 
                 <div class="col-start-1 col-end-2 row-start-2 row-end-3"> 
                     <div class="relative hover:animate-bounce" id="yourPokemonContainer">
                         <div class="w-[50px] absolute z-2 ml-[70%]" id="elementYou"></div>
-                        <img src="./asset/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="ml-[60%] w-[100px] ">
+                        <img src="../asset/apiAirRumput/bulbasaur.png" id="yourPokemon" alt="Bulbasaur" class="ml-[60%] w-[100px] ">
                     </div>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-start">
                     <div class="bg-white rounded-md w-[60%] border border-black rounded-lg border-8 border-double">
                         <p id="yourName" class="font-preahvihear">Bulbasaur</p>
-                         <div class="border"><div class="w-[10%] inline-block font-preahvihear">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
+                        <div class="border"><div class="w-[10%] inline-block font-preahvihear">HP:</div><div id="yourHPContainer" class=" inline-block w-[85%]"><div id="yourHP" class="h-[10px] w-[100%] bg-black rounded-md"> </div></div></div>
+                         <div class="text-end font-preahvihear" id="yourHealthBar">A</div>
                     </div>
                 </div>
   
@@ -198,17 +194,22 @@
         <div class="col-start-1 col-end-4 row-start-7 row-end-8 border border-black rounded-lg border-8 border-double bg-white flex items-center justify-center font-preahvihear" id="gameInstruction">Defeat your opponent!</div>
         <div class="col-start-4 col-end-5 row-start-7 row-end-8 bg-white border border-black rounded-lg border-8 border-double"> 
                 <div class="grid grid-cols-2 grid-rows-2 h-[100%] cursor-pointer z-10">
-                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="fireAttackButton" onclick="duelStart(event)">Fire</button>
+                    <!-- <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="fireAttackButton" onclick="duelStart(event)">Fire</button>
                     <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="waterAttackButton" onclick="duelStart(event)">Water</button>
                     <button class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="grassAttackButton" onclick="duelStart(event)">Grass</button>
-                    <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="physicalAttackButton" onclick="duelStart(event)">Physical</button>
+                    <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="physicalAttackButton" onclick="duelStart(event)">Physical</button> -->
+                    
+
+                    <button class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear z-30" id="fireAttackButton" >Fire</button>
+                    <button class="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="waterAttackButton" >Water</button>
+                    <button class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="grassAttackButton" >Grass</button>
+                    <button class="col-start-2 col-end-3 row-start-2 row-end-3 flex items-center justify-center cursor-pointer hover:bg-gray-200 font-preahvihear" id="physicalAttackButton">Physical</button>
                 </div>
         </div>
         
         </section>
     </section>
-    <br>
-    <footer class="bg-yellow-400 text-white p-6 mt-10 w-full relative">
+    <footer class="bg-yellow-400 text-white p-6 w-full relative">
         <div class="container mx-auto text-center font-lexend">
             <p>&copy; 2025 RevoFun. All rights reserved.</p>
             <div class="mt-4 font-lexend">
@@ -218,7 +219,7 @@
         </div>
     </footer>
 
-    <script src="./script/apiairrumput.js"></script>
-    <script src="./script/script.js"></script>
+    <script src="../ts/apiairrumput.js"></script>
+    <script src="../ts/script.js"></script>
 </body>
 </html>
