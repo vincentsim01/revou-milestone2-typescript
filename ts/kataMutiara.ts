@@ -85,18 +85,6 @@ letPlayButton.addEventListener("click", () => {
     secondKataMutiara.classList.remove("hidden");
     kataMutiaraDescription.classList.add('hidden');
     titleContainer?.classList.add('hidden');
-    // kataMutiaraDescription.innerHTML = `
-    // <div class="font-preahvihear text-xs text-gray-900 mb-2 bg-white/30 border border-black rounded-md p-5" >
-
-    // <b><u>Temukan pasangan kata yang cocok! </u></b>
-    // <ul class='list-disc'>
-    // <li>Si Mutiara mengucapkan beberapa kata bijak yang terdiri dari 2 frase </li>
-    // <li>Frase pertama terletak di kotak atas dan frase kedua terletak di kotak bawah</li>
-    // <li>Kalian harus memasangkan frase pertama dengan frase kedua yang tepat!</li>
-    // <li>Mohon jangan terburu-buru dalam memilih pasangan! Karena Si Mutiara perlu waktu untuk memproses kedua frase yang dipilih</li>
-    // </ul>
-    // </div>
-    // `;
     countdownContainer.classList.remove("hidden");
     createBoard();
 });
