@@ -27,6 +27,9 @@ var nextLevelButton = document.getElementById('nextLevelButton');
 var gameContainerDesktop = document.getElementById('gameContainerDesktop');
 var gameContainerMobile = document.getElementById('gameContainerMobile');
 var letPlayButtonMobile = document.getElementById("letPlayButtonMobile");
+var resultContainerMobile = document.getElementById("resultContainerMobile");
+var playAgainButtonMobile = document.getElementById("playAgainButtonMobile");
+var nextLevelButtonMobile = document.getElementById('nextLevelButtonMobile');
 var gameLevel = 5;
 var kataMutiara = [
     { 1: ["Kamu memang seperti lempeng bumi", "bergeser sedikit saja sudah mengguncang hatiku"] },
@@ -177,7 +180,7 @@ function createBoardMobile() {
         card1.dataset.Content = item[Object.keys(item)[0]][0];
         card1.dataset.id = item[Object.keys(item)[0]];
         card1.classList.add("firstPhraseMove");
-        card1.addEventListener("click", flipCard);
+        card1.addEventListener("click", flipCardMobile);
         firstKataMutiaraMobile.appendChild(card1);
         var card2 = document.createElement("div");
         card2.classList.add("card2Mobile");
@@ -187,7 +190,7 @@ function createBoardMobile() {
         card2.dataset.Content = item[Object.keys(item)[0]][1];
         card2.dataset.id = item[Object.keys(item)[0]];
         card2.classList.add("secondPhraseMove");
-        card2.addEventListener("click", flipCard);
+        card2.addEventListener("click", flipCardMobile);
         secondKataMutiaraMobile.appendChild(card2);
     });
     //from the array of cards for 1st phrase then we will randomize the order
@@ -239,6 +242,35 @@ function flipCard() {
         this.classList.remove("flipped");
     }
 }
+function flipCardMobile() {
+    var _this = this;
+    if (this.classList.contains("flipped"))
+        return;
+    this.textContent = this.dataset.Content;
+    this.classList.add("flipped");
+    cardmoveSound.play();
+    if (!firstCard) {
+        firstCard = this;
+    }
+    else if (firstCard && !secondCard) {
+        secondCard = this;
+        if (firstCard.parentElement === this.parentElement) {
+            secondCard = null;
+            setTimeout(function () {
+                _this.textContent = '?';
+                _this.classList.remove("flipped");
+            }, 800);
+            return;
+        }
+        checkMatchMobile();
+    }
+    //if there is a third card being flipped the system will say no
+    else if (firstCard !== null && secondCard !== null) {
+        alert('Please wait for the pearl to finish checking');
+        this.textContent = '?';
+        this.classList.remove("flipped");
+    }
+}
 function checkMatch() {
     if (firstCard.dataset.id === secondCard.dataset.id) {
         firstCard.classList.add("matched");
@@ -256,12 +288,27 @@ function checkMatch() {
         }, 1000);
     }
 }
+function checkMatchMobile() {
+    if (firstCard.dataset.id === secondCard.dataset.id) {
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+        cardokSound.play();
+        resetTurnMobile();
+    }
+    else {
+        setTimeout(function () {
+            firstCard.textContent = "?";
+            secondCard.textContent = "?";
+            firstCard.classList.remove("flipped");
+            secondCard.classList.remove("flipped");
+            resetTurnMobile();
+        }, 1000);
+    }
+}
 //click the play at the same level again button
 function playAgain() {
     firstKataMutiara.textContent = "";
     secondKataMutiara.textContent = "";
-    firstKataMutiaraMobile.textContent = "";
-    secondKataMutiaraMobile.textContent = "";
     resultContainer.classList.add("hidden");
     resultText.textContent = "";
     //to randomize the whole array
@@ -270,12 +317,21 @@ function playAgain() {
     randomKataFive = selectRandomPairs(randomKataMutiara, gameLevel);
     createBoard();
 }
+function playAgainMobile() {
+    firstKataMutiaraMobile.textContent = "";
+    secondKataMutiaraMobile.textContent = "";
+    resultContainerMobile.classList.add("hidden");
+    resultText.textContent = "";
+    //to randomize the whole array
+    randomKataMutiara = shuffleArray(kataMutiara);
+    //to pick 5 items from the randomized array
+    randomKataFive = selectRandomPairs(randomKataMutiara, gameLevel);
+    createBoardMobile();
+}
 // click the next level button
 function playAgainWin() {
     firstKataMutiara.textContent = "";
     secondKataMutiara.textContent = "";
-    firstKataMutiaraMobile.textContent = "";
-    secondKataMutiaraMobile.textContent = "";
     resultContainer.classList.add("hidden");
     resultText.textContent = "";
     //to randomize the whole array
@@ -289,17 +345,43 @@ function playAgainWin() {
         nextLevelButton.classList.add('hidden');
     }, 1000);
 }
+function playAgainWinMobile() {
+    firstKataMutiaraMobile.textContent = "";
+    secondKataMutiaraMobile.textContent = "";
+    resultContainerMobile.classList.add("hidden");
+    resultText.textContent = "";
+    //to randomize the whole array
+    randomKataMutiara = shuffleArray(kataMutiara);
+    gameLevel++;
+    //to pick 5 items from the randomized array
+    randomKataFive = selectRandomPairs(randomKataMutiara, gameLevel);
+    createBoardMobile();
+    //hide the nextlevel button after 1 second
+    setTimeout(function () {
+        nextLevelButtonMobile.classList.add('hidden');
+    }, 1000);
+}
 //play again button will always appear regardless player lose or win the round and the difficulty remains the same
 playAgainButton.addEventListener("click", function () {
     clearInterval(intervalId);
     timeCounter = 46;
     playAgain();
 });
+playAgainButtonMobile.addEventListener("click", function () {
+    clearInterval(intervalId);
+    timeCounter = 46;
+    playAgainMobile();
+});
 //next level button will appear only when player managed to clear the round and the difficulty will increase by 1 additional card
 nextLevelButton.addEventListener("click", function () {
     clearInterval(intervalId);
     timeCounter = 46;
     playAgainWin();
+});
+nextLevelButtonMobile.addEventListener("click", function () {
+    clearInterval(intervalId);
+    timeCounter = 46;
+    playAgainWinMobile();
 });
 // set the card back
 function resetTurn() {
@@ -311,6 +393,24 @@ function resetTurn() {
             //show result and the next level button
             resultContainer.classList.remove("hidden");
             nextLevelButton.classList.remove("hidden");
+            resultText.textContent = "🎉 You Win! Your time was " + timeRemain + " seconds";
+            cardvictorySound.play();
+            //stop interval first then when createboard function is called then it will reset the countdown
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+        }, 500);
+    }
+}
+function resetTurnMobile() {
+    var _a;
+    _a = [null, null], firstCard = _a[0], secondCard = _a[1];
+    if (document.querySelectorAll(".matched").length === randomKataFive.length * 2) {
+        setTimeout(function () {
+            var timeRemain = 45 - timeCounter;
+            //show result and the next level button
+            resultContainerMobile.classList.remove("hidden");
+            nextLevelButtonMobile.classList.remove("hidden");
             resultText.textContent = "🎉 You Win! Your time was " + timeRemain + " seconds";
             cardvictorySound.play();
             //stop interval first then when createboard function is called then it will reset the countdown

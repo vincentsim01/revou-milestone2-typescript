@@ -18,6 +18,10 @@ const nextLevelButton = document.getElementById('nextLevelButton') as HTMLElemen
 const gameContainerDesktop = document.getElementById('gameContainerDesktop') as HTMLElement | null;
 const gameContainerMobile = document.getElementById('gameContainerMobile') as HTMLElement | null;
 const letPlayButtonMobile = document.getElementById("letPlayButtonMobile") as HTMLElement | null;
+const resultContainerMobile = document.getElementById("resultContainerMobile") as HTMLElement | null;
+const playAgainButtonMobile = document.getElementById("playAgainButtonMobile") as HTMLElement | null;
+const nextLevelButtonMobile = document.getElementById('nextLevelButtonMobile') as HTMLElement | null;
+
 
 let gameLevel:number = 5;
 
@@ -189,7 +193,7 @@ function runCountDown(){
                 card1.dataset.Content = item[Object.keys(item)[0]][0];
                 card1.dataset.id = item[Object.keys(item)[0]];
                 card1.classList.add("firstPhraseMove");
-                card1.addEventListener("click", flipCard);
+                card1.addEventListener("click", flipCardMobile);
                 firstKataMutiaraMobile.appendChild(card1);
 
                 const card2 = document.createElement("div");
@@ -200,7 +204,7 @@ function runCountDown(){
                 card2.dataset.Content = item[Object.keys(item)[0]][1];
                 card2.dataset.id = item[Object.keys(item)[0]];
                 card2.classList.add("secondPhraseMove");
-                card2.addEventListener("click", flipCard);
+                card2.addEventListener("click", flipCardMobile);
                 secondKataMutiaraMobile.appendChild(card2);
             });
 
@@ -258,6 +262,39 @@ function runCountDown(){
 
     }
 
+
+
+        function flipCardMobile() {
+        if (this.classList.contains("flipped")) return;    
+        this.textContent = this.dataset.Content;
+        this.classList.add("flipped");
+        cardmoveSound.play();
+
+        if (!firstCard) {
+            firstCard = this;
+        } 
+        else if (firstCard && !secondCard) {
+            secondCard = this;
+            if (firstCard.parentElement === this.parentElement) {
+                secondCard = null;
+                setTimeout(() => {
+                    this.textContent = '?';
+                    this.classList.remove("flipped");
+                }, 800);
+                return
+            }
+            checkMatchMobile();
+        } 
+
+        //if there is a third card being flipped the system will say no
+        else if (firstCard!== null && secondCard !== null) {
+            alert('Please wait for the pearl to finish checking');
+            this.textContent = '?';
+            this.classList.remove("flipped");
+        }
+
+    }
+
         function checkMatch() {
             if (firstCard.dataset.id === secondCard.dataset.id) {
                 firstCard.classList.add("matched");
@@ -276,12 +313,28 @@ function runCountDown(){
             }
         }
 
+        function checkMatchMobile() {
+            if (firstCard.dataset.id === secondCard.dataset.id) {
+                firstCard.classList.add("matched");
+                secondCard.classList.add("matched");
+                cardokSound.play();
+                resetTurnMobile();
+            } 
+            else {
+                setTimeout(() => {
+                firstCard.textContent = "?";
+                secondCard.textContent = "?";
+                firstCard.classList.remove("flipped");
+                secondCard.classList.remove("flipped");
+                resetTurnMobile();
+                }, 1000);
+            }
+        }
+
         //click the play at the same level again button
         function playAgain(){
             firstKataMutiara.textContent="";
             secondKataMutiara.textContent="";
-            firstKataMutiaraMobile.textContent="";
-            secondKataMutiaraMobile.textContent="";
             resultContainer.classList.add("hidden");
             resultText.textContent = "";
             //to randomize the whole array
@@ -292,12 +345,23 @@ function runCountDown(){
             createBoard();
         }
 
+        function playAgainMobile(){
+            firstKataMutiaraMobile.textContent="";
+            secondKataMutiaraMobile.textContent="";
+            resultContainerMobile.classList.add("hidden");
+            resultText.textContent = "";
+            //to randomize the whole array
+            randomKataMutiara = shuffleArray(kataMutiara);
+
+            //to pick 5 items from the randomized array
+            randomKataFive = selectRandomPairs(randomKataMutiara, gameLevel);
+            createBoardMobile();
+        }
+
         // click the next level button
         function playAgainWin(){
             firstKataMutiara.textContent="";
             secondKataMutiara.textContent="";
-            firstKataMutiaraMobile.textContent="";
-            secondKataMutiaraMobile.textContent="";
             resultContainer.classList.add("hidden");
             resultText.textContent = "";
             //to randomize the whole array
@@ -307,10 +371,31 @@ function runCountDown(){
             //to pick 5 items from the randomized array
             randomKataFive = selectRandomPairs(randomKataMutiara, gameLevel);
             createBoard();
+     
 
             //hide the nextlevel button after 1 second
             setTimeout(() => {
                 nextLevelButton.classList.add('hidden')
+            },1000)
+        }
+
+        function playAgainWinMobile(){
+
+            firstKataMutiaraMobile.textContent="";
+            secondKataMutiaraMobile.textContent="";
+            resultContainerMobile.classList.add("hidden");
+            resultText.textContent = "";
+            //to randomize the whole array
+            randomKataMutiara = shuffleArray(kataMutiara);
+            gameLevel++;
+
+            //to pick 5 items from the randomized array
+            randomKataFive = selectRandomPairs(randomKataMutiara, gameLevel);
+            createBoardMobile();
+
+            //hide the nextlevel button after 1 second
+            setTimeout(() => {
+                nextLevelButtonMobile.classList.add('hidden')
             },1000)
         }
 
@@ -321,11 +406,23 @@ function runCountDown(){
             playAgain();
         })
 
+        playAgainButtonMobile.addEventListener("click", () => {
+            clearInterval(intervalId);
+            timeCounter = 46;
+            playAgainMobile();
+        })
+
         //next level button will appear only when player managed to clear the round and the difficulty will increase by 1 additional card
         nextLevelButton.addEventListener("click", () => {
             clearInterval(intervalId);
             timeCounter = 46;
             playAgainWin();
+        })
+
+        nextLevelButtonMobile.addEventListener("click", () => {
+            clearInterval(intervalId);
+            timeCounter = 46;
+            playAgainWinMobile();
         })
 
         // set the card back
@@ -350,6 +447,31 @@ function runCountDown(){
                      500);
             }
         }
+
+
+        function resetTurnMobile() {
+            [firstCard, secondCard] = [null, null];
+            if (document.querySelectorAll(".matched").length === randomKataFive.length*2) {
+                setTimeout(
+                    () => 
+                        {
+                        let timeRemain:number = 45 - timeCounter;
+                        //show result and the next level button
+                        resultContainerMobile.classList.remove("hidden");
+                        nextLevelButtonMobile.classList.remove("hidden");
+                        resultText.textContent = "🎉 You Win! Your time was " + timeRemain + " seconds";
+                        cardvictorySound.play();
+
+                        //stop interval first then when createboard function is called then it will reset the countdown
+                        if (intervalId) {
+                            clearInterval(intervalId);
+                        }
+                    },
+                     500);
+            }
+        }
+
+        
 
 
 
