@@ -376,6 +376,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementTie');
                 elementEnemy.classList.remove('enemyelementTie');
+                elementYou.classList.remove('yourelementTie');
+                elementEnemy.classList.remove('enemyelementTie');
                 return;
             }, 2500);
         }
@@ -425,6 +427,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementLose');
                 elementEnemy.classList.remove('enemyelementWin');
+                elementYou.classList.remove('yourelementLoseMobile');
+                elementEnemy.classList.remove('enemyelementWinMobile');
                 yourPokemon.classList.remove('getHit');
                 return;
             }, 2500);
@@ -475,6 +479,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementWin');
                 elementEnemy.classList.remove('enemyelementLose');
+                elementYou.classList.remove('yourelementWinMobile');
+                elementEnemy.classList.remove('enemyelementLoseMobile');
                 enemyPokemon.classList.remove('getHit');
                 return;
             }, 2500);
@@ -529,6 +535,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementWin');
                 elementEnemy.classList.remove('enemyelementLose');
+                elementYou.classList.remove('yourelementWinMobile');
+                elementEnemy.classList.remove('enemyelementLoseMobile');
                 enemyPokemon.classList.remove('getHit');
                 return;
             }, 2500);
@@ -578,6 +586,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementTie');
                 elementEnemy.classList.remove('enemyelementTie');
+                elementYou.classList.remove('yourelementTieMobile');
+                elementEnemy.classList.remove('enemyelementTieMobile');
                 return;
             }, 2500);
         }
@@ -627,6 +637,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementLose');
                 elementEnemy.classList.remove('enemyelementWin');
+                elementYou.classList.remove('yourelementLoseMobile');
+                elementEnemy.classList.remove('enemyelementWinMobile');
                 yourPokemon.classList.remove('getHit');
                 return;
             }, 2500);
@@ -683,6 +695,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementLose');
                 elementEnemy.classList.remove('enemyelementWin');
+                elementYou.classList.remove('yourelementLoseMobile');
+                elementEnemy.classList.remove('enemyelementWinMobile');
                 yourPokemon.classList.remove('getHit');
                 return;
             }, 2500);
@@ -733,6 +747,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementWin');
                 elementEnemy.classList.remove('enemyelementLose');
+                elementYou.classList.remove('yourelementWinMobile');
+                elementEnemy.classList.remove('enemyelementLoseMobile');
                 enemyPokemon.classList.remove('getHit');
                 return;
             }, 2500);
@@ -782,6 +798,8 @@ function duelStart(e) {
                 physicalAttackButton.classList.remove('text-gray-100');
                 elementYou.classList.remove('yourelementTie');
                 elementEnemy.classList.remove('enemyelementTie');
+                elementYou.classList.remove('yourelementTieMobile');
+                elementEnemy.classList.remove('enemyelementTieMobile');
                 return;
             }, 2500);
         }
@@ -801,12 +819,12 @@ function duelStart(e) {
             enemyHP.style.width = "".concat(enemyHPValue, "%");
             normallyEffectiveContainer++;
             if (window.innerWidth <= 768) {
-                elementYou.classList.add('yourelementPhysicalMobile');
-                elementEnemy.classList.add('enemyelementPhysicalMobile');
+                yourPokemon.classList.add('yourelementPhysicalMobile');
+                enemyPokemon.classList.add('enemyelementPhysicalMobile');
             }
             else if (window.innerWidth > 768) {
-                elementYou.classList.add('yourelementPhysical');
-                elementEnemy.classList.add('enemyelementPhysical');
+                yourPokemon.classList.add('yourelementPhysical');
+                enemyPokemon.classList.add('enemyelementPhysical');
             }
             setTimeout(function () {
                 NotEffectiveSound.play();
@@ -819,6 +837,8 @@ function duelStart(e) {
             gameInstruction.textContent = "Let's continue the duel";
             yourPokemon.classList.remove('yourelementPhysical');
             enemyPokemon.classList.remove('enemyelementPhysical');
+            yourPokemon.classList.remove('yourelementPhysicalMobile');
+            enemyPokemon.classList.remove('enemyelementPhysicalMobile');
             fireAttackButton.classList.remove('hidden');
             waterAttackButton.classList.remove('hidden');
             grassAttackButton.classList.remove('hidden');
