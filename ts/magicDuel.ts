@@ -13,10 +13,10 @@ const magicDuelLevel:any = document.getElementById('magicDuelLevel');
 let abraKadabraButton = document.getElementById('abraKadabraButton') as HTMLElement | null;
 
 
-const avadakedavra:any = document.getElementById('avadakedavra') as HTMLElement | null;
+const avadakedavra = document.getElementById('avadakedavra') as HTMLElement | null;
 
-const hedwigTheme:any = document.getElementById('hedwigTheme')
-const avadakedavrasound:any = document.getElementById('avadakedavrasound') 
+const hedwigTheme = document.getElementById('hedwigTheme') as HTMLAudioElement | null;
+const avadakedavrasound = document.getElementById('avadakedavrasound') as HTMLAudioElement | null;
 
 let magicMeterLeft = document.getElementById('magicMeterLeft') as HTMLElement | null;
 let magicMeterRight = document.getElementById('magicMeterRight') as HTMLElement | null;

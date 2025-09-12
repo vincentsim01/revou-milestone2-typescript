@@ -2,18 +2,18 @@ const firstKataMutiara = document.getElementById("firstKataMutiara") as HTMLElem
 const secondKataMutiara = document.getElementById("secondKataMutiara") as HTMLElement | null;
 const firstKataMutiaraMobile = document.getElementById("firstKataMutiaraMobile") as HTMLElement | null;
 const secondKataMutiaraMobile = document.getElementById("secondKataMutiaraMobile") as HTMLElement | null;
-const resultContainer:any = document.getElementById("resultContainer");
-const resultText:any = document.getElementById("resultText");
+const resultContainer= document.getElementById("resultContainer") as HTMLDivElement | null;
+const resultText = document.getElementById("resultText") as HTMLDivElement | null;
 const playAgainButton = document.getElementById("playAgainButton") as HTMLElement | null;
 const kataMutiaraDescription:any = document.getElementById("kataMutiaraDescription");
 const titleContainer = document.getElementById('titleContainer') as HTMLElement | null;
 const countdownContainer = document.getElementById("countdownContainer") as HTMLElement | null;
-const countdownText:any = document.getElementById("countdownText");
-const undertheseaSong:any = document.getElementById("udertheseaSong");
-const cardmoveSound:any = document.getElementById("cardmoveSound");
-const cardokSound:any = document.getElementById("cardokSound");
-const cardvictorySound:any = document.getElementById("cardvictorySound");
-const cardlostSound:any = document.getElementById("cardlostSound");
+const countdownText = document.getElementById("countdownText") as HTMLDivElement | null;
+const undertheseaSong = document.getElementById("udertheseaSong") as HTMLAudioElement | null;
+const cardmoveSound = document.getElementById("cardmoveSound") as HTMLAudioElement | null;
+const cardokSound = document.getElementById("cardokSound") as HTMLAudioElement | null;
+const cardvictorySound= document.getElementById("cardvictorySound") as HTMLAudioElement | null;
+const cardlostSound= document.getElementById("cardlostSound") as HTMLAudioElement | null;
 const nextLevelButton = document.getElementById('nextLevelButton') as HTMLElement | null;
 const gameContainerDesktop = document.getElementById('gameContainerDesktop') as HTMLElement | null;
 const gameContainerMobile = document.getElementById('gameContainerMobile') as HTMLElement | null;
@@ -132,7 +132,7 @@ function runCountDown(){
 }
 
 
- function createBoard() {
+ function createBoard():void {
             setTimeout(runCountDown, 3000);
 
             randomKataFive.forEach((item) => {
@@ -182,7 +182,7 @@ function runCountDown(){
             }, 4000);
     }
 
-     function createBoardMobile() {
+     function createBoardMobile():void {
             setTimeout(runCountDown, 3000);
 
             randomKataFive.forEach((item) => {
@@ -231,7 +231,7 @@ function runCountDown(){
                 });
             }, 4000);
     }
-    function flipCard() {
+    function flipCard():void {
         if (this.classList.contains("flipped")) return;    
         this.textContent = this.dataset.Content;
         this.classList.add("flipped");
@@ -264,7 +264,7 @@ function runCountDown(){
 
 
 
-        function flipCardMobile() {
+        function flipCardMobile():void {
         if (this.classList.contains("flipped")) return;    
         this.textContent = this.dataset.Content;
         this.classList.add("flipped");
