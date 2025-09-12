@@ -125,7 +125,7 @@ function runCountDown(){
         clearInterval(intervalId);
         countdownText.textContent = "Waktu habis!";
         cardlostSound.play();
-        resultContainer.classList.remove("hidden");
+        resultContainer?.classList.remove("hidden");
         resultText.textContent = "You Lose!";
     }
 }, 1000);
@@ -144,7 +144,7 @@ function runCountDown(){
                 card1.dataset.id = item[Object.keys(item)[0]];
                 card1.classList.add("firstPhraseMove");
                 card1.addEventListener("click", flipCard);
-                firstKataMutiara.appendChild(card1);
+                firstKataMutiara?.appendChild(card1);
 
                 const card2 = document.createElement("div");
                 card2.classList.add("card2");
@@ -155,7 +155,7 @@ function runCountDown(){
                 card2.dataset.id = item[Object.keys(item)[0]];
                 card2.classList.add("secondPhraseMove");
                 card2.addEventListener("click", flipCard);
-                secondKataMutiara.appendChild(card2);
+                secondKataMutiara?.appendChild(card2);
             });
 
             //from the array of cards for 1st phrase then we will randomize the order
@@ -194,7 +194,7 @@ function runCountDown(){
                 card1.dataset.id = item[Object.keys(item)[0]];
                 card1.classList.add("firstPhraseMove");
                 card1.addEventListener("click", flipCardMobile);
-                firstKataMutiaraMobile.appendChild(card1);
+                firstKataMutiaraMobile?.appendChild(card1);
 
                 const card2 = document.createElement("div");
                 card2.classList.add("card2Mobile");
@@ -205,7 +205,7 @@ function runCountDown(){
                 card2.dataset.id = item[Object.keys(item)[0]];
                 card2.classList.add("secondPhraseMove");
                 card2.addEventListener("click", flipCardMobile);
-                secondKataMutiaraMobile.appendChild(card2);
+                secondKataMutiaraMobile?.appendChild(card2);
             });
 
             //from the array of cards for 1st phrase then we will randomize the order

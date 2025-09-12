@@ -150,7 +150,7 @@ pokemonGenerationArray.forEach((item) => {
 
 gameVersion.forEach((item)=>{
     let versionSelected = document.getElementById(`generation-${item}`);
-    versionSelected.addEventListener('click', ()=>{
+    versionSelected?.addEventListener('click', ()=>{
         const findVersion = Object.values(Object.values(pokemonGenerationArray.find(gen => gen[item]))[0]);
         characterArray = [...findVersion];
         DisplayCharacter(characterArray);
@@ -160,14 +160,14 @@ gameVersion.forEach((item)=>{
 
 const enemyArray:string[] = ['aang' , 'kakashi', 'brewmaster' ];
 chooseCharacterButton.addEventListener('click', () => {
-    characterSelectionContainer.classList.remove('hidden');
+    characterSelectionContainer?.classList.remove('hidden');
     DisplayCharacter(characterArray);
     opening.play();
-    chooseCharacterText.classList.add('slowlyAppear');
-    characterDisplayContainer.classList.add('slowlyAppear');
-    generationList.classList.add('slowlyAppear');
-    gameStory.classList.remove('hidden');
-    gameStory.classList.add('starWarsText');
+    chooseCharacterText?.classList.add('slowlyAppear');
+    characterDisplayContainer?.classList.add('slowlyAppear');
+    generationList?.classList.add('slowlyAppear');
+    gameStory?.classList.remove('hidden');
+    gameStory?.classList.add('starWarsText');
 
 
 });

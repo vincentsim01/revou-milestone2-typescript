@@ -146,7 +146,7 @@ pokemonGenerationArray.forEach(function (item) {
 });
 gameVersion.forEach(function (item) {
     var versionSelected = document.getElementById("generation-".concat(item));
-    versionSelected.addEventListener('click', function () {
+    versionSelected === null || versionSelected === void 0 ? void 0 : versionSelected.addEventListener('click', function () {
         var findVersion = Object.values(Object.values(pokemonGenerationArray.find(function (gen) { return gen[item]; }))[0]);
         characterArray = __spreadArray([], findVersion, true);
         DisplayCharacter(characterArray);
@@ -154,14 +154,14 @@ gameVersion.forEach(function (item) {
 });
 var enemyArray = ['aang', 'kakashi', 'brewmaster'];
 chooseCharacterButton.addEventListener('click', function () {
-    characterSelectionContainer.classList.remove('hidden');
+    characterSelectionContainer === null || characterSelectionContainer === void 0 ? void 0 : characterSelectionContainer.classList.remove('hidden');
     DisplayCharacter(characterArray);
     opening.play();
-    chooseCharacterText.classList.add('slowlyAppear');
-    characterDisplayContainer.classList.add('slowlyAppear');
-    generationList.classList.add('slowlyAppear');
-    gameStory.classList.remove('hidden');
-    gameStory.classList.add('starWarsText');
+    chooseCharacterText === null || chooseCharacterText === void 0 ? void 0 : chooseCharacterText.classList.add('slowlyAppear');
+    characterDisplayContainer === null || characterDisplayContainer === void 0 ? void 0 : characterDisplayContainer.classList.add('slowlyAppear');
+    generationList === null || generationList === void 0 ? void 0 : generationList.classList.add('slowlyAppear');
+    gameStory === null || gameStory === void 0 ? void 0 : gameStory.classList.remove('hidden');
+    gameStory === null || gameStory === void 0 ? void 0 : gameStory.classList.add('starWarsText');
 });
 function DisplayCharacter(characterArray) {
     characterDisplayContainer.innerHTML = '';
