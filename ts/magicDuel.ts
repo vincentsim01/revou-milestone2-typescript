@@ -88,7 +88,7 @@ duelStartButton.addEventListener('click', () => {
 
 });
 
-abraKadabraButton.addEventListener('click', () => {
+abraKadabraButton?.addEventListener('click', () => {
         magicToken += 5;
         opponentMagicToken -= 5;
         magicMeterLeft.style.width = magicToken + '%';
@@ -97,29 +97,29 @@ abraKadabraButton.addEventListener('click', () => {
 
         if(magicToken>=100){
                 clearInterval(intervalId);
-                avadakedavra.classList.remove('hidden');
-                avadakedavrasound.play();
+                avadakedavra?.classList.remove('hidden');
+                avadakedavrasound?.play();
                 setTimeout(() => {
                     avadakedavra.classList.add('hidden');
                 }, 2000);
-                magicDuelOutcomeContainer.classList.remove('hidden');
-                magicDuelOutcome.classList.remove('hidden');
+                magicDuelOutcomeContainer?.classList.remove('hidden');
+                magicDuelOutcome?.classList.remove('hidden');
                 magicDuelResult.textContent = 'You win!';
                 magicDuelMessage.textContent = 'Congratulations!';
                 magicDuelClickCount.textContent = `You clicked ${clickCounter} times!`;
-                magicDuelOutcomeWinButton.classList.remove('hidden');
+                magicDuelOutcomeWinButton?.classList.remove('hidden');
                 // magicToken=1000000000;
             }   
     }); 
 
     magicDuelOutcomeLoseButton.addEventListener('click', () => {
-        magicDuelOutcomeContainer.classList.add('hidden');
-        magicDuelOutcome.classList.add('hidden');
+        magicDuelOutcomeContainer?.classList.add('hidden');
+        magicDuelOutcome?.classList.add('hidden');
         magicDuelResult.textContent = '';
         magicDuelMessage.textContent = '';
         magicDuelClickCount.textContent = '';
-        magicDuelOutcomeWinButton.classList.add('hidden');
-        magicDuelOutcomeLoseButton.classList.add('hidden');
+        magicDuelOutcomeWinButton?.classList.add('hidden');
+        magicDuelOutcomeLoseButton?.classList.add('hidden');
         magicToken = 10;
         opponentMagicToken = 100 - magicToken;
         magicMeterLeft.style.width = magicToken + '%';

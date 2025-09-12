@@ -65,7 +65,7 @@ duelStartButton.addEventListener('click', function () {
     //Start Koklemot's spell
     startInterval();
 });
-abraKadabraButton.addEventListener('click', function () {
+abraKadabraButton === null || abraKadabraButton === void 0 ? void 0 : abraKadabraButton.addEventListener('click', function () {
     magicToken += 5;
     opponentMagicToken -= 5;
     magicMeterLeft.style.width = magicToken + '%';
@@ -73,28 +73,28 @@ abraKadabraButton.addEventListener('click', function () {
     clickCounter++;
     if (magicToken >= 100) {
         clearInterval(intervalId);
-        avadakedavra.classList.remove('hidden');
-        avadakedavrasound.play();
+        avadakedavra === null || avadakedavra === void 0 ? void 0 : avadakedavra.classList.remove('hidden');
+        avadakedavrasound === null || avadakedavrasound === void 0 ? void 0 : avadakedavrasound.play();
         setTimeout(function () {
             avadakedavra.classList.add('hidden');
         }, 2000);
-        magicDuelOutcomeContainer.classList.remove('hidden');
-        magicDuelOutcome.classList.remove('hidden');
+        magicDuelOutcomeContainer === null || magicDuelOutcomeContainer === void 0 ? void 0 : magicDuelOutcomeContainer.classList.remove('hidden');
+        magicDuelOutcome === null || magicDuelOutcome === void 0 ? void 0 : magicDuelOutcome.classList.remove('hidden');
         magicDuelResult.textContent = 'You win!';
         magicDuelMessage.textContent = 'Congratulations!';
         magicDuelClickCount.textContent = "You clicked ".concat(clickCounter, " times!");
-        magicDuelOutcomeWinButton.classList.remove('hidden');
+        magicDuelOutcomeWinButton === null || magicDuelOutcomeWinButton === void 0 ? void 0 : magicDuelOutcomeWinButton.classList.remove('hidden');
         // magicToken=1000000000;
     }
 });
 magicDuelOutcomeLoseButton.addEventListener('click', function () {
-    magicDuelOutcomeContainer.classList.add('hidden');
-    magicDuelOutcome.classList.add('hidden');
+    magicDuelOutcomeContainer === null || magicDuelOutcomeContainer === void 0 ? void 0 : magicDuelOutcomeContainer.classList.add('hidden');
+    magicDuelOutcome === null || magicDuelOutcome === void 0 ? void 0 : magicDuelOutcome.classList.add('hidden');
     magicDuelResult.textContent = '';
     magicDuelMessage.textContent = '';
     magicDuelClickCount.textContent = '';
-    magicDuelOutcomeWinButton.classList.add('hidden');
-    magicDuelOutcomeLoseButton.classList.add('hidden');
+    magicDuelOutcomeWinButton === null || magicDuelOutcomeWinButton === void 0 ? void 0 : magicDuelOutcomeWinButton.classList.add('hidden');
+    magicDuelOutcomeLoseButton === null || magicDuelOutcomeLoseButton === void 0 ? void 0 : magicDuelOutcomeLoseButton.classList.add('hidden');
     magicToken = 10;
     opponentMagicToken = 100 - magicToken;
     magicMeterLeft.style.width = magicToken + '%';
