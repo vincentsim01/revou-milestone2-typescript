@@ -94,7 +94,26 @@ A popup summary table appears showing:
 Number of attacks by type
 Count of super effective, effective, and physical hits
 Player can retry, pick a new Pokémon, and restart the game.
-RevoU Second Assignment/ │ ├── asset/ # Images, videos, or other assets │ ├── css/ # Stylesheets │ ├── apiairrumput.css │ ├── katamutiara.css │ └── style.css │ ├── script/ # JavaScript files │ ├── apiairrumput.js │ ├── katamutiara.js │ ├── magicduelscript.js │ └── script.js │ ├── apiairrumput.html # API Air Rumput game ├── katamutiara.html # Kata Mutiara page ├── magicduel.html # Magic Duel game ├── index.html # Main landing page │ └── README.md # Project documentation
+RevoU Second Assignment - convert Typescript/ │ 
+├── asset/ # Images, videos, or other assets │
+
+├── css/ # Stylesheets │ 
+├── apiairrumput.css │ 
+├── katamutiara.css │ 
+└── style.css │ 
+
+├── script/ # JavaScript files │ 
+├── apiairrumput.js │ 
+├── katamutiara.js │ 
+├── magicduelscript.js │ 
+└── script.js │ 
+
+├── apiairrumput.html # API Air Rumput game 
+├── katamutiara.html # Kata Mutiara page 
+├── magicduel.html # Magic Duel game 
+├── index.html # Main landing page │ 
+
+└── README.md # Project documentation
 
 🛠️ Tech Stack
 HTML5 – structure
@@ -104,4 +123,5 @@ Google Fonts – typography
 Freepik Assets – images and illustrations
 
 Next Step
-Conversion to typescript
+Level Up Feature
+Add More Games
