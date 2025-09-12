@@ -87,24 +87,24 @@ var secondCard = null;
 var letPlayButton = document.getElementById("letPlayButton");
 letPlayButton.addEventListener("click", function () {
     undertheseaSong.play();
-    letPlayButton.classList.add("hidden");
+    letPlayButton === null || letPlayButton === void 0 ? void 0 : letPlayButton.classList.add("hidden");
     // firstKataMutiara.classList.remove("hidden");
     // secondKataMutiara.classList.remove("hidden");
     gameContainerDesktop === null || gameContainerDesktop === void 0 ? void 0 : gameContainerDesktop.classList.remove('hidden');
     kataMutiaraDescription.classList.add('hidden');
     titleContainer === null || titleContainer === void 0 ? void 0 : titleContainer.classList.add('hidden');
-    countdownContainer.classList.remove("hidden");
+    countdownContainer === null || countdownContainer === void 0 ? void 0 : countdownContainer.classList.remove("hidden");
     createBoard();
 });
 letPlayButtonMobile.addEventListener("click", function () {
     undertheseaSong.play();
-    letPlayButtonMobile.classList.add("hidden");
+    letPlayButtonMobile === null || letPlayButtonMobile === void 0 ? void 0 : letPlayButtonMobile.classList.add("hidden");
     // firstKataMutiara.classList.remove("hidden");
     // secondKataMutiara.classList.remove("hidden");
     gameContainerMobile === null || gameContainerMobile === void 0 ? void 0 : gameContainerMobile.classList.remove('hidden');
     kataMutiaraDescription.classList.add('hidden');
     titleContainer === null || titleContainer === void 0 ? void 0 : titleContainer.classList.add('hidden');
-    countdownContainer.classList.remove("hidden");
+    countdownContainer === null || countdownContainer === void 0 ? void 0 : countdownContainer.classList.remove("hidden");
     createBoardMobile();
 });
 var timeCounter = 46;

@@ -127,20 +127,17 @@ abraKadabraButton?.addEventListener('click', () => {
         startInterval();
     });
 
-    magicDuelOutcomeWinButton.addEventListener('click', () => {
-        magicDuelOutcomeContainer.classList.add('hidden');
-        magicDuelOutcome.classList.add('hidden');
+    magicDuelOutcomeWinButton?.addEventListener('click', () => {
+        magicDuelOutcomeContainer?.classList.add('hidden');
+        magicDuelOutcome?.classList.add('hidden');
         magicDuelResult.textContent = '';
         magicDuelMessage.textContent = '';
         magicDuelClickCount.textContent = '';
-        magicDuelOutcomeWinButton.classList.add('hidden');
-        magicDuelOutcomeLoseButton.classList.add('hidden');
+        magicDuelOutcomeWinButton?.classList.add('hidden');
+        magicDuelOutcomeLoseButton?.classList.add('hidden');
         magicToken = 10;
         opponentMagicToken = 100 - magicToken;
-
-        // const levelNow = parseInt(magicDuelLevel.textContent, 10) || 0;
         duelLevelCounter = duelLevelCounter + 1;
-        // console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
         magicDuelLevel.textContent = duelLevelCounter;
         let spellspeed = 1 / duelLevelCounter;
         spellSpeed.textContent = `1 Spell every ${spellspeed.toFixed(2)} seconds`;
@@ -149,21 +146,20 @@ abraKadabraButton?.addEventListener('click', () => {
     });
 
 
-        magicDuelOutcomeExitButton.addEventListener('click', () => {
-        magicDuelOutcomeContainer.classList.add('hidden');
-        magicDuelOutcome.classList.add('hidden');
+        magicDuelOutcomeExitButton?.addEventListener('click', () => {
+        magicDuelOutcomeContainer?.classList.add('hidden');
+        magicDuelOutcome?.classList.add('hidden');
         magicDuelResult.textContent = '';
         magicDuelMessage.textContent = '';
         magicDuelClickCount.textContent = '';
-        harrisspell.classList.add('hidden');
-        koklemotspellpower.classList.add('hidden');
-        magicDuelOutcomeWinButton.classList.add('hidden');
-        magicDuelOutcomeLoseButton.classList.add('hidden');
-        console.log(`magictoken exit buttonn ${magicToken} opponentMagicToken: ${opponentMagicToken}`);
+        harrisspell?.classList.add('hidden');
+        koklemotspellpower?.classList.add('hidden');
+        magicDuelOutcomeWinButton?.classList.add('hidden');
+        magicDuelOutcomeLoseButton?.classList.add('hidden');
         magicMeterLeft.style.width = magicToken + '%';
         magicMeterRight.style.width = opponentMagicToken + '%';
-        magicDuelMechanism.classList.add('hidden');
-        duelStartButton.classList.remove('hidden');
+        magicDuelMechanism?.classList.add('hidden');
+        duelStartButton?.classList.remove('hidden');
         duelLevelCounter = 1;  // reset level dengan jelas
         magicDuelLevel.textContent = duelLevelCounter;
         console.log(`duelLevelCounter exit button: ${duelLevelCounter}`);

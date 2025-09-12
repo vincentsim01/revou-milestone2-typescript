@@ -101,39 +101,36 @@ magicDuelOutcomeLoseButton.addEventListener('click', function () {
     magicMeterRight.style.width = opponentMagicToken + '%';
     startInterval();
 });
-magicDuelOutcomeWinButton.addEventListener('click', function () {
-    magicDuelOutcomeContainer.classList.add('hidden');
-    magicDuelOutcome.classList.add('hidden');
+magicDuelOutcomeWinButton === null || magicDuelOutcomeWinButton === void 0 ? void 0 : magicDuelOutcomeWinButton.addEventListener('click', function () {
+    magicDuelOutcomeContainer === null || magicDuelOutcomeContainer === void 0 ? void 0 : magicDuelOutcomeContainer.classList.add('hidden');
+    magicDuelOutcome === null || magicDuelOutcome === void 0 ? void 0 : magicDuelOutcome.classList.add('hidden');
     magicDuelResult.textContent = '';
     magicDuelMessage.textContent = '';
     magicDuelClickCount.textContent = '';
-    magicDuelOutcomeWinButton.classList.add('hidden');
-    magicDuelOutcomeLoseButton.classList.add('hidden');
+    magicDuelOutcomeWinButton === null || magicDuelOutcomeWinButton === void 0 ? void 0 : magicDuelOutcomeWinButton.classList.add('hidden');
+    magicDuelOutcomeLoseButton === null || magicDuelOutcomeLoseButton === void 0 ? void 0 : magicDuelOutcomeLoseButton.classList.add('hidden');
     magicToken = 10;
     opponentMagicToken = 100 - magicToken;
-    // const levelNow = parseInt(magicDuelLevel.textContent, 10) || 0;
     duelLevelCounter = duelLevelCounter + 1;
-    // console.log(`duelLevelCounter win button: ${duelLevelCounter}`);
     magicDuelLevel.textContent = duelLevelCounter;
     var spellspeed = 1 / duelLevelCounter;
     spellSpeed.textContent = "1 Spell every ".concat(spellspeed.toFixed(2), " seconds");
     startInterval();
 });
-magicDuelOutcomeExitButton.addEventListener('click', function () {
-    magicDuelOutcomeContainer.classList.add('hidden');
-    magicDuelOutcome.classList.add('hidden');
+magicDuelOutcomeExitButton === null || magicDuelOutcomeExitButton === void 0 ? void 0 : magicDuelOutcomeExitButton.addEventListener('click', function () {
+    magicDuelOutcomeContainer === null || magicDuelOutcomeContainer === void 0 ? void 0 : magicDuelOutcomeContainer.classList.add('hidden');
+    magicDuelOutcome === null || magicDuelOutcome === void 0 ? void 0 : magicDuelOutcome.classList.add('hidden');
     magicDuelResult.textContent = '';
     magicDuelMessage.textContent = '';
     magicDuelClickCount.textContent = '';
-    harrisspell.classList.add('hidden');
-    koklemotspellpower.classList.add('hidden');
-    magicDuelOutcomeWinButton.classList.add('hidden');
-    magicDuelOutcomeLoseButton.classList.add('hidden');
-    console.log("magictoken exit buttonn ".concat(magicToken, " opponentMagicToken: ").concat(opponentMagicToken));
+    harrisspell === null || harrisspell === void 0 ? void 0 : harrisspell.classList.add('hidden');
+    koklemotspellpower === null || koklemotspellpower === void 0 ? void 0 : koklemotspellpower.classList.add('hidden');
+    magicDuelOutcomeWinButton === null || magicDuelOutcomeWinButton === void 0 ? void 0 : magicDuelOutcomeWinButton.classList.add('hidden');
+    magicDuelOutcomeLoseButton === null || magicDuelOutcomeLoseButton === void 0 ? void 0 : magicDuelOutcomeLoseButton.classList.add('hidden');
     magicMeterLeft.style.width = magicToken + '%';
     magicMeterRight.style.width = opponentMagicToken + '%';
-    magicDuelMechanism.classList.add('hidden');
-    duelStartButton.classList.remove('hidden');
+    magicDuelMechanism === null || magicDuelMechanism === void 0 ? void 0 : magicDuelMechanism.classList.add('hidden');
+    duelStartButton === null || duelStartButton === void 0 ? void 0 : duelStartButton.classList.remove('hidden');
     duelLevelCounter = 1; // reset level dengan jelas
     magicDuelLevel.textContent = duelLevelCounter;
     console.log("duelLevelCounter exit button: ".concat(duelLevelCounter));

@@ -89,25 +89,25 @@ const letPlayButton = document.getElementById("letPlayButton") as HTMLElement | 
 
 letPlayButton.addEventListener("click", () => {
     undertheseaSong.play();
-    letPlayButton.classList.add("hidden");
+    letPlayButton?.classList.add("hidden");
     // firstKataMutiara.classList.remove("hidden");
     // secondKataMutiara.classList.remove("hidden");
     gameContainerDesktop?.classList.remove('hidden');
     kataMutiaraDescription.classList.add('hidden');
     titleContainer?.classList.add('hidden');
-    countdownContainer.classList.remove("hidden");
+    countdownContainer?.classList.remove("hidden");
     createBoard();
 });
 
 letPlayButtonMobile.addEventListener("click", () => {
     undertheseaSong.play();
-    letPlayButtonMobile.classList.add("hidden");
+    letPlayButtonMobile?.classList.add("hidden");
     // firstKataMutiara.classList.remove("hidden");
     // secondKataMutiara.classList.remove("hidden");
     gameContainerMobile?.classList.remove('hidden');
     kataMutiaraDescription.classList.add('hidden');
     titleContainer?.classList.add('hidden');
-    countdownContainer.classList.remove("hidden");
+    countdownContainer?.classList.remove("hidden");
     createBoardMobile();
 });
 
