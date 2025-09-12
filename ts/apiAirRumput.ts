@@ -13,9 +13,9 @@ const enemyHPContainer = document.getElementById("enemyHPContainer")  as HTMLDiv
 const enemyHP = document.getElementById("enemyHP")  as HTMLDivElement | null;
 const duelResultContainer = document.getElementById("duelResultContainer")  as HTMLDivElement | null;
 const duelResultText = document.getElementById("duelResultText") as HTMLParagraphElement | null;
-const duelResultSuperEffective = document.getElementById("duelResultSuperEffective") as HTMLSpanElement | null;
-const duelResultNotEffective = document.getElementById("duelResultNotEffective") as HTMLSpanElement | null;
-const duelResultNormallyEffective= document.getElementById("duelResultNormallyEffective") as HTMLSpanElement | null;
+const duelResultSuperEffective:any = document.getElementById("duelResultSuperEffective");
+const duelResultNotEffective:any = document.getElementById("duelResultNotEffective");
+const duelResultNormallyEffective:any = document.getElementById("duelResultNormallyEffective");
 const fireAttackCount= document.getElementById("fireAttackCount") as HTMLSpanElement | null;
 const waterAttackCount = document.getElementById("waterAttackCount") as HTMLSpanElement | null;
 const grassAttackCount = document.getElementById("grassAttackCount") as HTMLSpanElement | null;
@@ -268,11 +268,11 @@ const iconArray:any = ['fire.png', 'water.png', 'grass.png', 'physical.png'];
 
 const enemyAttackArray:any = ["Fire", "Water", "Grass"];
 
-let playerDamageThisTurn:any;
+let playerDamageThisTurn:number;
 
-let enemyDamageThisTurn:any;
+let enemyDamageThisTurn:number;
 
-let enemyAttackThisTurn:any;
+let enemyAttackThisTurn:string;
 
 var yourHPValue:any = 100;
 
