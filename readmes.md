@@ -10,7 +10,7 @@ Hero banner section
 "Word from CEO" message
 Section with existing clients
 Simple contact form
-🎲 Games
+🎲 Games including desktop and mobile friendly interface
 Revofun includes three unique games:
 
 ⚡ Magic Duel (Clicker Game)
@@ -80,11 +80,11 @@ Battle Logic
 
 Opponent selects a move randomly.
 Damage rules:
-Fire 🔥 beats Grass 🌱 → Player deals 20 damage, receives 5 damage.
-Grass 🌱 beats Water 🌊 → Player deals 20 damage, receives 5 damage.
-Water 🌊 beats Fire 🔥 → Player deals 20 damage, receives 5 damage.
-Same element → Both deal 10 damage.
-Physical 👊 vs Physical 👊 → Both deal 3 damage.
+Fire 🔥 beats Grass 🌱 → Player deals 20 damage, receives 0 damage.
+Grass 🌱 beats Water 🌊 → Player deals 20 damage, receives 0 damage.
+Water 🌊 beats Fire 🔥 → Player deals 20 damage, receives 0 damage.
+Same element → Both deal 0 damage.
+Physical 👊 vs Physical 👊 → Both deal random damage from 0 - 20.
 Implementation uses addEventListener, if-else conditions, innerHTML, textContent, arrays, forEach, map, and classList.
 A command log (bottom panel) updates each turn using setTimeout to simulate timed battle messages.
 End Game
