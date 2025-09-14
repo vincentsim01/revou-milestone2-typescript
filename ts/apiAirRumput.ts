@@ -159,7 +159,7 @@ gameVersion.forEach((item)=>{
 });
 
 const enemyArray:string[] = ['aang' , 'kakashi', 'brewmaster' ];
-chooseCharacterButton.addEventListener('click', () => {
+chooseCharacterButton?.addEventListener('click', () => {
     characterSelectionContainer?.classList.remove('hidden');
     DisplayCharacter(characterArray);
     opening.play();
@@ -191,7 +191,7 @@ function DisplayCharacter(characterArray:any):void{
         newDiv.appendChild(newImg);
         newDiv.appendChild(newbr);
         newDiv.appendChild(newName);
-        characterDisplayContainer.appendChild(newDiv);
+        characterDisplayContainer?.appendChild(newDiv);
         pokemons=[...characterArray];
 })
        clickPokemon();
@@ -281,9 +281,11 @@ var enemyHPValue:any = 100;
 yourHealthBar.textContent = `${yourHPValue}/100`;
 
 //duel outcome
-function resultCheck():any{
+
+function resultCheck2():any{
     setTimeout(()=>{
-            if(yourHPValue <= 0 && enemyHPValue > 0){
+        switch(true){
+            case (yourHPValue <= 0 && enemyHPValue > 0):
                 battleSong.pause();
                 battleSong.currentTime = 0;
                 defeatedSong.play();
@@ -298,8 +300,8 @@ function resultCheck():any{
                 duelResultNormallyEffective.textContent = normallyEffectiveContainer;
                 duelResultNotEffective.textContent = notEffectiveContainer;
                 totalRoundCount.textContent = roundCounter;
-                return;
-            }else if(yourHPValue > 0 && enemyHPValue <= 0){
+                break;
+            case (yourHPValue > 0 && enemyHPValue <= 0):
                 battleSong.pause();
                 battleSong.currentTime = 0;
                 victorySong.play();
@@ -314,8 +316,8 @@ function resultCheck():any{
                 duelResultNormallyEffective.textContent = normallyEffectiveContainer;
                 duelResultNotEffective.textContent = notEffectiveContainer;
                 totalRoundCount.textContent = roundCounter;
-                return;
-            }else if(yourHPValue <= 0 && enemyHPValue <= 0){
+                break;
+            case (yourHPValue <= 0 && enemyHPValue <= 0):
                 battleSong.pause();
                 battleSong.currentTime = 0;
                 tieSong.play();
@@ -330,14 +332,10 @@ function resultCheck():any{
                 duelResultNormallyEffective.textContent = normallyEffectiveContainer;
                 duelResultNotEffective.textContent = notEffectiveContainer;
                 totalRoundCount.textContent = roundCounter;
-                return;
-            }
+                break;
+        }
     },1000);
-
 }
-
-
-
 
 
 function duelStart(e:MouseEvent):void{
@@ -403,7 +401,7 @@ function duelStart(e:MouseEvent):void{
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
-                resultCheck()
+                resultCheck2()
 
             }, 1000);
             setTimeout(() => {
@@ -464,7 +462,7 @@ function duelStart(e:MouseEvent):void{
                     superEffectiveSound.play();
 
                 }, 600);
-                resultCheck()
+                resultCheck2()
             }, 1000);
             setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -520,7 +518,7 @@ function duelStart(e:MouseEvent):void{
                     superEffectiveSound.play();
 
                 }, 600);
-                resultCheck()
+                resultCheck2()
             }, 1000);
             setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -585,7 +583,7 @@ function duelStart(e:MouseEvent):void{
                         superEffectiveSound.play();
 
                     }, 600);
-                    resultCheck()
+                    resultCheck2()
                 }, 1000);
                 setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -644,7 +642,7 @@ function duelStart(e:MouseEvent):void{
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
-                    resultCheck()
+                    resultCheck2()
                 }, 1000);
             setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -701,7 +699,7 @@ function duelStart(e:MouseEvent):void{
 
                 }, 600);
                     notEffectiveContainer++;
-                    resultCheck()
+                    resultCheck2()
                 }, 1000);
             setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -768,7 +766,7 @@ function duelStart(e:MouseEvent):void{
                     superEffectiveSound.play();
 
                 }, 600);
-                    resultCheck()
+                    resultCheck2()
                 }, 1000);
             setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -828,7 +826,7 @@ function duelStart(e:MouseEvent):void{
                         superEffectiveSound.play();
 
                     }, 600);
-                    resultCheck()
+                    resultCheck2()
                 }, 1000);
             setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -886,7 +884,7 @@ function duelStart(e:MouseEvent):void{
                     setTimeout(()=>{
                         NotEffectiveSound.play();
                     },500);
-                    resultCheck()
+                    resultCheck2()
                 }, 1000);
                 setTimeout(() => {
                 elementYou.innerHTML = "";
@@ -942,7 +940,7 @@ function duelStart(e:MouseEvent):void{
                 setTimeout(()=>{
                     NotEffectiveSound.play();
                 },500);
-                    resultCheck()
+                    resultCheck2()
                 }, 1000);
             setTimeout(() => {
                 elementYou.innerHTML = "";
