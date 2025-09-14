@@ -264,9 +264,9 @@ physicalAttackButton?.addEventListener("click", duelStart );
 // }
 
 
-const iconArray:any = ['fire.png', 'water.png', 'grass.png', 'physical.png'];
+const iconArray:string[] = ['fire.png', 'water.png', 'grass.png', 'physical.png'];
 
-const enemyAttackArray:any = ["Fire", "Water", "Grass"];
+const enemyAttackArray:string[] = ["Fire", "Water", "Grass"];
 
 let playerDamageThisTurn:number;
 
@@ -279,6 +279,13 @@ var yourHPValue:any = 100;
 var enemyHPValue:any = 100;
 
 yourHealthBar.textContent = `${yourHPValue}/100`;
+
+enum Elemental{
+    Fire = "Fire",
+    Water = "Water",
+    Grass = "Grass",
+    Physical = "Physical"
+}
 
 //duel outcome
 
@@ -428,7 +435,7 @@ function duelStart(e:MouseEvent):void{
     if(btn.id == "fireAttackButton"){
         fireAttackCounter++;
             switch(enemyAttackThisTurn){
-                case "Fire":
+                case Elemental.Fire:
                     gameInstruction.textContent = "Enemy used Fire attack! It's a tie!";
                     playerDamageThisTurn = 0;
                     enemyDamageThisTurn = 0;
@@ -460,7 +467,7 @@ function duelStart(e:MouseEvent):void{
                     revertElement()
                     return;
                     break;
-                case "Water":
+                case Elemental.Water:
                     gameInstruction.textContent = "Enemy used Water attack! Your attack loses!";
                     playerDamageThisTurn = 0;
                     enemyDamageThisTurn = 20;
@@ -494,7 +501,7 @@ function duelStart(e:MouseEvent):void{
                     revertElement()
                     return;
                     break;
-                case "Grass":
+                case Elemental.Grass:
                     gameInstruction.textContent = "Enemy used Grass attack! Your attack wins!";
                     playerDamageThisTurn = 20;
                     enemyDamageThisTurn = 0;
@@ -534,7 +541,7 @@ function duelStart(e:MouseEvent):void{
     else if(btn.id === "waterAttackButton"){
         waterAttackCounter++;
             switch(enemyAttackThisTurn){
-                case "Fire":
+                case Elemental.Fire:
                         gameInstruction.textContent = "Enemy used Fire attack! your attack wins!";
                         playerDamageThisTurn = 20;
                         enemyDamageThisTurn = 0;
@@ -567,7 +574,7 @@ function duelStart(e:MouseEvent):void{
                         }, 1000);
                     revertElement()
                     break;
-                case "Water":
+                case Elemental.Water:
                         gameInstruction.textContent = "Enemy used Water attack! It's a tie!";
                         playerDamageThisTurn = 0;
                         enemyDamageThisTurn = 0;
@@ -600,7 +607,7 @@ function duelStart(e:MouseEvent):void{
                         }, 1000);
                     revertElement()
                     break;
-                case "Grass":
+                case Elemental.Grass:
                         gameInstruction.textContent = "Enemy used Grass attack! Your attack loses!";
                         playerDamageThisTurn = 0;
                         enemyDamageThisTurn = 20;
@@ -643,7 +650,7 @@ function duelStart(e:MouseEvent):void{
     else if(btn.id === "grassAttackButton"){
         grassAttackCounter++;
             switch(enemyAttackThisTurn){
-                case "Fire":
+                case Elemental.Fire:
                         gameInstruction.textContent = "Enemy used Fire attack! Your attack loses!";
                         playerDamageThisTurn = 0;
                         enemyDamageThisTurn = 20;
@@ -679,7 +686,7 @@ function duelStart(e:MouseEvent):void{
                         }, 1000);
                     revertElement()
                     break;
-                case "Water":
+                case Elemental.Water:
                         gameInstruction.textContent = "Enemy used Water attack! Your attack wins!";
                         playerDamageThisTurn = 20;
                         enemyDamageThisTurn = 0;
@@ -713,7 +720,7 @@ function duelStart(e:MouseEvent):void{
                         }, 1000);
                     revertElement()
                     break;
-                case "Grass":
+                case Elemental.Grass:
                         gameInstruction.textContent = "Enemy used Grass attack! It's a tie!";
                         playerDamageThisTurn = 0;
                         enemyDamageThisTurn = 0;

@@ -249,6 +249,13 @@ var enemyAttackThisTurn;
 var yourHPValue = 100;
 var enemyHPValue = 100;
 yourHealthBar.textContent = "".concat(yourHPValue, "/100");
+var Elemental;
+(function (Elemental) {
+    Elemental["Fire"] = "Fire";
+    Elemental["Water"] = "Water";
+    Elemental["Grass"] = "Grass";
+    Elemental["Physical"] = "Physical";
+})(Elemental || (Elemental = {}));
 //duel outcome
 function resultCheck2() {
     setTimeout(function () {
@@ -369,7 +376,7 @@ function duelStart(e) {
     if (btn.id == "fireAttackButton") {
         fireAttackCounter++;
         switch (enemyAttackThisTurn) {
-            case "Fire":
+            case Elemental.Fire:
                 gameInstruction.textContent = "Enemy used Fire attack! It's a tie!";
                 playerDamageThisTurn = 0;
                 enemyDamageThisTurn = 0;
@@ -399,7 +406,7 @@ function duelStart(e) {
                 revertElement();
                 return;
                 break;
-            case "Water":
+            case Elemental.Water:
                 gameInstruction.textContent = "Enemy used Water attack! Your attack loses!";
                 playerDamageThisTurn = 0;
                 enemyDamageThisTurn = 20;
@@ -430,7 +437,7 @@ function duelStart(e) {
                 revertElement();
                 return;
                 break;
-            case "Grass":
+            case Elemental.Grass:
                 gameInstruction.textContent = "Enemy used Grass attack! Your attack wins!";
                 playerDamageThisTurn = 20;
                 enemyDamageThisTurn = 0;
@@ -467,7 +474,7 @@ function duelStart(e) {
     else if (btn.id === "waterAttackButton") {
         waterAttackCounter++;
         switch (enemyAttackThisTurn) {
-            case "Fire":
+            case Elemental.Fire:
                 gameInstruction.textContent = "Enemy used Fire attack! your attack wins!";
                 playerDamageThisTurn = 20;
                 enemyDamageThisTurn = 0;
@@ -497,7 +504,7 @@ function duelStart(e) {
                 }, 1000);
                 revertElement();
                 break;
-            case "Water":
+            case Elemental.Water:
                 gameInstruction.textContent = "Enemy used Water attack! It's a tie!";
                 playerDamageThisTurn = 0;
                 enemyDamageThisTurn = 0;
@@ -526,7 +533,7 @@ function duelStart(e) {
                 }, 1000);
                 revertElement();
                 break;
-            case "Grass":
+            case Elemental.Grass:
                 gameInstruction.textContent = "Enemy used Grass attack! Your attack loses!";
                 playerDamageThisTurn = 0;
                 enemyDamageThisTurn = 20;
@@ -562,7 +569,7 @@ function duelStart(e) {
     else if (btn.id === "grassAttackButton") {
         grassAttackCounter++;
         switch (enemyAttackThisTurn) {
-            case "Fire":
+            case Elemental.Fire:
                 gameInstruction.textContent = "Enemy used Fire attack! Your attack loses!";
                 playerDamageThisTurn = 0;
                 enemyDamageThisTurn = 20;
@@ -594,7 +601,7 @@ function duelStart(e) {
                 }, 1000);
                 revertElement();
                 break;
-            case "Water":
+            case Elemental.Water:
                 gameInstruction.textContent = "Enemy used Water attack! Your attack wins!";
                 playerDamageThisTurn = 20;
                 enemyDamageThisTurn = 0;
@@ -624,7 +631,7 @@ function duelStart(e) {
                 }, 1000);
                 revertElement();
                 break;
-            case "Grass":
+            case Elemental.Grass:
                 gameInstruction.textContent = "Enemy used Grass attack! It's a tie!";
                 playerDamageThisTurn = 0;
                 enemyDamageThisTurn = 0;
