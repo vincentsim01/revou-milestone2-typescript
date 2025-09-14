@@ -117,7 +117,7 @@ letPlayButtonMobile.addEventListener("click", () => {
 
 let timeCounter:number = 46;
 let intervalId:any=null;
-function runCountDown(){
+function runCountDown():void{
     if (intervalId) {
         clearInterval(intervalId);
     }
@@ -383,7 +383,7 @@ function runCountDown(){
             },1000)
         }
 
-        function playAgainWinMobile(){
+        function playAgainWinMobile():void{
 
             firstKataMutiaraMobile.textContent="";
             secondKataMutiaraMobile.textContent="";
