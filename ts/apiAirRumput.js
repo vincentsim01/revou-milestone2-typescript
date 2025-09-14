@@ -199,7 +199,7 @@ function clickPokemon() {
         });
         var pokemonCharacter = document.getElementById("".concat(pokemon, "Character"));
         //update your pokemon avatar at the battle arena to the one that you selected
-        pokemonCharacter.addEventListener('click', function () {
+        pokemonCharacter === null || pokemonCharacter === void 0 ? void 0 : pokemonCharacter.addEventListener('click', function () {
             yourPokemon.src = "../asset/apiAirRumput/".concat(pokemon, ".png");
             yourName.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
             startAdventureButton.classList.remove('hidden');

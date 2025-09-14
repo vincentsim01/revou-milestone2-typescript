@@ -60,7 +60,17 @@ var notEffectiveContainer:number = 0;
 
 let chosenEnemy:any=null;
 
-const pokemonGenerationArray:any = 
+interface Starters {
+  fire: string;
+  water: string;
+  grass: string;
+}
+
+interface Generation {
+  [generationName: string]: Starters;
+}
+
+const pokemonGenerationArray:Generation[] = 
 [
     {
         'RedBlue':{
@@ -213,7 +223,7 @@ function DisplayCharacter(characterArray:any):void{
             const pokemonCharacter = document.getElementById(`${pokemon}Character`);
             
             //update your pokemon avatar at the battle arena to the one that you selected
-            pokemonCharacter.addEventListener('click', () => {
+            pokemonCharacter?.addEventListener('click', () => {
                 yourPokemon.src = `../asset/apiAirRumput/${pokemon}.png`;
                 yourName.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
                 startAdventureButton.classList.remove('hidden');
