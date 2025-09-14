@@ -259,10 +259,6 @@ waterAttackButton?.addEventListener("click", duelStart );
 grassAttackButton?.addEventListener("click", duelStart );
 physicalAttackButton?.addEventListener("click", duelStart );
 
-// function duelStart():void{
-//     alert("Click the attack button to start the duel!");
-// }
-
 
 const iconArray:string[] = ['fire.png', 'water.png', 'grass.png', 'physical.png'];
 
@@ -285,6 +281,13 @@ enum Elemental{
     Water = "Water",
     Grass = "Grass",
     Physical = "Physical"
+}
+
+enum ElementalButton{
+    FireButton = "fireAttackButton",
+    WaterButton = "waterAttackButton",
+    GrassButton = "grassAttackButton",
+    PhysicalButton = "physicalAttackButton"
 }
 
 //duel outcome
@@ -393,6 +396,14 @@ function revertElement():void{
 }
 
 
+function HPReduced():void{
+        yourHPValue = yourHPValue - enemyDamageThisTurn;
+        yourHP.style.width = `${yourHPValue}%`;
+        yourHealthBar.textContent = `${yourHPValue}/100`;
+        enemyHPValue = enemyHPValue - playerDamageThisTurn;
+        enemyHP.style.width = `${enemyHPValue}%`;
+}
+
 function duelStart(e:MouseEvent):void{
     const btn = e.currentTarget as HTMLButtonElement;
     roundCounter++;
@@ -426,13 +437,8 @@ function duelStart(e:MouseEvent):void{
     physicalAttackButton.classList.add('text-gray-100');
 
 
-
-
-
-
-
-    //if player choose fire button
-    if(btn.id == "fireAttackButton"){
+    switch(btn.id){
+        case ElementalButton.FireButton:
         fireAttackCounter++;
             switch(enemyAttackThisTurn){
                 case Elemental.Fire:
@@ -441,11 +447,7 @@ function duelStart(e:MouseEvent):void{
                     enemyDamageThisTurn = 0;
                     setTimeout(() => {
                         gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective`;
-                        yourHPValue = yourHPValue - enemyDamageThisTurn;
-                        yourHP.style.width = `${yourHPValue}%`;
-                        yourHealthBar.textContent = `${yourHPValue}/100`;
-                        enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                        enemyHP.style.width = `${enemyHPValue}%`;
+                        HPReduced();
                         normallyEffectiveContainer++;
                         elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
         
@@ -473,11 +475,7 @@ function duelStart(e:MouseEvent):void{
                     enemyDamageThisTurn = 20;
                     setTimeout(() => {
                         gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                        yourHPValue = yourHPValue - enemyDamageThisTurn;
-                        yourHP.style.width = `${yourHPValue}%`;
-                        yourHealthBar.textContent = `${yourHPValue}/100`;
-                        enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                        enemyHP.style.width = `${enemyHPValue}%`;
+                        HPReduced();
                         notEffectiveContainer++;
                         elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
             
@@ -507,11 +505,7 @@ function duelStart(e:MouseEvent):void{
                     enemyDamageThisTurn = 0;
                     setTimeout(() => {
                         gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                        yourHPValue = yourHPValue - enemyDamageThisTurn;
-                        yourHP.style.width = `${yourHPValue}%`;
-                        yourHealthBar.textContent = `${yourHPValue}/100`;
-                        enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                        enemyHP.style.width = `${enemyHPValue}%`;
+                        HPReduced();        
                         superEffectiveContainer++;
                         elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
 
@@ -533,12 +527,10 @@ function duelStart(e:MouseEvent):void{
                     }, 1000);
                     revertElement()
                     return;
-                    break;
+               
             }
-
-    }
-    //if player choose water button
-    else if(btn.id === "waterAttackButton"){
+            break;
+        case ElementalButton.WaterButton:
         waterAttackCounter++;
             switch(enemyAttackThisTurn){
                 case Elemental.Fire:
@@ -547,11 +539,7 @@ function duelStart(e:MouseEvent):void{
                         enemyDamageThisTurn = 0;
                         setTimeout(() => {
                             gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                            yourHPValue = yourHPValue - enemyDamageThisTurn;
-                            yourHP.style.width = `${yourHPValue}%`;
-                            yourHealthBar.textContent = `${yourHPValue}/100`;
-                            enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                            enemyHP.style.width = `${enemyHPValue}%`;
+                            HPReduced();   
                             superEffectiveContainer++;
                             elementYou.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
 
@@ -580,11 +568,7 @@ function duelStart(e:MouseEvent):void{
                         enemyDamageThisTurn = 0;
                         setTimeout(() => {
                             gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective!`;
-                            yourHPValue = yourHPValue - enemyDamageThisTurn;
-                            yourHP.style.width = `${yourHPValue}%`;
-                            yourHealthBar.textContent = `${yourHPValue}/100`;
-                            enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                            enemyHP.style.width = `${enemyHPValue}%`;
+                            HPReduced();   
                             normallyEffectiveContainer++;
 
                             elementYou.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
@@ -613,11 +597,7 @@ function duelStart(e:MouseEvent):void{
                         enemyDamageThisTurn = 20;
                         setTimeout(() => {
                             gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                            yourHPValue = yourHPValue - enemyDamageThisTurn;
-                            yourHP.style.width = `${yourHPValue}%`;
-                            yourHealthBar.textContent = `${yourHPValue}/100`;
-                            enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                            enemyHP.style.width = `${enemyHPValue}%`;
+                            HPReduced();   
                             elementYou.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
             
                             elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
@@ -641,14 +621,9 @@ function duelStart(e:MouseEvent):void{
                     break;
             }
  
-    }
-
-
-
-
-    //if player choose grass button
-    else if(btn.id === "grassAttackButton"){
-        grassAttackCounter++;
+            break;
+        case ElementalButton.GrassButton:
+    grassAttackCounter++;
             switch(enemyAttackThisTurn){
                 case Elemental.Fire:
                         gameInstruction.textContent = "Enemy used Fire attack! Your attack loses!";
@@ -658,11 +633,7 @@ function duelStart(e:MouseEvent):void{
                             elementYou.innerHTML = "";
                             elementEnemy.innerHTML = "";
                             gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                            yourHPValue = yourHPValue - enemyDamageThisTurn;
-                            yourHP.style.width = `${yourHPValue}%`;
-                            yourHealthBar.textContent = `${yourHPValue}/100`;
-                            enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                            enemyHP.style.width = `${enemyHPValue}%`;
+                            HPReduced();   
                             notEffectiveContainer++;
 
                             elementYou.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
@@ -693,11 +664,7 @@ function duelStart(e:MouseEvent):void{
                         setTimeout(() => {
 
                             gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                            yourHPValue = yourHPValue - enemyDamageThisTurn;
-                            yourHP.style.width = `${yourHPValue}%`;
-                            yourHealthBar.textContent = `${yourHPValue}/100`;
-                            enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                            enemyHP.style.width = `${enemyHPValue}%`;
+                            HPReduced();   
                             superEffectiveContainer++;
                             elementYou.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
 
@@ -726,11 +693,7 @@ function duelStart(e:MouseEvent):void{
                         enemyDamageThisTurn = 0;
                         setTimeout(() => {
                             gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective!`;
-                            yourHPValue = yourHPValue - enemyDamageThisTurn;
-                            yourHP.style.width = `${yourHPValue}%`;
-                            yourHealthBar.textContent = `${yourHPValue}/100`;
-                            enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                            enemyHP.style.width = `${enemyHPValue}%`;
+                            HPReduced();   
                             normallyEffectiveContainer++;
 
                             elementYou.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
@@ -754,22 +717,15 @@ function duelStart(e:MouseEvent):void{
                     revertElement()
                     break; 
             }
-
-            
-         }
-    //if player choose physical button
-     else if(btn.id === "physicalAttackButton"){
+            break;
+        case ElementalButton.PhysicalButton:
             physicalAttackCounter++;
               gameInstruction.innerHTML = `Since you use physical enemy then also use physical!`;
                 playerDamageThisTurn = Math.floor(Math.random()*21);
                 enemyDamageThisTurn = Math.floor(Math.random()*21);
                 setTimeout(() => {
                     gameInstruction.textContent = `you dealt ${playerDamageThisTurn} damage and your opponent dealt ${enemyDamageThisTurn}! It's okay effective!`;
-                    yourHPValue = yourHPValue - enemyDamageThisTurn;
-                    yourHP.style.width = `${yourHPValue}%`;
-                    yourHealthBar.textContent = `${yourHPValue}/100`;
-                    enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                    enemyHP.style.width = `${enemyHPValue}%`;
+                    HPReduced();   
                     normallyEffectiveContainer++;
 
                     if(window.innerWidth<=768){
@@ -785,8 +741,10 @@ function duelStart(e:MouseEvent):void{
                     resultCheck2()
                 }, 1000);
                 revertElement();
-
-        }
+            break;
+        default:
+            return;
+    }
 
 
         // after duel end click this button to restart the game
@@ -824,9 +782,6 @@ function duelStart(e:MouseEvent):void{
 
     }
 
-// fireAttackButton?.addEventListener("click", () =>{
-//     console.log("fire attack");
-// } );
 
 //start the duel after clicking one of the element button
 // Duplicate implementation of duelStart removed to fix compile error.
