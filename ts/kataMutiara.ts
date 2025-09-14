@@ -25,7 +25,11 @@ const nextLevelButtonMobile = document.getElementById('nextLevelButtonMobile') a
 
 let gameLevel:number = 5;
 
-const kataMutiara:any[] = [
+interface KataMutiaraEntry {
+  [key: number]: string[];
+}
+
+const kataMutiara:KataMutiaraEntry[] = [
     { 1 : ["Kamu memang seperti lempeng bumi", "bergeser sedikit saja sudah mengguncang hatiku"] },
     { 2 : ["Selain ada garuda di dadaku", "di dadaku juga selalu ada kamu."] },
     { 3 : ["Lebih baik menjadi pahlawan", "daripada pacaran tapi jadi selingkuhan"] },
