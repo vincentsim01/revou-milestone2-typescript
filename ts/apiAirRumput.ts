@@ -375,181 +375,186 @@ function duelStart(e:MouseEvent):void{
     //if player choose fire button
     if(btn.id == "fireAttackButton"){
         fireAttackCounter++;
-        if(enemyAttackThisTurn === "Fire"){
-            gameInstruction.textContent = "Enemy used Fire attack! It's a tie!";
-            playerDamageThisTurn = 0;
-            enemyDamageThisTurn = 0;
-            setTimeout(() => {
-                gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective`;
-                yourHPValue = yourHPValue - enemyDamageThisTurn;
-                yourHP.style.width = `${yourHPValue}%`;
-                yourHealthBar.textContent = `${yourHPValue}/100`;
-                enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                enemyHP.style.width = `${enemyHPValue}%`;
-                normallyEffectiveContainer++;
-                elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-   
-                elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-       
-                if(window.innerWidth<=768){
-                    elementYou.classList.add('yourelementTieMobile');
-                    elementEnemy.classList.add('enemyelementTieMobile');
-                }else if(window.innerWidth>768){
-                    elementYou.classList.add('yourelementTie');
-                    elementEnemy.classList.add('enemyelementTie');
-                }
-                setTimeout(()=>{
-                    NotEffectiveSound.play();
-                },500);
-                resultCheck2()
+            switch(enemyAttackThisTurn){
+                case "Fire":
+                    gameInstruction.textContent = "Enemy used Fire attack! It's a tie!";
+                    playerDamageThisTurn = 0;
+                    enemyDamageThisTurn = 0;
+                    setTimeout(() => {
+                        gameInstruction.textContent = `Both you and your opponent dealt ${playerDamageThisTurn} damage! It's normally effective`;
+                        yourHPValue = yourHPValue - enemyDamageThisTurn;
+                        yourHP.style.width = `${yourHPValue}%`;
+                        yourHealthBar.textContent = `${yourHPValue}/100`;
+                        enemyHPValue = enemyHPValue - playerDamageThisTurn;
+                        enemyHP.style.width = `${enemyHPValue}%`;
+                        normallyEffectiveContainer++;
+                        elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
+        
+                        elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
+            
+                        if(window.innerWidth<=768){
+                            elementYou.classList.add('yourelementTieMobile');
+                            elementEnemy.classList.add('enemyelementTieMobile');
+                        }else if(window.innerWidth>768){
+                            elementYou.classList.add('yourelementTie');
+                            elementEnemy.classList.add('enemyelementTie');
+                        }
+                        setTimeout(()=>{
+                            NotEffectiveSound.play();
+                        },500);
+                        resultCheck2()
 
-            }, 1000);
-            setTimeout(() => {
-                elementYou.innerHTML = "";
-                elementEnemy.innerHTML = "";
-                gameInstruction.textContent = `Let's continue the duel`;
+                    }, 1000);
+                    setTimeout(() => {
+                        elementYou.innerHTML = "";
+                        elementEnemy.innerHTML = "";
+                        gameInstruction.textContent = `Let's continue the duel`;
 
-                fireAttackButton.classList.add('cursor-pointer');
-                waterAttackButton.classList.add('cursor-pointer');
-                grassAttackButton.classList.add('cursor-pointer');
-                physicalAttackButton.classList.add('cursor-pointer');
+                        fireAttackButton.classList.remove('hidden');
+                        waterAttackButton.classList.remove('hidden');
+                        grassAttackButton.classList.remove('hidden');
+                        physicalAttackButton.classList.remove('hidden');
 
-                fireAttackButton.classList.remove('hidden');
-                waterAttackButton.classList.remove('hidden');
-                grassAttackButton.classList.remove('hidden');
-                physicalAttackButton.classList.remove('hidden');
-                
-                fireAttackButton.classList.remove('text-gray-100');
-                waterAttackButton.classList.remove('text-gray-100');
-                grassAttackButton.classList.remove('text-gray-100');
-                physicalAttackButton.classList.remove('text-gray-100');
+                        fireAttackButton.classList.add('cursor-pointer');
+                        waterAttackButton.classList.add('cursor-pointer');
+                        grassAttackButton.classList.add('cursor-pointer');
+                        physicalAttackButton.classList.add('cursor-pointer');
 
-                elementYou.classList.remove('yourelementTie');
-                elementEnemy.classList.remove('enemyelementTie');
+                        fireAttackButton.classList.remove('text-gray-100');
+                        waterAttackButton.classList.remove('text-gray-100');
+                        grassAttackButton.classList.remove('text-gray-100');
+                        physicalAttackButton.classList.remove('text-gray-100');
+                        elementYou.classList.remove('yourelementTie');
+                        elementEnemy.classList.remove('enemyelementTie');
+                        elementYou.classList.remove('yourelementTieMobile');
+                        elementEnemy.classList.remove('enemyelementTieMobile');
+                        yourPokemon.classList.remove('getHit');
+                        return;
+                    }, 2500);
+                    return;
+                    break;
+                case "Water":
+                    gameInstruction.textContent = "Enemy used Water attack! Your attack loses!";
+                    playerDamageThisTurn = 0;
+                    enemyDamageThisTurn = 20;
+                    setTimeout(() => {
+                        gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
+                        yourHPValue = yourHPValue - enemyDamageThisTurn;
+                        yourHP.style.width = `${yourHPValue}%`;
+                        yourHealthBar.textContent = `${yourHPValue}/100`;
+                        enemyHPValue = enemyHPValue - playerDamageThisTurn;
+                        enemyHP.style.width = `${enemyHPValue}%`;
+                        notEffectiveContainer++;
+                        elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
+            
+                        elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
 
-                elementYou.classList.remove('yourelementTie');
-                elementEnemy.classList.remove('enemyelementTie');
 
-                return;
-            }, 2500);
+                        if(window.innerWidth<=768){
+                            elementYou.classList.add('yourelementLoseMobile');
+                            elementEnemy.classList.add('enemyelementWinMobile');
+                        }else if(window.innerWidth>768){
+                            elementYou.classList.add('yourelementLose');
+                            elementEnemy.classList.add('enemyelementWin');
+                        }
+                        setTimeout(() => {
+                            yourPokemon.classList.add('getHit');
+                            superEffectiveSound.play();
 
-        }else if(enemyAttackThisTurn === "Water"){
-            gameInstruction.textContent = "Enemy used Water attack! Your attack loses!";
-            playerDamageThisTurn = 0;
-            enemyDamageThisTurn = 20;
-            setTimeout(() => {
-                gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                yourHPValue = yourHPValue - enemyDamageThisTurn;
-                yourHP.style.width = `${yourHPValue}%`;
-                yourHealthBar.textContent = `${yourHPValue}/100`;
-                enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                enemyHP.style.width = `${enemyHPValue}%`;
-                notEffectiveContainer++;
-                elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
-     
-                elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/water.png" alt="Water Icon">`;
+                        }, 600);
+                        resultCheck2()
+                    }, 1000);
+                    setTimeout(() => {
+                        elementYou.innerHTML = "";
+                        elementEnemy.innerHTML = "";
+                        gameInstruction.textContent = `Let's continue the duel`;
 
+                        fireAttackButton.classList.remove('hidden');
+                        waterAttackButton.classList.remove('hidden');
+                        grassAttackButton.classList.remove('hidden');
+                        physicalAttackButton.classList.remove('hidden');
 
-                if(window.innerWidth<=768){
-                    elementYou.classList.add('yourelementLoseMobile');
-                    elementEnemy.classList.add('enemyelementWinMobile');
-                }else if(window.innerWidth>768){
-                    elementYou.classList.add('yourelementLose');
-                    elementEnemy.classList.add('enemyelementWin');
-                }
-                setTimeout(() => {
-                    yourPokemon.classList.add('getHit');
-                    superEffectiveSound.play();
+                        fireAttackButton.classList.add('cursor-pointer');
+                        waterAttackButton.classList.add('cursor-pointer');
+                        grassAttackButton.classList.add('cursor-pointer');
+                        physicalAttackButton.classList.add('cursor-pointer');
 
-                }, 600);
-                resultCheck2()
-            }, 1000);
-            setTimeout(() => {
-                elementYou.innerHTML = "";
-                elementEnemy.innerHTML = "";
-                gameInstruction.textContent = `Let's continue the duel`;
+                        fireAttackButton.classList.remove('text-gray-100');
+                        waterAttackButton.classList.remove('text-gray-100');
+                        grassAttackButton.classList.remove('text-gray-100');
+                        physicalAttackButton.classList.remove('text-gray-100');
+                        elementYou.classList.remove('yourelementLose');
+                        elementEnemy.classList.remove('enemyelementWin');
+                        elementYou.classList.remove('yourelementLoseMobile');
+                        elementEnemy.classList.remove('enemyelementWinMobile');
+                        yourPokemon.classList.remove('getHit');
+                        return;
+                    }, 2500);
+                    return;
+                    break;
+                case "Grass":
+                    gameInstruction.textContent = "Enemy used Grass attack! Your attack wins!";
+                    playerDamageThisTurn = 20;
+                    enemyDamageThisTurn = 0;
+                    setTimeout(() => {
+                        gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
+                        yourHPValue = yourHPValue - enemyDamageThisTurn;
+                        yourHP.style.width = `${yourHPValue}%`;
+                        yourHealthBar.textContent = `${yourHPValue}/100`;
+                        enemyHPValue = enemyHPValue - playerDamageThisTurn;
+                        enemyHP.style.width = `${enemyHPValue}%`;
+                        superEffectiveContainer++;
+                        elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
 
-                fireAttackButton.classList.remove('hidden');
-                waterAttackButton.classList.remove('hidden');
-                grassAttackButton.classList.remove('hidden');
-                physicalAttackButton.classList.remove('hidden');
+                        elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
 
-                fireAttackButton.classList.add('cursor-pointer');
-                waterAttackButton.classList.add('cursor-pointer');
-                grassAttackButton.classList.add('cursor-pointer');
-                physicalAttackButton.classList.add('cursor-pointer');
+                        if(window.innerWidth<=768){
+                            elementYou.classList.add('yourelementWinMobile');
+                            elementEnemy.classList.add('enemyelementLoseMobile');
+                        }else if(window.innerWidth>768){
+                            elementYou.classList.add('yourelementWin');
+                            elementEnemy.classList.add('enemyelementLose');
+                        }
+                        setTimeout(() => {
+                            enemyPokemon.classList.add('getHit');
+                            superEffectiveSound.play();
 
-                fireAttackButton.classList.remove('text-gray-100');
-                waterAttackButton.classList.remove('text-gray-100');
-                grassAttackButton.classList.remove('text-gray-100');
-                physicalAttackButton.classList.remove('text-gray-100');
-                elementYou.classList.remove('yourelementLose');
-                elementEnemy.classList.remove('enemyelementWin');
-                elementYou.classList.remove('yourelementLoseMobile');
-                elementEnemy.classList.remove('enemyelementWinMobile');
-                yourPokemon.classList.remove('getHit');
-                return;
-            }, 2500);
-        }else if(enemyAttackThisTurn === "Grass"){
-            gameInstruction.textContent = "Enemy used Grass attack! Your attack wins!";
-            playerDamageThisTurn = 20;
-            enemyDamageThisTurn = 0;
-            setTimeout(() => {
-                gameInstruction.textContent = `You dealt ${playerDamageThisTurn} damage but your opponent dealt ${enemyDamageThisTurn} damage! It's super effective!`;
-                yourHPValue = yourHPValue - enemyDamageThisTurn;
-                yourHP.style.width = `${yourHPValue}%`;
-                yourHealthBar.textContent = `${yourHPValue}/100`;
-                enemyHPValue = enemyHPValue - playerDamageThisTurn;
-                enemyHP.style.width = `${enemyHPValue}%`;
-                superEffectiveContainer++;
-                elementYou.innerHTML = `<img src="../asset/apiAirRumput/fire.png" alt="Fire Icon">`;
+                        }, 600);
+                        resultCheck2()
+                    }, 1000);
+                    setTimeout(() => {
+                        elementYou.innerHTML = "";
+                        elementEnemy.innerHTML = "";
+                        gameInstruction.textContent = `Let's continue the duel`;
 
-                elementEnemy.innerHTML = `<img src="../asset/apiAirRumput/grass.png" alt="Grass Icon">`;
+                        fireAttackButton.classList.remove('hidden');
+                        waterAttackButton.classList.remove('hidden');
+                        grassAttackButton.classList.remove('hidden');
+                        physicalAttackButton.classList.remove('hidden');
 
-                if(window.innerWidth<=768){
-                    elementYou.classList.add('yourelementWinMobile');
-                    elementEnemy.classList.add('enemyelementLoseMobile');
-                }else if(window.innerWidth>768){
-                    elementYou.classList.add('yourelementWin');
-                    elementEnemy.classList.add('enemyelementLose');
-                }
-                setTimeout(() => {
-                    enemyPokemon.classList.add('getHit');
-                    superEffectiveSound.play();
+                        fireAttackButton.classList.add('cursor-pointer');
+                        waterAttackButton.classList.add('cursor-pointer');
+                        grassAttackButton.classList.add('cursor-pointer');
+                        physicalAttackButton.classList.add('cursor-pointer');
 
-                }, 600);
-                resultCheck2()
-            }, 1000);
-            setTimeout(() => {
-                elementYou.innerHTML = "";
-                elementEnemy.innerHTML = "";
-                gameInstruction.textContent = `Let's continue the duel`;
+                        fireAttackButton.classList.remove('text-gray-100');
+                        waterAttackButton.classList.remove('text-gray-100');
+                        grassAttackButton.classList.remove('text-gray-100');
+                        physicalAttackButton.classList.remove('text-gray-100');
 
-                fireAttackButton.classList.remove('hidden');
-                waterAttackButton.classList.remove('hidden');
-                grassAttackButton.classList.remove('hidden');
-                physicalAttackButton.classList.remove('hidden');
+                        elementYou.classList.remove('yourelementWin');
+                        elementEnemy.classList.remove('enemyelementLose');
 
-                fireAttackButton.classList.add('cursor-pointer');
-                waterAttackButton.classList.add('cursor-pointer');
-                grassAttackButton.classList.add('cursor-pointer');
-                physicalAttackButton.classList.add('cursor-pointer');
+                        elementYou.classList.remove('yourelementWinMobile');
+                        elementEnemy.classList.remove('enemyelementLoseMobile');
 
-                fireAttackButton.classList.remove('text-gray-100');
-                waterAttackButton.classList.remove('text-gray-100');
-                grassAttackButton.classList.remove('text-gray-100');
-                physicalAttackButton.classList.remove('text-gray-100');
+                        enemyPokemon.classList.remove('getHit');
+                        return;
+                    }, 2500);
+                    return;
+                    break;
+            }
 
-                elementYou.classList.remove('yourelementWin');
-                elementEnemy.classList.remove('enemyelementLose');
-
-                elementYou.classList.remove('yourelementWinMobile');
-                elementEnemy.classList.remove('enemyelementLoseMobile');
-
-                enemyPokemon.classList.remove('getHit');
-                return;
-            }, 2500);
-        }
     }
     //if player choose water button
     else if(btn.id === "waterAttackButton"){
