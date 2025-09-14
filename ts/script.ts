@@ -79,4 +79,15 @@
     });
   }
 
+const params = new URLSearchParams(window.location.search);
+const names: string | null = params.get("name");
+
+const message = document.getElementById("message") as HTMLElement;
+
+if (names) {
+  message.textContent = `Thank you, ${names}!`;
+} else {
+  message.textContent = "Thank you!";
+}
+
   // export default initNavMenu;

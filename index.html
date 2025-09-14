@@ -154,12 +154,12 @@
         <div class="bg-gradient-to-r from-yellow-400 to-yellow-200 rounded-md w-[90%] md:w-[50%] flex-col justify-center items-center p-10">
             <h2 class="underline text-3xl text-center font-lexend">Contact Us</h2>
             <br><br>
-            <form method="POST" action="./html/thankYou.html" class="text-center">
+            <form method="GET" action="./html/thankYou.html" class="text-center">
                 <label for="name" class="mx-auto font-lexend text-center">Name</label>
-                <input type="text" id="name" class="border-b border-black w-[80%] m-3 font-lexend" placeholder="your name here"  required>
+                <input type="text" id="name" name="name" class="border-b border-black w-[80%] m-3 font-lexend" placeholder="your name here"  required>
                 <br><br>
                 <label for="email" class="mx-auto font-lexend text-center">Email</label>
-                <input type="email" id="email" class="border-b border-black w-[80%] m-3 font-lexend" placeholder="your email here"  required>
+                <input type="email" id="email" name="email" class="border-b border-black w-[80%] m-3 font-lexend" placeholder="your email here"  required>
                 <br>
                 <button type="submit" class="border border-black rounded-md m-5 mx-auto pl-5 pr-5 pt-3 pb-3 text-center font-lexend cursor-pointer">Submit</button>
             </form>

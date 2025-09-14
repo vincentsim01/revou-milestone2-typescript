@@ -64,4 +64,13 @@ if (navmobilecontainer && navmobile) {
         }
     });
 }
+var params = new URLSearchParams(window.location.search);
+var names = params.get("name");
+var message = document.getElementById("message");
+if (names) {
+    message.textContent = "Thank you, ".concat(names, "!");
+}
+else {
+    message.textContent = "Thank you!";
+}
 // export default initNavMenu;
