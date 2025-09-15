@@ -60,6 +60,22 @@ var notEffectiveContainer:number = 0;
 
 let chosenEnemy:any=null;
 
+function* evolvetoCharizard():any{
+    let count:number = 0;
+      while (true) {
+        count++;
+        yield count;
+      }
+}
+
+const charizardCounter = evolvetoCharizard();
+yourPokemon?.addEventListener('dblclick', ()=>{
+    const { value } = charizardCounter.next();
+    if(value === 3){
+        yourPokemon.src = `../asset/apiAirRumput/charizard.png`;
+    }});
+
+
 interface Starters {
   fire: string;
   water: string;
